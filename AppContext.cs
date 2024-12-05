@@ -104,7 +104,7 @@ namespace Windows_AI_Assistant
 			{
 				String text = "";
 				String result = "";
-
+		
 				switch (Globals.settings.speechToText)
 				{
 					case Data.Settings.SpeechToText.Azure:
@@ -114,6 +114,8 @@ namespace Windows_AI_Assistant
 							break;
 						}
 				}
+
+				
 
 				if (text.StartsWith(Globals.settings.keyword))
 				{

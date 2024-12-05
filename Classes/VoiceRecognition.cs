@@ -11,14 +11,18 @@ namespace Windows_AI_Assistant.Classes
 	{
 		public String recognizeAzure(String subscriptionKey, String region, String lang="en-US")
 		{
-			SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);
-			SpeechRecognitionResult result;
-			using (SpeechRecognizer recognizer = new(speechConfig, AutoDetectSourceLanguageConfig.FromLanguages(new String[] { lang })))
+			try
 			{
-				result = recognizer.RecognizeOnceAsync().Result;
-				if(result.Reason==ResultReason.RecognizedSpeech)
-					return result.Text;
+				SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);
+				SpeechRecognitionResult result;
+				using (SpeechRecognizer recognizer = new(speechConfig, AutoDetectSourceLanguageConfig.FromLanguages(new String[] { lang })))
+				{
+					result = recognizer.RecognizeOnceAsync().Result;
+					if (result.Reason == ResultReason.RecognizedSpeech)
+						return result.Text;
+				}
 			}
+			catch (Exception ex) { }
 			return "";
 		}
 	}

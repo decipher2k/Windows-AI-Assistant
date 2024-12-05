@@ -8,10 +8,15 @@
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
     <Platforms>AnyCPU;x64;x86</Platforms>
+    <ApplicationIcon>robot.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="robot.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="robot.ico" />
   </ItemGroup>
 
   <ItemGroup>
