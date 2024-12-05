@@ -63,9 +63,6 @@ namespace Windows_AI_Assistant
 			Globals.Save();
 		}
 
-
-
-
 		public void bnSettingsVoiceRecognition_Click(object sender, EventArgs e)
 		{
 			if(cbVoiceRecognition.SelectedItem.ToString() == "Microsoft Azure")
@@ -73,6 +70,13 @@ namespace Windows_AI_Assistant
 				Settings.AzureSettings azureSettings = new Settings.AzureSettings();
 				azureSettings.ShowDialog();				
 			}
+			Globals.Save();
+		}
+
+		public void bnSettingsCommands_Click(object sender, EventArgs e)
+		{
+			Settings.CommandSettings commandSettings = new Settings.CommandSettings();
+			commandSettings.ShowDialog();
 			Globals.Save();
 		}
 

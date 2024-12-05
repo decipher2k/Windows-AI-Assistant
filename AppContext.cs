@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
@@ -59,6 +60,44 @@ namespace Windows_AI_Assistant
 			Application.Exit();
 		}
 
+		bool EvaluateCommand(String text)
+		{
+			foreach (Data.Program program in Globals.settings.programs)
+			{
+				if (text.ToLower().Contains(program.Token.ToLower()) && program.Token!="")
+				{
+					try
+					{
+						ProcessStartInfo processStartInfo = new ProcessStartInfo()
+						{
+							UseShellExecute = true,
+							CreateNoWindow = true,
+							FileName = program.Command,
+							Arguments = program.Parameter
+						};
+						Process.Start(processStartInfo);
+					}
+					catch (Exception ex) { }
+					return true;
+				}
+			}
+
+			foreach (Data.Webhook webhook in Globals.settings.webhooks)
+			{
+				if (text.ToLower().Contains(webhook.Token.ToLower()) && webhook.Token!="")
+				{
+					try
+					{
+						new WebClient().DownloadString(webhook.URl);
+					}
+					catch (Exception ex) { }
+					return true;
+				}
+			}
+
+			return false;
+		}
+
 		void mainThread()
 		{
 			while (running)
@@ -80,35 +119,56 @@ namespace Windows_AI_Assistant
 				{
 					text = text.Substring(Globals.settings.keyword.Length);
 
-					switch (Globals.settings.aiChat)
+					if (!EvaluateCommand(text))
 					{
-						case Data.Settings.AIChat.Ollama:
-							{
-								if(Globals.settings.ollama.SystemPrompt!="" && Globals.settings.ollama.Model!="")
-									result = new Classes.AIChat().sendToOllama(text, Globals.settings.ollama.SystemPrompt, Globals.settings.ollama.Model);
-								break;
-							}
-						case Data.Settings.AIChat.ChatGPT:
-							{
-								if(Globals.settings.chatGPT.APIKey!="")
-									result = new Classes.AIChat().sendToChatGPT(text, Globals.settings.chatGPT.APIKey);
-								break;
-							}
-					}
 
-					switch (Globals.settings.textToSpeech)
+						switch (Globals.settings.aiChat)
+						{
+							case Data.Settings.AIChat.Ollama:
+								{
+									if (Globals.settings.ollama.SystemPrompt != "" && Globals.settings.ollama.Model != "")
+										result = new Classes.AIChat().sendToOllama(text, Globals.settings.ollama.SystemPrompt, Globals.settings.ollama.Model);
+									break;
+								}
+							case Data.Settings.AIChat.ChatGPT:
+								{
+									if (Globals.settings.chatGPT.APIKey != "")
+										result = new Classes.AIChat().sendToChatGPT(text, Globals.settings.chatGPT.APIKey);
+									break;
+								}
+						}
+
+						switch (Globals.settings.textToSpeech)
+						{
+							case Data.Settings.TextToSpeech.Elevenlabs:
+								{
+									if (Globals.settings.elevenlabs.APIKey != "" && Globals.settings.elevenlabs.Voice != "")
+										new Classes.TextToSpeech().speakElevenlabs(result, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
+									break;
+								}
+							case Data.Settings.TextToSpeech.Windows:
+								{
+									new Classes.TextToSpeech().speakWindows(result);
+									break;
+								}
+						}
+					}
+					else
 					{
-						case Data.Settings.TextToSpeech.Elevenlabs:
-							{
-								if(Globals.settings.elevenlabs.APIKey!="" && Globals.settings.elevenlabs.Voice!="")
-									new Classes.TextToSpeech().speakElevenlabs(result, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
-								break;
-							}
-						case Data.Settings.TextToSpeech.Windows:
-							{
-								new Classes.TextToSpeech().speakWindows(result);
-								break;
-							}
+						switch (Globals.settings.textToSpeech)
+						{
+							case Data.Settings.TextToSpeech.Elevenlabs:
+								{
+									if (Globals.settings.elevenlabs.APIKey != "" && Globals.settings.elevenlabs.Voice != "")
+										new Classes.TextToSpeech().speakElevenlabs("OK", Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
+									break;
+								}
+							case Data.Settings.TextToSpeech.Windows:
+								{
+									new Classes.TextToSpeech().speakWindows("OK");
+									break;
+								}
+						}
 					}
 				}
 			}

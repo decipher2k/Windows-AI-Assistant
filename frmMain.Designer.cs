@@ -40,12 +40,13 @@
 			bnSettingsSpeechSynthesis = new Button();
 			label4 = new Label();
 			tbKeyword = new TextBox();
+			button1 = new Button();
 			SuspendLayout();
 			// 
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Location = new Point(27, 116);
+			label1.Location = new Point(27, 95);
 			label1.Name = "label1";
 			label1.Size = new Size(157, 25);
 			label1.TabIndex = 1;
@@ -56,7 +57,7 @@
 			cbVoiceRecognition.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbVoiceRecognition.FormattingEnabled = true;
 			cbVoiceRecognition.Items.AddRange(new object[] { "Microsoft Azure" });
-			cbVoiceRecognition.Location = new Point(27, 144);
+			cbVoiceRecognition.Location = new Point(27, 123);
 			cbVoiceRecognition.Name = "cbVoiceRecognition";
 			cbVoiceRecognition.Size = new Size(355, 33);
 			cbVoiceRecognition.TabIndex = 2;
@@ -65,7 +66,7 @@
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Location = new Point(27, 200);
+			label2.Location = new Point(27, 179);
 			label2.Name = "label2";
 			label2.Size = new Size(74, 25);
 			label2.TabIndex = 3;
@@ -76,7 +77,7 @@
 			cbChatAI.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbChatAI.FormattingEnabled = true;
 			cbChatAI.Items.AddRange(new object[] { "ChatGPT", "Ollama" });
-			cbChatAI.Location = new Point(27, 228);
+			cbChatAI.Location = new Point(27, 207);
 			cbChatAI.Name = "cbChatAI";
 			cbChatAI.Size = new Size(355, 33);
 			cbChatAI.TabIndex = 4;
@@ -85,7 +86,7 @@
 			// label3
 			// 
 			label3.AutoSize = true;
-			label3.Location = new Point(27, 293);
+			label3.Location = new Point(27, 272);
 			label3.Name = "label3";
 			label3.Size = new Size(151, 25);
 			label3.TabIndex = 5;
@@ -96,15 +97,15 @@
 			cbSpeechSynthesis.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbSpeechSynthesis.FormattingEnabled = true;
 			cbSpeechSynthesis.Items.AddRange(new object[] { "Elevenlabs", "Microsoft Windows Speech" });
-			cbSpeechSynthesis.Location = new Point(27, 321);
+			cbSpeechSynthesis.Location = new Point(27, 300);
 			cbSpeechSynthesis.Name = "cbSpeechSynthesis";
 			cbSpeechSynthesis.Size = new Size(355, 33);
 			cbSpeechSynthesis.TabIndex = 6;
-			cbSpeechSynthesis.SelectedIndexChanged += this.cbSpeechSynthesis_SelectedIndexChanged;
+			cbSpeechSynthesis.SelectedIndexChanged += cbSpeechSynthesis_SelectedIndexChanged;
 			// 
 			// bnSettingsVoiceRecognition
 			// 
-			bnSettingsVoiceRecognition.Location = new Point(388, 144);
+			bnSettingsVoiceRecognition.Location = new Point(388, 123);
 			bnSettingsVoiceRecognition.Name = "bnSettingsVoiceRecognition";
 			bnSettingsVoiceRecognition.Size = new Size(112, 34);
 			bnSettingsVoiceRecognition.TabIndex = 7;
@@ -114,7 +115,7 @@
 			// 
 			// bnSettingsChatAI
 			// 
-			bnSettingsChatAI.Location = new Point(388, 228);
+			bnSettingsChatAI.Location = new Point(388, 207);
 			bnSettingsChatAI.Name = "bnSettingsChatAI";
 			bnSettingsChatAI.Size = new Size(112, 34);
 			bnSettingsChatAI.TabIndex = 8;
@@ -124,7 +125,7 @@
 			// 
 			// bnSettingsSpeechSynthesis
 			// 
-			bnSettingsSpeechSynthesis.Location = new Point(388, 321);
+			bnSettingsSpeechSynthesis.Location = new Point(388, 300);
 			bnSettingsSpeechSynthesis.Name = "bnSettingsSpeechSynthesis";
 			bnSettingsSpeechSynthesis.Size = new Size(112, 34);
 			bnSettingsSpeechSynthesis.TabIndex = 9;
@@ -149,11 +150,22 @@
 			tbKeyword.TabIndex = 11;
 			tbKeyword.TextChanged += tbKeyword_TextChanged;
 			// 
+			// button1
+			// 
+			button1.Location = new Point(27, 352);
+			button1.Name = "button1";
+			button1.Size = new Size(473, 34);
+			button1.TabIndex = 12;
+			button1.Text = "Commands";
+			button1.UseVisualStyleBackColor = true;
+			button1.Click += this.bnSettingsCommands_Click;
+			// 
 			// frmMain
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(520, 402);
+			ClientSize = new Size(520, 420);
+			Controls.Add(button1);
 			Controls.Add(tbKeyword);
 			Controls.Add(label4);
 			Controls.Add(bnSettingsSpeechSynthesis);
@@ -190,5 +202,6 @@
 		private Button bnSettingsSpeechSynthesis;
 		private Label label4;
 		private TextBox tbKeyword;
+		private Button button1;
 	}
 }

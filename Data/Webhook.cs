@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Windows_AI_Assistant.Data
 {
-	public class Program
+	public class Webhook
 	{
 		public String Token { get; set; } = "";
-		public String Command { get; set; } = "";
-		public String Parameter { get; set; } = "";
+		public String URl { get; set; } = "";
 	}
 }

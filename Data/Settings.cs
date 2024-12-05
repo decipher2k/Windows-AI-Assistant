@@ -12,7 +12,8 @@ namespace Windows_AI_Assistant.Data
 		public ChatGPT chatGPT { get; set; } = new ChatGPT();
 		public Elevenlabs elevenlabs { get; set; } = new Elevenlabs();
 		public Ollama ollama { get; set; } = new Ollama();
-		public Program program { get; set; } = new Program();
+		public List<Program> programs { get; set; } = new List<Program>();
+		public List<Webhook> webhooks { get; set; } = new List<Webhook>();
 		public SpeechToText speechToText { get; set; } = SpeechToText.Azure;
 		public TextToSpeech textToSpeech { get; set; } = TextToSpeech.Windows;
 		public AIChat aiChat { get; set; }=AIChat.Ollama;
