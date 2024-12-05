@@ -7,7 +7,7 @@ Voice-controlled AI Assistant for Windows<br><br>
 -Advanced voice recognition powered by Azure Speech Services<br>
 -Hands-free interaction with your Windows system:<br>
 --Program starter using key sentences<br>
---Webhooks using key sentences for integrations with IFTTT (home automation etc.) - https://ifttt.com/ <br>
+--Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
 <br><br>
 
 <h2>Download:</h2><br>
@@ -31,7 +31,7 @@ Next to the API Key field, click the eye icon to view and copy your API key and 
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
-<h3>Ollam:</h3><br>
+<h3>Ollama:</h3><br>
 (https://ollama.com/)<br>
 Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) with at least 8GB RAM is suggested for running 7B models, but 12GB-16GB are better for running basic models.<br>
 Some models (3B etc.) will work with less VRAM at the cost of quality.<br>
