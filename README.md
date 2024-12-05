@@ -34,7 +34,7 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 <br>
 <h3>Ollama:</h3><br>
 (https://ollama.com/)<br>
-Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) with at least 8GB RAM is suggested for running 7B models, but 12GB-16GB are better for running basic models.<br>
+Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) with at least 8GB VRAM is suggested for running 7B models, but 12GB-16GB VRAM are better for running basic models.<br>
 Some models (3B etc.) will work with less VRAM at the cost of quality.<br>
 Good models (70B) will require 24GB video RAM and more.<br>
 Set the model name and a system prompt in the settings window.<br>
