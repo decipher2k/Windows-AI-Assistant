@@ -14,6 +14,7 @@ namespace Windows_AI_Assistant.Data
 		public Ollama ollama { get; set; } = new Ollama();
 		public List<Program> programs { get; set; } = new List<Program>();
 		public List<Webhook> webhooks { get; set; } = new List<Webhook>();
+		public List <Plugin> plugins { get; set; } = new List<Plugin>();
 		public SpeechToText speechToText { get; set; } = SpeechToText.Azure;
 		public TextToSpeech textToSpeech { get; set; } = TextToSpeech.Windows;
 		public AIChat aiChat { get; set; }=AIChat.Ollama;

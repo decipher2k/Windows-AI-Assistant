@@ -47,6 +47,19 @@ namespace Windows_AI_Assistant.Settings
 					});
 				}
 			}
+
+			foreach (Data.Plugin plugin in Globals.settings.plugins)
+			{
+				if (plugin.Token != null && plugin.Token != "")
+				{
+					dgWebhook.Rows.Add(new String[]
+					{
+					"Voice Recognition",
+					plugin.Token.ToString(),
+					plugin.DLL.ToString()
+					});
+				}
+			}
 		}
 
 		private void bnSave_Click(object sender, EventArgs e)
@@ -60,17 +73,21 @@ namespace Windows_AI_Assistant.Settings
 						row.Cells[i].Value = "";
 				}
 
-				if (row.Cells[1].Value != "" && row.Cells[2].Value != "")
+				try
 				{
-					Data.Program program = new Data.Program()
+					if (row.Cells[1].Value != "" && row.Cells[2].Value != "")
 					{
-						Token = row.Cells[1].Value.ToString(),
-						Command = row.Cells[2].Value.ToString(),
-						Parameter = row.Cells[3].Value.ToString()
-					};
+						Data.Program program = new Data.Program()
+						{
+							Token = row.Cells[1].Value.ToString(),
+							Command = row.Cells[2].Value.ToString(),
+							Parameter = row.Cells[3].Value.ToString()
+						};
 
-					Globals.settings.programs.Add(program);
+						Globals.settings.programs.Add(program);
+					}
 				}
+				catch (Exception ex) { }
 			}
 
 			Globals.settings.webhooks.Clear();
@@ -82,18 +99,45 @@ namespace Windows_AI_Assistant.Settings
 						row.Cells[i].Value = "";
 				}
 
-				if (row.Cells[1].Value != "" && row.Cells[2].Value != "")
+				try
 				{
-					Data.Webhook webhook = new Data.Webhook()
+					if (row.Cells[1].Value != "" && row.Cells[2].Value != "")
 					{
-						Token = row.Cells[1].Value.ToString(),
-						URl = row.Cells[2].Value.ToString(),
-						Getpost = Data.Webhook.GetPost.Parse<Data.Webhook.GetPost>(row.Cells[3].Value.ToString()),
-						Parameter= row.Cells[4].Value.ToString()
+						Data.Webhook webhook = new Data.Webhook()
+						{
+							Token = row.Cells[1].Value.ToString(),
+							URl = row.Cells[2].Value.ToString(),
+							Getpost = Data.Webhook.GetPost.Parse<Data.Webhook.GetPost>(row.Cells[3].Value.ToString()),
+							Parameter = row.Cells[4].Value.ToString()
 
-					};
-					Globals.settings.webhooks.Add(webhook);
+						};
+						Globals.settings.webhooks.Add(webhook);
+					}
 				}
+				catch (Exception ex) { }
+			}
+
+			Globals.settings.plugins.Clear();
+			foreach (DataGridViewRow row in dgPlugins.Rows)
+			{
+				for (int i = 0; i < row.Cells.Count; i++)
+				{
+					if (row.Cells[i].Value == null)
+						row.Cells[i].Value = "";
+				}
+				try
+				{
+					if (row.Cells[1].Value != "" && row.Cells[2].Value != "")
+					{
+						Data.Plugin plugin = new Data.Plugin()
+						{
+							Token = row.Cells[1].Value.ToString(),
+							DLL = row.Cells[2].Value.ToString(),
+						};
+						Globals.settings.plugins.Add(plugin);
+					}
+				}
+				catch (Exception ex) { }
 			}
 			this.Close();
 		}

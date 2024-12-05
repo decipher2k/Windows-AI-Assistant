@@ -35,4 +35,10 @@
     <PackageReference Include="System.Speech" Version="9.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="WAIA Plugin">
+      <HintPath>..\WAIA Sample Plugin\WAIA Plugin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

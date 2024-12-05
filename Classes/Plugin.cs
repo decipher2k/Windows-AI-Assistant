@@ -1,0 +1,26 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
+using WAIA_Plugin;
+
+namespace Windows_AI_Assistant.Classes
+{
+	public class Plugin
+	{
+		public String RunPlugin(String text, String dll)
+		{
+			var DLL = Assembly.LoadFile(Path.GetDirectoryName( Assembly.GetExecutingAssembly().Location)+"\\"+dll);
+
+			foreach (Type type in DLL.GetExportedTypes())
+			{
+				var c = Activator.CreateInstance(type);
+				String ret=(String)type.InvokeMember("RunPlugin", BindingFlags.InvokeMethod, null, c, new object[] { text });
+				return ret;
+			}
+			return "";
+		}
+	}
+}

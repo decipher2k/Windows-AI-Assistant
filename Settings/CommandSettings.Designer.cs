@@ -45,19 +45,25 @@
 			clmnHTTPParameter = new DataGridViewTextBoxColumn();
 			bnSave = new Button();
 			bnCancel = new Button();
+			dgPlugins = new DataGridView();
+			dataGridViewComboBoxColumn2 = new DataGridViewComboBoxColumn();
+			dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+			dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)dgProgram).BeginInit();
 			((System.ComponentModel.ISupportInitialize)settingsBindingSource).BeginInit();
 			((System.ComponentModel.ISupportInitialize)dgWebhook).BeginInit();
+			((System.ComponentModel.ISupportInitialize)dgPlugins).BeginInit();
 			SuspendLayout();
 			// 
 			// dgProgram
 			// 
 			dgProgram.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dgProgram.Columns.AddRange(new DataGridViewColumn[] { clmnType, clmnToken, clmnProgram, clmnParameter });
-			dgProgram.Location = new Point(55, 76);
+			dgProgram.Location = new Point(38, 46);
+			dgProgram.Margin = new Padding(2);
 			dgProgram.Name = "dgProgram";
 			dgProgram.RowHeadersWidth = 62;
-			dgProgram.Size = new Size(816, 225);
+			dgProgram.Size = new Size(821, 135);
 			dgProgram.TabIndex = 0;
 			// 
 			// clmnType
@@ -96,18 +102,20 @@
 			// label1
 			// 
 			label1.AutoSize = true;
-			label1.Location = new Point(55, 28);
+			label1.Location = new Point(38, 17);
+			label1.Margin = new Padding(2, 0, 2, 0);
 			label1.Name = "label1";
-			label1.Size = new Size(645, 25);
+			label1.Size = new Size(429, 15);
 			label1.TabIndex = 1;
 			label1.Text = "Start Program (use [TEXT] to define a variable for the said text in the parameters)";
 			// 
 			// label2
 			// 
 			label2.AutoSize = true;
-			label2.Location = new Point(55, 371);
+			label2.Location = new Point(38, 223);
+			label2.Margin = new Padding(2, 0, 2, 0);
 			label2.Name = "label2";
-			label2.Size = new Size(612, 25);
+			label2.Size = new Size(407, 15);
 			label2.TabIndex = 2;
 			label2.Text = "Webhook (use [TEXT] to define a variable for the said text in the parameters)";
 			// 
@@ -115,10 +123,11 @@
 			// 
 			dgWebhook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			dgWebhook.Columns.AddRange(new DataGridViewColumn[] { dataGridViewComboBoxColumn1, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, clmnGetPost, clmnHTTPParameter });
-			dgWebhook.Location = new Point(55, 419);
+			dgWebhook.Location = new Point(38, 251);
+			dgWebhook.Margin = new Padding(2);
 			dgWebhook.Name = "dgWebhook";
 			dgWebhook.RowHeadersWidth = 62;
-			dgWebhook.Size = new Size(816, 225);
+			dgWebhook.Size = new Size(821, 135);
 			dgWebhook.TabIndex = 3;
 			// 
 			// dataGridViewComboBoxColumn1
@@ -160,9 +169,10 @@
 			// 
 			// bnSave
 			// 
-			bnSave.Location = new Point(627, 684);
+			bnSave.Location = new Point(685, 568);
+			bnSave.Margin = new Padding(2);
 			bnSave.Name = "bnSave";
-			bnSave.Size = new Size(112, 34);
+			bnSave.Size = new Size(78, 20);
 			bnSave.TabIndex = 4;
 			bnSave.Text = "Save";
 			bnSave.UseVisualStyleBackColor = true;
@@ -170,19 +180,54 @@
 			// 
 			// bnCancel
 			// 
-			bnCancel.Location = new Point(759, 684);
+			bnCancel.Location = new Point(781, 568);
+			bnCancel.Margin = new Padding(2);
 			bnCancel.Name = "bnCancel";
-			bnCancel.Size = new Size(112, 34);
+			bnCancel.Size = new Size(78, 20);
 			bnCancel.TabIndex = 5;
 			bnCancel.Text = "Cancel";
 			bnCancel.UseVisualStyleBackColor = true;
 			bnCancel.Click += bnCancel_Click;
 			// 
+			// dgPlugins
+			// 
+			dgPlugins.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			dgPlugins.Columns.AddRange(new DataGridViewColumn[] { dataGridViewComboBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4 });
+			dgPlugins.Location = new Point(38, 407);
+			dgPlugins.Margin = new Padding(2);
+			dgPlugins.Name = "dgPlugins";
+			dgPlugins.RowHeadersWidth = 62;
+			dgPlugins.Size = new Size(821, 135);
+			dgPlugins.TabIndex = 6;
+			// 
+			// dataGridViewComboBoxColumn2
+			// 
+			dataGridViewComboBoxColumn2.HeaderText = "Type";
+			dataGridViewComboBoxColumn2.Items.AddRange(new object[] { "Voice Recognition", "AI Chat" });
+			dataGridViewComboBoxColumn2.MinimumWidth = 8;
+			dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
+			dataGridViewComboBoxColumn2.Width = 150;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			dataGridViewTextBoxColumn3.HeaderText = "Token to listen for";
+			dataGridViewTextBoxColumn3.MinimumWidth = 8;
+			dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+			dataGridViewTextBoxColumn3.Width = 150;
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			dataGridViewTextBoxColumn4.HeaderText = "DLL File";
+			dataGridViewTextBoxColumn4.MinimumWidth = 8;
+			dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+			dataGridViewTextBoxColumn4.Width = 150;
+			// 
 			// CommandSettings
 			// 
-			AutoScaleDimensions = new SizeF(10F, 25F);
+			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(932, 762);
+			ClientSize = new Size(908, 615);
+			Controls.Add(dgPlugins);
 			Controls.Add(bnCancel);
 			Controls.Add(bnSave);
 			Controls.Add(dgWebhook);
@@ -190,12 +235,14 @@
 			Controls.Add(label1);
 			Controls.Add(dgProgram);
 			FormBorderStyle = FormBorderStyle.FixedToolWindow;
+			Margin = new Padding(2);
 			Name = "CommandSettings";
 			StartPosition = FormStartPosition.CenterScreen;
 			Text = "Command Settings";
 			((System.ComponentModel.ISupportInitialize)dgProgram).EndInit();
 			((System.ComponentModel.ISupportInitialize)settingsBindingSource).EndInit();
 			((System.ComponentModel.ISupportInitialize)dgWebhook).EndInit();
+			((System.ComponentModel.ISupportInitialize)dgPlugins).EndInit();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -218,5 +265,9 @@
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
 		private DataGridViewComboBoxColumn clmnGetPost;
 		private DataGridViewTextBoxColumn clmnHTTPParameter;
+		private DataGridView dgPlugins;
+		private DataGridViewComboBoxColumn dataGridViewComboBoxColumn2;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 	}
 }

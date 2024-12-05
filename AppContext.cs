@@ -86,6 +86,31 @@ namespace Windows_AI_Assistant
 				}
 			}
 
+			foreach(Data.Plugin plugin in Globals.settings.plugins)
+			{
+				if(text.ToLower().Contains(plugin.Token.ToLower()) &&  plugin.Token!="")
+				{
+					String ret=new Classes.Plugin().RunPlugin(text,plugin.DLL);
+					if (ret != null && ret != "")
+					{
+						switch (Globals.settings.textToSpeech)
+						{
+							case Data.Settings.TextToSpeech.Elevenlabs:
+								{
+									if (Globals.settings.elevenlabs.APIKey != "" && Globals.settings.elevenlabs.Voice != "")
+										new Classes.TextToSpeech().speakElevenlabs(ret, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
+									break;
+								}
+							case Data.Settings.TextToSpeech.Windows:
+								{
+									new Classes.TextToSpeech().speakWindows(ret);
+									break;
+								}
+						}
+					}
+				}
+			}
+
 			return false;
 		}
 
