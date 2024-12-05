@@ -1,7 +1,7 @@
 
 <h1>Windows AI Assistant</h1><br>
 <br>
-<b>A voice-controlled AI Assistant for Microsoft Windows</b><br><br>
+<b>A voice-controled AI Assistant for Microsoft Windows</b><br><br>
 <h2>Features:</h2><br>
 -Seamlessly integrates with Ollama or ChatGPT<br>
 -Advanced voice recognition powered by Azure Speech Services<br>
@@ -16,7 +16,7 @@ https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.1/Window
 <br><br>
 <h2>Usage:</h2><br>
 <br>
-After starting the application, a tray icon is being added for controlling the settings.<br>
+After starting the application, a tray icon is being added for controling the settings.<br>
 Setup the API keys and other information using the "Settings" buttons.<br>
 <br>
 <h3>Microsoft Azure speech recognition:</h3><br>
