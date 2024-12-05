@@ -24,12 +24,6 @@ https://github.com/dessant/buster/wiki/Configuring-Microsoft-Azure-Speech-to-Tex
 <h3>ChatGPT:</h3><br>
 https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b35aa00 <br>
 <br>
-<h3>Elevenlabs:</h3><br>
-Log in to your ElevenLabs account.<br>
-In the top-right corner, click on your profile icon > Profile.<br>
-Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
-Please note: The "voice" field referes to the name of the voice, not to its ID.<br>
-<br>
 <h3>Ollama:</h3><br>
 (https://ollama.com/)<br>
 Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) with at least 8GB VRAM is suggested for running 7B models, but 12GB-16GB VRAM are better for running basic models.<br>
@@ -37,6 +31,13 @@ Some models (3B etc.) will work with less VRAM at the cost of quality.<br>
 Good models (70B) will require 24GB VRAM and more.<br>
 Set the model name and a system prompt in the settings window.<br>
 You can find models at https://ollama.com/search <br>
+<br>
+<h3>Elevenlabs:</h3><br>
+Log in to your ElevenLabs account.<br>
+In the top-right corner, click on your profile icon > Profile.<br>
+Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
+Please note: The "voice" field referes to the name of the voice, not to its ID.<br>
+<br>
 <h3>Keyword:</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
