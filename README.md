@@ -49,7 +49,7 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 -Ollama (free, requires good hardware)<br>
 -ChatGPT API (about 10$/month)<br>
 <br>
-<h3>Speech output:</h3><br>
+<h3>Speech output - one of the following:</h3><br>
 -Microsoft Windows Speech (free, average quality)<br>
 -Elevenlabs (about 10$/h, good quality)<br>
 <br>
