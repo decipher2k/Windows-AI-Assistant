@@ -15,6 +15,7 @@ https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.1/Window
 <br><br>
 <h2>Usage:</h2><br>
 <br>
+After starting the application, a tray icon is being added for controlling the settings.<br>
 Setup the API keys and other information using the "Settings" buttons.<br>
 <br>
 <h3>Microsoft Azure speech recognition:</h3><br>
