@@ -36,7 +36,7 @@ Some models (3B etc.) will work with less VRAM at the cost of quality.<br>
 Good models (70B) will require 24GB VRAM and more.<br>
 Set the model name and a system prompt in the settings window.<br>
 You can find models at https://ollama.com/search <br>
-<h3>Keyword.</h3><br>
+<h3>Keyword:</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
