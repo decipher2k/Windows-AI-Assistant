@@ -51,7 +51,7 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 <br>
 <h3>Speech output - one of the following:</h3><br>
 -Microsoft Windows Speech (free, average quality)<br>
--Elevenlabs (about 10$/h, good quality)<br>
+-Elevenlabs (about 10$/month, good quality)<br>
 <br>
 Please note that prices are dependent on real usage and may vary.
 
