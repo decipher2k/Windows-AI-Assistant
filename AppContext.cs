@@ -6,6 +6,7 @@ using System.Net;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
+using Windows_AI_Assistant.Classes;
 using Windows_AI_Assistant.Data;
 
 namespace Windows_AI_Assistant
@@ -77,7 +78,7 @@ namespace Windows_AI_Assistant
 						};
 						Process.Start(processStartInfo);
 					}
-					catch (Exception ex) { }
+					catch (Exception ex) { new TextToSpeech().speakWindows("Error starting program."); }
 					return true;
 				}
 			}
@@ -90,7 +91,7 @@ namespace Windows_AI_Assistant
 					{
 						new WebClient().DownloadString(webhook.URl);
 					}
-					catch (Exception ex) { }
+					catch (Exception ex) { new TextToSpeech().speakWindows("Error calling webhook."); }
 					return true;
 				}
 			}
