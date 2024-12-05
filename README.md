@@ -55,6 +55,10 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 -Microsoft Windows Speech (free, average quality)<br>
 -Elevenlabs (about 10$/month, good quality)<br>
 <br>
-Please note that prices are dependent on real usage and may vary.
+Please note that prices are dependent on real usage and may vary.<br><br>
+<h2>Writing a plugin</h2><br>
+To write a plugin, add "WAIA Plugin.dll" to a new Visual Studio 2022 DotNet 8.0 project, derive a class from the interface IWAIAPlugin and implement the following Method:<br>         
+public String RunPlugin(String text);
+
 
 
