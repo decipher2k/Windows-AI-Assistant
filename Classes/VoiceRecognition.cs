@@ -13,13 +13,15 @@ namespace Windows_AI_Assistant.Classes
 		{
 			try
 			{
-				SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);
+				SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);				
 				SpeechRecognitionResult result;
 				using (SpeechRecognizer recognizer = new(speechConfig, AutoDetectSourceLanguageConfig.FromLanguages(new String[] { lang })))
 				{
 					result = recognizer.RecognizeOnceAsync().Result;
 					if (result.Reason == ResultReason.RecognizedSpeech)
 						return result.Text;
+					else if (result.Reason == ResultReason.Canceled)
+						new TextToSpeech().speakWindows("Please repeat.");
 				}
 			}
 			catch (Exception ex) { new Classes.TextToSpeech().speakWindows("Error recognizing speech."); }

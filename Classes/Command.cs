@@ -47,7 +47,7 @@ namespace Windows_AI_Assistant.Classes
 
 				var content = new FormUrlEncodedContent(values);
 
-				var response = client.PostAsync("http://www.example.com/recepticle.aspx", content).Result;
+				var response = client.PostAsync(url, content).Result;
 
 				var responseString = response.Content.ReadAsStringAsync().Result;
 			}

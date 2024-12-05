@@ -79,7 +79,7 @@ namespace Windows_AI_Assistant
 				{
 					try
 					{
-						new Command().openURL(webhook.URl, webhook.Getpost.ToString(), webhook.Parameter, text.Replace(webhook.Token,"");
+						new Command().openURL(webhook.URl, webhook.Getpost.ToString(), webhook.Parameter, text.Replace(webhook.Token,""));
 					}
 					catch (Exception ex) { new TextToSpeech().speakWindows("Error calling webhook."); }
 					return true;
