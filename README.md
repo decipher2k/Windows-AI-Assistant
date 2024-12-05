@@ -1,7 +1,7 @@
 
 Windows AI Assistant<br>
 <br>
-Voice-controlled AI Assistant for Windows<br>
+Voice-controlled AI Assistant for Windows<br><br>
 Features:<br>
 Seamlessly integrates with Ollama or ChatGPT<br>
 Advanced voice recognition powered by Azure Speech Services<br>
