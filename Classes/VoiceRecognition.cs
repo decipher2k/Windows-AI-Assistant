@@ -22,7 +22,7 @@ namespace Windows_AI_Assistant.Classes
 						return result.Text;
 				}
 			}
-			catch (Exception ex) { }
+			catch (Exception ex) { new Classes.TextToSpeech().speakWindows("Error recognizing speech."); }
 			return "";
 		}
 	}

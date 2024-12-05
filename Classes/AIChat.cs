@@ -31,7 +31,7 @@ namespace Windows_AI_Assistant.Classes
 
 				ret = chat.SendAsync(text).StreamToEndAsync().Result;
 			}
-			catch (Exception ex) { MessageBox.Show("Error querying Ollama.") }
+			catch (Exception ex) { new Classes.TextToSpeech().speakWindows("Error querying Ollama."); }
 			return ret;
 		}
 
@@ -47,7 +47,7 @@ namespace Windows_AI_Assistant.Classes
 				foreach (ChatMessageContentPart contentPart in completion.Content)
 					ret = ret + contentPart.Text + " ";
 			}
-			catch (Exception ex) { MessageBox.Show("Error querying ChatGPT."); }
+			catch (Exception ex) { new Classes.TextToSpeech().speakWindows("Error querying ChatGPT."); }
 			return ret;
 		}
 	}

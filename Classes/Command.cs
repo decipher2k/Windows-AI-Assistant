@@ -11,14 +11,18 @@ namespace Windows_AI_Assistant.Classes
 	{
 		public void runProgram(String file, String parameter = "")
 		{
-			ProcessStartInfo psi = new ProcessStartInfo()
+			try
 			{
-				UseShellExecute = true,
-				FileName = file,
-				Arguments = parameter,
-				CreateNoWindow = true
-			};
-			Process.Start(psi);
+				ProcessStartInfo psi = new ProcessStartInfo()
+				{
+					UseShellExecute = true,
+					FileName = file,
+					Arguments = parameter,
+					CreateNoWindow = true
+				};
+				Process.Start(psi);
+			}
+			catch (Exception ex) { new Classes.TextToSpeech().speakWindows("Error while starting the program."); }
 		}
 
 
