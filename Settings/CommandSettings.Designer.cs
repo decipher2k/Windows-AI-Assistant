@@ -41,6 +41,8 @@
 			dataGridViewComboBoxColumn1 = new DataGridViewComboBoxColumn();
 			dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
 			dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+			clmnGetPost = new DataGridViewComboBoxColumn();
+			clmnHTTPParameter = new DataGridViewTextBoxColumn();
 			bnSave = new Button();
 			bnCancel = new Button();
 			((System.ComponentModel.ISupportInitialize)dgProgram).BeginInit();
@@ -55,7 +57,7 @@
 			dgProgram.Location = new Point(55, 76);
 			dgProgram.Name = "dgProgram";
 			dgProgram.RowHeadersWidth = 62;
-			dgProgram.Size = new Size(665, 225);
+			dgProgram.Size = new Size(816, 225);
 			dgProgram.TabIndex = 0;
 			// 
 			// clmnType
@@ -96,27 +98,27 @@
 			label1.AutoSize = true;
 			label1.Location = new Point(55, 28);
 			label1.Name = "label1";
-			label1.Size = new Size(122, 25);
+			label1.Size = new Size(645, 25);
 			label1.TabIndex = 1;
-			label1.Text = "Start Program";
+			label1.Text = "Start Program (use [TEXT] to define a variable for the said text in the parameters)";
 			// 
 			// label2
 			// 
 			label2.AutoSize = true;
 			label2.Location = new Point(55, 371);
 			label2.Name = "label2";
-			label2.Size = new Size(89, 25);
+			label2.Size = new Size(612, 25);
 			label2.TabIndex = 2;
-			label2.Text = "Webhook";
+			label2.Text = "Webhook (use [TEXT] to define a variable for the said text in the parameters)";
 			// 
 			// dgWebhook
 			// 
 			dgWebhook.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			dgWebhook.Columns.AddRange(new DataGridViewColumn[] { dataGridViewComboBoxColumn1, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2 });
+			dgWebhook.Columns.AddRange(new DataGridViewColumn[] { dataGridViewComboBoxColumn1, dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, clmnGetPost, clmnHTTPParameter });
 			dgWebhook.Location = new Point(55, 419);
 			dgWebhook.Name = "dgWebhook";
 			dgWebhook.RowHeadersWidth = 62;
-			dgWebhook.Size = new Size(665, 225);
+			dgWebhook.Size = new Size(816, 225);
 			dgWebhook.TabIndex = 3;
 			// 
 			// dataGridViewComboBoxColumn1
@@ -141,9 +143,24 @@
 			dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
 			dataGridViewTextBoxColumn2.Width = 150;
 			// 
+			// clmnGetPost
+			// 
+			clmnGetPost.HeaderText = "GET/POST";
+			clmnGetPost.Items.AddRange(new object[] { "GET", "POST" });
+			clmnGetPost.MinimumWidth = 8;
+			clmnGetPost.Name = "clmnGetPost";
+			clmnGetPost.Width = 150;
+			// 
+			// clmnHTTPParameter
+			// 
+			clmnHTTPParameter.HeaderText = "Parameter";
+			clmnHTTPParameter.MinimumWidth = 8;
+			clmnHTTPParameter.Name = "clmnHTTPParameter";
+			clmnHTTPParameter.Width = 150;
+			// 
 			// bnSave
 			// 
-			bnSave.Location = new Point(470, 684);
+			bnSave.Location = new Point(627, 684);
 			bnSave.Name = "bnSave";
 			bnSave.Size = new Size(112, 34);
 			bnSave.TabIndex = 4;
@@ -153,7 +170,7 @@
 			// 
 			// bnCancel
 			// 
-			bnCancel.Location = new Point(607, 684);
+			bnCancel.Location = new Point(759, 684);
 			bnCancel.Name = "bnCancel";
 			bnCancel.Size = new Size(112, 34);
 			bnCancel.TabIndex = 5;
@@ -165,7 +182,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(772, 762);
+			ClientSize = new Size(932, 762);
 			Controls.Add(bnCancel);
 			Controls.Add(bnSave);
 			Controls.Add(dgWebhook);
@@ -194,10 +211,12 @@
 		private Label label1;
 		private Label label2;
 		private DataGridView dgWebhook;
+		private Button bnSave;
+		private Button bnCancel;
 		private DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
 		private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-		private Button bnSave;
-		private Button bnCancel;
+		private DataGridViewComboBoxColumn clmnGetPost;
+		private DataGridViewTextBoxColumn clmnHTTPParameter;
 	}
 }

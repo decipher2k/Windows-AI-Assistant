@@ -10,5 +10,12 @@ namespace Windows_AI_Assistant.Data
 	{
 		public String Token { get; set; } = "";
 		public String URl { get; set; } = "";
+		public GetPost Getpost { get; set; } = GetPost.GET;
+		public String Parameter { get; set; } = "";
+		public enum GetPost
+		{
+			GET,
+			POST
+		}
 	}
 }

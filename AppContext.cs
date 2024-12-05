@@ -17,7 +17,6 @@ namespace Windows_AI_Assistant
 		bool running = true;
 		public AppContext()
 		{			
-
 			var icon = new System.Drawing.Icon("robot.ico"); // Load an icon for the tray
 			ContextMenuStrip contextMenuStrip = new ContextMenuStrip();
 			contextMenuStrip.Items.Add("Open");
@@ -55,9 +54,7 @@ namespace Windows_AI_Assistant
 
 		void Exit(object sender, EventArgs e)
 		{
-			// Hide tray icon, otherwise it will remain shown until user mouses over it
 			trayIcon.Visible = false;
-
 			Application.Exit();
 		}
 
@@ -69,14 +66,7 @@ namespace Windows_AI_Assistant
 				{
 					try
 					{
-						ProcessStartInfo processStartInfo = new ProcessStartInfo()
-						{
-							UseShellExecute = true,
-							CreateNoWindow = true,
-							FileName = program.Command,
-							Arguments = program.Parameter
-						};
-						Process.Start(processStartInfo);
+						new Command().runProgram(program.Command, program.Parameter,text.Replace(program.Token,""));
 					}
 					catch (Exception ex) { new TextToSpeech().speakWindows("Error starting program."); }
 					return true;
@@ -89,7 +79,7 @@ namespace Windows_AI_Assistant
 				{
 					try
 					{
-						new WebClient().DownloadString(webhook.URl);
+						new Command().openURL(webhook.URl, webhook.Getpost.ToString(), webhook.Parameter, text.Replace(webhook.Token,"");
 					}
 					catch (Exception ex) { new TextToSpeech().speakWindows("Error calling webhook."); }
 					return true;

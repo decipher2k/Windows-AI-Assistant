@@ -20,24 +20,32 @@ namespace Windows_AI_Assistant.Settings
 
 			foreach (Data.Program program in Globals.settings.programs)
 			{
-				dgProgram.Rows.Add(new String[]
+				if (program.Token != null && program.Token != "")
 				{
+					dgProgram.Rows.Add(new String[]
+					{
 					"Voice Recognition",
 					program.Token.ToString(),
 					program.Command.ToString(),
 					program.Parameter.ToString()
-				});
+					});
+				};
 			}
 
 
 			foreach (Data.Webhook webhook in Globals.settings.webhooks)
-			{				
-				dgWebhook.Rows.Add(new String[]
+			{
+				if (webhook.Token != null && webhook.Token != "")
 				{
+					dgWebhook.Rows.Add(new String[]
+					{
 					"Voice Recognition",
 					webhook.Token.ToString(),
-					webhook.URl.ToString()
-				});
+					webhook.URl.ToString(),
+					webhook.Getpost.ToString(),
+					webhook.Parameter.ToString()
+					});
+				}
 			}
 		}
 
@@ -79,7 +87,10 @@ namespace Windows_AI_Assistant.Settings
 					Data.Webhook webhook = new Data.Webhook()
 					{
 						Token = row.Cells[1].Value.ToString(),
-						URl = row.Cells[2].Value.ToString()
+						URl = row.Cells[2].Value.ToString(),
+						Getpost = Data.Webhook.GetPost.Parse<Data.Webhook.GetPost>(row.Cells[3].Value.ToString()),
+						Parameter= row.Cells[4].Value.ToString()
+
 					};
 					Globals.settings.webhooks.Add(webhook);
 				}
