@@ -12,8 +12,7 @@
 <br><br>
 
 <h2>Download:</h2><br>
-https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.1/Windows.AI.Assistant.zip
-<br><br>
+https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.2/Windows.AI.Assistant.zip<br><br>
 <h2>Usage:</h2><br>
 <br>
 After starting the application, a tray icon is being added for controling the settings.<br>
