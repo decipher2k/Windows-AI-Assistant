@@ -38,6 +38,34 @@ namespace Windows_AI_Assistant
 				 Globals.settings.aiChat == Data.Settings.AIChat.Ollama ? "Ollama":"";
 		}
 
+		public void cbVoiceRecognition_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cbVoiceRecognition.SelectedItem.ToString() == "Microsoft Azure")
+				Globals.settings.speechToText = Data.Settings.SpeechToText.Azure;
+			Globals.Save();
+		}
+
+		public void cbChatAI_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if(cbChatAI.SelectedItem.ToString()== "ChatGPT")
+				Globals.settings.aiChat = Data.Settings.AIChat.ChatGPT;
+			else if (cbChatAI.SelectedItem.ToString() == "Ollama")
+				Globals.settings.aiChat = Data.Settings.AIChat.Ollama;
+			Globals.Save();
+		}
+
+		public void cbSpeechSynthesis_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (cbSpeechSynthesis.SelectedItem.ToString() == "Elevenlabs")
+				Globals.settings.textToSpeech = Data.Settings.TextToSpeech.Elevenlabs;
+			else if (cbSpeechSynthesis.SelectedItem.ToString() == "Microsoft Windows Speech")
+				Globals.settings.textToSpeech = Data.Settings.TextToSpeech.Windows;
+			Globals.Save();
+		}
+
+
+
+
 		public void bnSettingsVoiceRecognition_Click(object sender, EventArgs e)
 		{
 			if(cbVoiceRecognition.SelectedItem.ToString() == "Microsoft Azure")

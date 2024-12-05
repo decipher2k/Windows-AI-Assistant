@@ -25,6 +25,7 @@ namespace Windows_AI_Assistant.Settings
 			{
 				Globals.settings.elevenlabs.APIKey = tbAPIKey.Text;
 				Globals.settings.elevenlabs.Voice = tbVoice.Text;
+				this.Close();
 			}
 		}
 

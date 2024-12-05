@@ -60,6 +60,7 @@
 			cbVoiceRecognition.Name = "cbVoiceRecognition";
 			cbVoiceRecognition.Size = new Size(355, 33);
 			cbVoiceRecognition.TabIndex = 2;
+			cbVoiceRecognition.SelectedIndexChanged += cbVoiceRecognition_SelectedIndexChanged;
 			// 
 			// label2
 			// 
@@ -79,6 +80,7 @@
 			cbChatAI.Name = "cbChatAI";
 			cbChatAI.Size = new Size(355, 33);
 			cbChatAI.TabIndex = 4;
+			cbChatAI.SelectedIndexChanged += cbChatAI_SelectedIndexChanged;
 			// 
 			// label3
 			// 
@@ -98,6 +100,7 @@
 			cbSpeechSynthesis.Name = "cbSpeechSynthesis";
 			cbSpeechSynthesis.Size = new Size(355, 33);
 			cbSpeechSynthesis.TabIndex = 6;
+			cbSpeechSynthesis.SelectedIndexChanged += this.cbSpeechSynthesis_SelectedIndexChanged;
 			// 
 			// bnSettingsVoiceRecognition
 			// 
