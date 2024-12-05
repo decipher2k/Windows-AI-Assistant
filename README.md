@@ -27,6 +27,7 @@ https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b3
 Log in to your ElevenLabs account.<br>
 In the top-right corner, click on your profile icon > Profile.<br>
 Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
+Please note: The "voice" field referes to the name of the voice, not to its ID.
 <br>
 <h3>Keyowrd</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
