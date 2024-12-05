@@ -28,6 +28,7 @@ Log in to your ElevenLabs account.<br>
 In the top-right corner, click on your profile icon > Profile.<br>
 Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
 <br>
+<h3>Keyowrd</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
