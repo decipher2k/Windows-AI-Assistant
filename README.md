@@ -3,11 +3,11 @@
 <br>
 Voice-controlled AI Assistant for Windows<br><br>
 <h2>Features:</h2><br>
-Seamlessly integrates with Ollama or ChatGPT<br>
-Advanced voice recognition powered by Azure Speech Services<br>
-Hands-free interaction with your Windows system<br>
-Program starter using key sentences<br>
-Webhooks using key sentences for integrations with IFTTT (home automation etc.) - https://ifttt.com/ <br>
+-Seamlessly integrates with Ollama or ChatGPT<br>
+-Advanced voice recognition powered by Azure Speech Services<br>
+-Hands-free interaction with your Windows system:<br>
+--Program starter using key sentences<br>
+--Webhooks using key sentences for integrations with IFTTT (home automation etc.) - https://ifttt.com/ <br>
 <br><br>
 
 <h2>Download:</h2><br>
