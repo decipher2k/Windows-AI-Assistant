@@ -57,7 +57,7 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 <br>
 Please note that prices are dependent on real usage and may vary.<br><br>
 <h2>Writing a plugin</h2><br>
-To write a plugin, add "WAIA Plugin.dll" to a new Visual Studio 2022 DotNet 8.0 project, derive a class from the interface IWAIAPlugin and implement the following Method:<br>         
+To write a plugin, add "WAIA Plugin.dll" to a new Visual Studio 2022 DotNet 8.0 class library project, derive a class from the interface IWAIAPlugin and implement the following Method:<br>         
 public String RunPlugin(String text);<br><br>
 String text is the spoken input.<br><br>
 The return value of the function will be sent to the speech synthesis engine.
