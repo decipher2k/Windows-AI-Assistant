@@ -31,7 +31,8 @@ This is an example for the media player plugin:
 <br><br>
 The media player plugin is included in the release of the program.<br><br>
 The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
-Using the chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "playing media" will allow you to say either "play media", or "play the song" etc.<br>
+Speech recognition will listen for the exact sentence.<br>
+Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "playing media" will allow you to say either "play media", or "play the song" etc.<br>
 The second column defines the sentence that the program uses to recognize the command.<br>
 The third column defines the name of the plugin DLL.<br>
 The following columns are there to parametrize the plugin. They do differ from plugin to plugin. Please read the plugin's manual for more information.<br><br>
