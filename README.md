@@ -23,9 +23,20 @@ Setup the API keys and other information using the "Settings" buttons.<br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
+<h2>Program Starter</h2>
+Plugins can be configured using the "Commands" button.<br>
+This is an example for starting Windows explorer:<br><br>
+
+<img src="https://github.com/user-attachments/assets/5fa40e98-4d8e-4d8c-8895-702e6cc632db" width="600">
+<br><br>
+The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
+Speech recognition will listen for the exact sentence.<br>
+Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "starting windows explorer" will allow you to say either "start windows explorer", or "run windows explorer" etc.<br>
+The third column is the program file that should be started.<br>
+The fourth column allows you to set command parameters.<br>
 <h2>Plugins</h2>
-Plugins can be configured using the "Commands" button.
-This is an example for the media player plugin:
+Plugins can be configured using the "Commands" button.<br>
+This is an example for the media player plugin:<br>
 <br><br>
 <img src="https://github.com/user-attachments/assets/ad6ddca7-6669-4751-a30c-5d5bf54b233e" width="600"></img>
 <br><br>
