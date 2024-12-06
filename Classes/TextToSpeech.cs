@@ -28,7 +28,10 @@ namespace Windows_AI_Assistant.Classes
 				while (_waveOut.PlaybackState != PlaybackState.Stopped)
 					System.Threading.Thread.Sleep(500);
 			}
-			catch (Exception ex) { new Classes.TextToSpeech().speakWindows("Error querying Elevenlabs."); }
+			catch (Exception ex) 
+			{
+				speakWindows(text);
+			}
 		}
 
 		public void speakWindows(String text)
@@ -43,7 +46,9 @@ namespace Windows_AI_Assistant.Classes
 				synthesizer.Speak(text);
 			}catch(Exception ex)
 			{
-				new Classes.TextToSpeech().speakWindows("Microsoft Speech error.");
+				var synthesizer = new System.Speech.Synthesis.SpeechSynthesizer();
+				synthesizer.SetOutputToDefaultAudioDevice();				
+				synthesizer.Speak(text);
 			}
 		}		
 	}

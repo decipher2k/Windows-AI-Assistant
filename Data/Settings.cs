@@ -17,11 +17,11 @@ namespace Windows_AI_Assistant.Data
 		public List <Plugin> plugins { get; set; } = new List<Plugin>();
 		public SpeechToText speechToText { get; set; } = SpeechToText.Azure;
 		public TextToSpeech textToSpeech { get; set; } = TextToSpeech.Windows;
-		public AIChat aiChat { get; set; }=AIChat.Ollama;
+		public AIChat aiChat { get; set; } = AIChat.Ollama;
 		public Command command { get; set; } = Command.Program;
 		public String keyword { get; set; } = "Computer";
 		public Awan awan { get; set; } = new Awan();
-		public WindowsSpeech windowsSpeech { get; set; }=new WindowsSpeech();
+		public WindowsSpeech windowsSpeech { get; set; } = new WindowsSpeech();
 
 		public enum SpeechToText
 		{
