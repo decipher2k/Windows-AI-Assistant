@@ -23,6 +23,19 @@ Setup the API keys and other information using the "Settings" buttons.<br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
+<h2>Plugins</h2>
+Plugins can be configured using the "Commands" button.
+This is an example for the media player plugin:
+<br><br>
+<img src="https://github.com/user-attachments/assets/ad6ddca7-6669-4751-a30c-5d5bf54b233e" width="600"></img>
+<br><br>
+The media player plugin is included in the release of the program.<br><br>
+The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
+Using the chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "playing media" will allow you to say either "play media", or "play the song" etc.<br>
+The second column defines the sentence that the program uses to recognize the command.<br>
+The third column defines the name of the plugin DLL.<br>
+The following columns are there to parametrize the plugin. They do differ from plugin to plugin. Please read the plugin's manual for more information.<br><br>
+
 <h1>Speech recognition</h1>
 <h3>Microsoft Azure speech recognition:</h3><br>
 Go to Microsoft Azure https://azure.microsoft.com/en-us/ and sign up for free with a Microsoft account, you may need to add a credit card to activate the account<br>
