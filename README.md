@@ -23,6 +23,7 @@ https://github.com/dessant/buster/wiki/Configuring-Microsoft-Azure-Speech-to-Tex
 <br>
 <h3>ChatGPT:</h3><br>
 https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b35aa00 <br>
+!You will need ChatGPT API credits, not ChatGPT Plus!<br>
 <br>
 <h3>Ollama:</h3><br>
 (https://ollama.com/)<br>
