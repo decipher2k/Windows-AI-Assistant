@@ -19,7 +19,13 @@ After starting the application, a tray icon is being added. Doubleclick on it to
 Setup the API keys and other information using the "Settings" buttons.<br>
 <br>
 <h3>Microsoft Azure speech recognition:</h3><br>
-https://github.com/dessant/buster/wiki/Configuring-Microsoft-Azure-Speech-to-Text <br>
+Go to Microsoft Azure https://azure.microsoft.com/en-us/ and sign up for free with a Microsoft account, you may need to add a credit card to activate the account<br>
+Go to Create Speech Services https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices to create a new speech service, create a new resource group, such as cognitive-services, select a region, give the service a unique name, select the free pricing tier, and click on Review + create to validate the provided details, then click on Create and wait for the <br>service to be created<br>
+Go to Cognitive Services https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/SpeechServices and click on the newly created service<br>
+Go to Resource Management > Keys and Endpoint and click on Show Keys<br>
+Copy the first displayed API key<br>
+<br>
+Thankfully copied from https://github.com/dessant/buster/wiki/Configuring-Microsoft-Azure-Speech-to-Text <br>
 <br>
 <h3>ChatGPT:</h3><br>
 https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b35aa00 <br>
