@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenAI;
 
 namespace Windows_AI_Assistant.Classes
 {
@@ -31,7 +32,7 @@ namespace Windows_AI_Assistant.Classes
 		}
 
 		public void speakWindows(String text)
-		{
+		{		
 			try
 			{
 				var synthesizer = new System.Speech.Synthesis.SpeechSynthesizer();
@@ -41,6 +42,6 @@ namespace Windows_AI_Assistant.Classes
 			{
 				new Classes.TextToSpeech().speakWindows("Microsoft Speech error.");
 			}
-		}
+		}		
 	}
 }

@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Windows_AI_Assistant.Settings
 {
-	public partial class ChatGPTSettings : Form
+	public partial class AwanSettings : Form
 	{
-		public ChatGPTSettings()
+		public AwanSettings()
 		{
 			InitializeComponent();
-			tbAPIKey.Text = Globals.settings.chatGPT.APIKey;
+			tbAPIKey.Text = Globals.settings.awan.APIKey;
+			cbModel.SelectedItem=Globals.settings.awan.Model;
 		}
 
 		private void OllamaSettings_Load(object sender, EventArgs e)
@@ -27,7 +28,8 @@ namespace Windows_AI_Assistant.Settings
 		{
 			if (tbAPIKey.Text != "")
 			{
-				Globals.settings.chatGPT.APIKey = tbAPIKey.Text;
+				Globals.settings.awan.APIKey = tbAPIKey.Text;
+				Globals.settings.awan.Model=cbModel.Text;
 				this.Close();
 			}
 		}

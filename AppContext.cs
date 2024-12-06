@@ -154,6 +154,10 @@ namespace Windows_AI_Assistant
 										result = new Classes.AIChat().sendToChatGPT(text, Globals.settings.chatGPT.APIKey);
 									break;
 								}
+							case Data.Settings.AIChat.Awan:
+								if (Globals.settings.awan.APIKey != "")
+									result = new Classes.AIChat().sendToAWAN(text, Globals.settings.awan.APIKey);
+								break;
 						}
 
 						switch (Globals.settings.textToSpeech)

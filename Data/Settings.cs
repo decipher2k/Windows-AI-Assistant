@@ -20,6 +20,7 @@ namespace Windows_AI_Assistant.Data
 		public AIChat aiChat { get; set; }=AIChat.Ollama;
 		public Command command { get; set; } = Command.Program;
 		public String keyword { get; set; } = "Computer";
+		public Awan awan { get; set; } = new Awan();
 
 		public enum SpeechToText
 		{
@@ -36,7 +37,7 @@ namespace Windows_AI_Assistant.Data
 		{
 			ChatGPT,
 			Ollama,
-			Claude
+			Awan
 		}
 
 		public enum Command

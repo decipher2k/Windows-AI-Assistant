@@ -35,7 +35,7 @@ namespace Windows_AI_Assistant
 				(Globals.settings.textToSpeech == Data.Settings.TextToSpeech.Windows ? "Microsoft Windows Speech" : "");
 
 			cbChatAI.SelectedItem = Globals.settings.aiChat == Data.Settings.AIChat.ChatGPT ? "ChatGPT" :
-				 Globals.settings.aiChat == Data.Settings.AIChat.Ollama ? "Ollama":"";
+				 Globals.settings.aiChat == Data.Settings.AIChat.Ollama ? "Ollama":Globals.settings.aiChat==Data.Settings.AIChat.Awan?"Awan":"";
 		}
 
 		public void cbVoiceRecognition_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,10 +47,12 @@ namespace Windows_AI_Assistant
 
 		public void cbChatAI_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if(cbChatAI.SelectedItem.ToString()== "ChatGPT")
+			if (cbChatAI.SelectedItem.ToString() == "ChatGPT")
 				Globals.settings.aiChat = Data.Settings.AIChat.ChatGPT;
 			else if (cbChatAI.SelectedItem.ToString() == "Ollama")
 				Globals.settings.aiChat = Data.Settings.AIChat.Ollama;
+			else if (cbChatAI.SelectedItem.ToString() == "Awan")
+				Globals.settings.aiChat = Data.Settings.AIChat.Awan;
 			Globals.Save();
 		}
 
@@ -91,6 +93,11 @@ namespace Windows_AI_Assistant
 			{
 				Settings.OllamaSettings ollamaSettings = new Settings.OllamaSettings();
 				ollamaSettings.ShowDialog();
+			}
+			else if(cbChatAI.SelectedItem.ToString()=="Awan")
+			{
+				Settings.AwanSettings awanSettings=new Settings.AwanSettings();
+				awanSettings.ShowDialog();
 			}
 			Globals.Save();
 		}

@@ -76,7 +76,7 @@
 			// 
 			cbChatAI.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbChatAI.FormattingEnabled = true;
-			cbChatAI.Items.AddRange(new object[] { "ChatGPT", "Ollama" });
+			cbChatAI.Items.AddRange(new object[] { "ChatGPT", "Ollama", "Awan" });
 			cbChatAI.Location = new Point(27, 207);
 			cbChatAI.Name = "cbChatAI";
 			cbChatAI.Size = new Size(355, 33);
@@ -158,7 +158,7 @@
 			button1.TabIndex = 12;
 			button1.Text = "Commands";
 			button1.UseVisualStyleBackColor = true;
-			button1.Click += this.bnSettingsCommands_Click;
+			button1.Click += bnSettingsCommands_Click;
 			// 
 			// frmMain
 			// 

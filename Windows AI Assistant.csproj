@@ -42,4 +42,10 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Settings\AwanSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>
