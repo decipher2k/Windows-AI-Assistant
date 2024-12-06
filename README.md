@@ -45,6 +45,7 @@ Low quality models (3B etc.) will work with 4GB VRAM.<br>
 Average models (7B/8B) will require about 12GB VRAM.<br>
 Good models (70B) will require 24GB VRAM and more.<br><br>
 Set the model name and a system prompt in the settings window.<br>
+The model will be automatically downloaded if it does not exist yet.<br>
 You can find models at https://ollama.com/search <br><br>
 <h3>Awan:</h3><br>
 (https://www.awanllm.com)<br>
