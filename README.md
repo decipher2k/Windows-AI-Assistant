@@ -36,7 +36,7 @@ The third column is the program file that should be started.<br>
 The fourth column allows you to set command parameters.<br><br>
 
 <h2>Webhooks</h2>
-Webhooks program starter can be configured using the "Commands" button.<br>
+Webhooks can be configured using the "Commands" button.<br>
 They can be used to raise events in webapplications, for example IFTTT. IFTTT can be used to control home automation systems etc.<br>
 This is an example for a webhook that turns on the light:<br><br>
 <img src="https://github.com/user-attachments/assets/28477f74-f1b1-41c2-8cb7-8b27ba639c13" width="600"></img>
