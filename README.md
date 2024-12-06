@@ -11,7 +11,6 @@
 --Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
   (untested)
 <br><br>
-
 <h2>Download:</h2><br>
 https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.5/Windows.AI.Assistant.zip<br><br>
 <h2>Usage:</h2><br>
@@ -32,8 +31,26 @@ This is an example for starting Windows explorer:<br><br>
 The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "starting windows explorer" will allow you to say either "start windows explorer", or "run windows explorer" etc.<br>
+<b>Chat AI commands are not implemented yet.</b><br>
 The third column is the program file that should be started.<br>
-The fourth column allows you to set command parameters.<br>
+The fourth column allows you to set command parameters.<br><br>
+
+<h2>Webhooks</h2>
+Webhooks can be used to raise events in webapplications, for example IFTTT. IFTTT can be used to control home automation systems etc.<br>
+This is an example for a webhook that turns on the light:<br><br>
+<img src="https://github.com/user-attachments/assets/28477f74-f1b1-41c2-8cb7-8b27ba639c13" width="600"></img>
+<br><br>
+The first column defines whether to use speech recognition and keywords or the chat AI to execute the webhook.<br>
+Speech recognition will listen for the exact sentence.<br>
+Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "turning on the light" will allow you to say either "turn on the light", or "switch on the light" etc.<br>
+<b>Chat AI commands are not implemented yet.</b><br>
+The second column defines the sentence that the program uses to recognize the command.<br>
+The third column is the URL of the webhook.<br>
+The fourth column defines whether to use HTTP POST or HTTP GET. For most webhooks, this will be HTTP GET.<br>
+The fifth colummn defines parameters to the webhook.<br>
+In case of GET messages, these parameters will be appended to the URL, for example "?light=on" will lead to "https://example.com/webhook?light=on".<br>
+In case of POST messages, these parameters will define the data that is being sent with the POST request, for example JSON data.<br><br>
+
 <h2>Plugins</h2>
 Plugins can be configured using the "Commands" button.<br>
 This is an example for the media player plugin:<br>
@@ -44,6 +61,7 @@ The media player plugin is included in the release of the program.<br><br>
 The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "playing media" will allow you to say either "play media", or "play the song" etc.<br>
+<b>Chat AI commands are not implemented yet.</b><br>
 The second column defines the sentence that the program uses to recognize the command.<br>
 The third column defines the name of the plugin DLL.<br>
 The following columns are there to parametrize the plugin. They do differ from plugin to plugin. Please read the plugin's manual for more information.<br><br>
