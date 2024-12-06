@@ -59,7 +59,8 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 -Microsoft Azure (5h/month are free)<br>
 <br>
 <h3>AI Chat - one of the following:</h3><br>
--Ollama (free, requires good hardware)<br>
+-Ollama (free, requires good hardware, slow)<br>
+-Awan (free, slow)<br>
 -ChatGPT API (about 10$/month)<br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
