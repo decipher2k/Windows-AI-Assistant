@@ -3,7 +3,7 @@
 <br>
 <b>A voice-controlled AI Assistant for Microsoft Windows</b><br><br>
 <h2>Features:</h2><br>
--Seamlessly integrates with Ollama or ChatGPT<br>
+-Seamlessly integrates with Ollama, ChatGPT and Awan.<br>
 -Advanced voice recognition powered by Azure speech services<br>
 -Plugin System
 -Hands-free interaction with Windows:<br>
