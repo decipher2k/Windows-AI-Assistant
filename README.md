@@ -80,7 +80,7 @@ Please note: The "voice" field referes to the name of the voice, not to its ID.<
 <br>
 <h3>AI Chat - one of the following:</h3><br>
 -Ollama (free, requires good hardware, slow)<br>
--Awan (free, slow)<br>
+-Awan (free, usage limits, slow)<br>
 -ChatGPT API (about 10$/month)<br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
