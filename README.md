@@ -55,7 +55,7 @@ https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b3
 <h3>Ollama:</h3><br>
 (https://ollama.com/)<br>
 Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) is required.<br>
-Low quality models (3B etc.) will work with 4GB VRAM.<br>
+Low quality models (3B etc.) will require 4GB VRAM.<br>
 Average models (7B/8B) will require about 12GB VRAM.<br>
 Good models (70B) will require 24GB VRAM and more.<br><br>
 Set the model name and a system prompt in the settings window.<br>
