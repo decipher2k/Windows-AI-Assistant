@@ -11,28 +11,33 @@ namespace Windows_AI_Assistant.Classes
 {
 	public class AIChat
 	{
-		public String sendToOllama(string text, String systemPrompt = "you are a helpful assistant.", String model= "llama3")
-		{			
+		public String sendToOllama(string text, String systemPrompt = "you are a helpful assistant.", String model = "llama3")
+		{
 			String ret = "";
 			try
 			{
-				var uri = new Uri("http://localhost:11434");
-				var ollama = new OllamaApiClient(uri);
+				return Task.Run(async Task<String> () => {
 
-				
-				var mdl = ollama.ListLocalModelsAsync().Result;
-				if (ollama.ListLocalModelsAsync().Result.Where(a => a.Name.Contains(model)).Count() == 0)
-				{
-					new TextToSpeech().speakWindows("Pulling AI model.");
-					foreach (var m in ollama.PullModelAsync(model).ToBlockingEnumerable()) ;
-					new TextToSpeech().speakWindows("Finished pulling AI model.");
-					return "";
-				}
+					var uri = new Uri("http://localhost:11434");
+					var ollama = new OllamaApiClient(uri);
 
-				var chat = new Chat(ollama, systemPrompt);
-				ollama.SelectedModel = model;
 
-				ret = chat.SendAsync(text).StreamToEndAsync().Result;
+					var mdl = ollama.ListLocalModelsAsync().Result;
+					if (ollama.ListLocalModelsAsync().Result.Where(a => a.Name.Contains(model)).Count() == 0)
+					{
+						new TextToSpeech().speakWindows("Pulling AI model.");
+
+						await foreach (var status in ollama.PullModelAsync(model)) ;
+						new TextToSpeech().speakWindows("Finished pulling AI model.");
+						return "";
+					}
+
+					var chat = new Chat(ollama, systemPrompt);
+					ollama.SelectedModel = model;
+
+					ret = chat.SendAsync(text).StreamToEndAsync().Result;
+					return ret;
+				}).Result;
 			}
 			catch (Exception) { new Classes.TextToSpeech().speakWindows("Error querying Ollama."); }
 			return ret.Replace("*","");
