@@ -5,7 +5,8 @@
 <h2>Features:</h2><br>
 -Seamlessly integrates with Ollama or ChatGPT<br>
 -Advanced voice recognition powered by Azure speech services<br>
--Hands-free interaction with your Windows system:<br>
+-Plugin System
+-Hands-free interaction with Windows:<br>
 --Program starter using key sentences<br>
 --Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
   (untested)
@@ -39,10 +40,12 @@ https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b3
 <br>
 <h3>Ollama:</h3><br>
 (https://ollama.com/)<br>
-Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) with at least 8GB VRAM is suggested for running 7B models, but 12GB-16GB VRAM are better for running basic models.<br>
-Some models (3B etc.) will work with less VRAM at the cost of quality.<br>
-Good models (70B) will require 24GB VRAM and more.<br>
+Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) is required.<br>
+Low quality models (3B etc.) will work with 4GB VRAM.<br>
+Average models (7B/8B) will require about 12GB VRAM.<br>
+Good models (70B) will require 24GB VRAM and more.<br><br>
 Set the model name and a system prompt in the settings window.<br>
+The model will be automatically downloaded if it does not exist yet.<br>
 You can find models at https://ollama.com/search <br><br>
 <h3>Awan:</h3><br>
 (https://www.awanllm.com)<br>
@@ -72,7 +75,7 @@ Please note: The "voice" field referes to the name of the voice, not to its ID.<
 <br>
 Please note that prices are dependent on real usage and may vary.<br><br>
 <h2>Writing a plugin</h2><br>
-To write a plugin, add "WAIA Plugin.dll" to a new Visual Studio 2022 DotNet 8.0 class library project, derive a class from the interface IWAIAPlugin and implement the following Method:<br>         
+To write a plugin, add "WAIA Plugin.dll" to a new Visual Studio 2022 DotNet 8.0 class library project, derive a class from the interface IWAIAPlugin and implement the following method:<br>         
 public String RunPlugin(String text);<br><br>
 String text is the spoken input.<br><br>
 The return value of the function will be sent to the speech synthesis engine.
