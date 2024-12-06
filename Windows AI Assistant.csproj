@@ -33,6 +33,7 @@
     <PackageReference Include="OllamaSharp" Version="4.0.9" />
     <PackageReference Include="OpenAI" Version="2.0.0" />
     <PackageReference Include="System.Speech" Version="9.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
   <ItemGroup>
