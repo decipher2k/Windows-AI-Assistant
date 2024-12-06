@@ -66,6 +66,10 @@ Using the Chat AI allows you to vary sentences. The program does automatically p
 The second column defines the sentence that the program uses to recognize the command.<br>
 The third column defines the name of the plugin DLL.<br>
 The following columns are there to parametrize the plugin. They do differ from plugin to plugin. Please read the plugin's manual for more information.<br><br>
+<h2>The [TEXT] variable</h2>
+Whenever you enter the token [TEXT] in an parameter of the commands section, its content will be replace with the text that has been said after the command.<br>
+For example "Create a note: Shopping" using the key sentence "Create a note" will pass the word "Shopping" instead of the [TEXT] token to a plugin, a webhook, or a program.<br>
+This will only work with Speech Recognition commands, not with Chat AI ones.<br>
 
 <h1>Speech recognition</h1>
 <h3>Microsoft Azure speech recognition:</h3><br>
