@@ -5,7 +5,8 @@
 <h2>Features:</h2><br>
 -Seamlessly integrates with Ollama or ChatGPT<br>
 -Advanced voice recognition powered by Azure speech services<br>
--Hands-free interaction with your Windows system:<br>
+-Plugin System
+-Hands-free interaction with Windows:<br>
 --Program starter using key sentences<br>
 --Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
   (untested)
