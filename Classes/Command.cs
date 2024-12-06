@@ -35,6 +35,9 @@ namespace Windows_AI_Assistant.Classes
 			}
 			else
 			{
+				if(parameter.StartsWith("?"))
+					parameter=parameter.Substring(1);
+
 				parameter = parameter.Replace("[TEXT]", text);
 				HttpClient client = new HttpClient();
 				var values = new Dictionary<string, string>();

@@ -10,7 +10,7 @@ namespace Windows_AI_Assistant.Classes
 {
 	public class Plugin
 	{
-		public String RunPlugin(String text, String dll)
+		public String RunPlugin(String text, String dll, String[] parameter)
 		{
 			var DLL = Assembly.LoadFile(Path.GetDirectoryName( Assembly.GetExecutingAssembly().Location)+"\\"+dll);
 
@@ -18,7 +18,7 @@ namespace Windows_AI_Assistant.Classes
 			{
 				var c = Activator.CreateInstance(type);
 				if(type.GetInterfaces().Contains(typeof(IWAIAPlugin)))
-					return (String)type.InvokeMember("RunPlugin", BindingFlags.InvokeMethod, null, c, new object[] { text });				
+					return (String)type.InvokeMember("RunPlugin", BindingFlags.InvokeMethod, null, c, new object[] { text,parameter });				
 			}
 			return "";
 		}

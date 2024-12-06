@@ -52,11 +52,14 @@ namespace Windows_AI_Assistant.Settings
 			{
 				if (plugin.Token != null && plugin.Token != "")
 				{
-					dgWebhook.Rows.Add(new String[]
+					dgPlugins.Rows.Add(new String[]
 					{
 					"Voice Recognition",
 					plugin.Token.ToString(),
-					plugin.DLL.ToString()
+					plugin.DLL.ToString(),
+					plugin.Parameter[0].ToString(),
+					plugin.Parameter[1].ToString(),
+					plugin.Parameter[2].ToString()
 					});
 				}
 			}
@@ -67,7 +70,7 @@ namespace Windows_AI_Assistant.Settings
 			Globals.settings.programs.Clear();
 			foreach (DataGridViewRow row in dgProgram.Rows)
 			{
-				for(int i=0;i<row.Cells.Count;i++)
+				for (int i = 0; i < row.Cells.Count; i++)
 				{
 					if (row.Cells[i].Value == null)
 						row.Cells[i].Value = "";
@@ -129,11 +132,13 @@ namespace Windows_AI_Assistant.Settings
 				{
 					if (row.Cells[1].Value != "" && row.Cells[2].Value != "")
 					{
-						Data.Plugin plugin = new Data.Plugin()
-						{
-							Token = row.Cells[1].Value.ToString(),
-							DLL = row.Cells[2].Value.ToString(),
-						};
+						Data.Plugin plugin = new Data.Plugin();						
+						plugin.Token = row.Cells[1].Value.ToString();
+						plugin.DLL = row.Cells[2].Value.ToString();
+						plugin.Parameter[0] = row.Cells[3].Value.ToString();
+						plugin.Parameter[1] = row.Cells[4].Value.ToString();
+						plugin.Parameter[2] = row.Cells[5].Value.ToString();						
+													
 						Globals.settings.plugins.Add(plugin);
 					}
 				}
@@ -145,6 +150,16 @@ namespace Windows_AI_Assistant.Settings
 		private void bnCancel_Click(object sender, EventArgs e)
 		{
 			this.Close();
+		}
+
+		private void label3_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void CommandSettings_Load(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

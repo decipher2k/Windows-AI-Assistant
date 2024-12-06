@@ -10,5 +10,6 @@ namespace Windows_AI_Assistant.Data
 	{
 		public string Token { get; set; }	
 		public string DLL {  get; set; }
+		public string[] Parameter { get; set; } = new string[3];
 	}
 }

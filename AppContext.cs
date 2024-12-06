@@ -90,7 +90,7 @@ namespace Windows_AI_Assistant
 			{
 				if(text.ToLower().Contains(plugin.Token.ToLower()) &&  plugin.Token!="")
 				{
-					String ret=new Classes.Plugin().RunPlugin(text,plugin.DLL);
+					String ret=new Classes.Plugin().RunPlugin(text,plugin.DLL,plugin.Parameter);
 					if (ret != null && ret != "")
 					{
 						switch (Globals.settings.textToSpeech)
@@ -107,6 +107,10 @@ namespace Windows_AI_Assistant
 									break;
 								}
 						}
+						return true;
+					}
+					else
+					{
 						return true;
 					}
 				}
@@ -132,7 +136,9 @@ namespace Windows_AI_Assistant
 						}
 				}
 
-				
+				text = text.Replace(".", "");
+				text = text.Replace(",", "");
+				text = text.Trim();
 
 				if (text.StartsWith(Globals.settings.keyword))
 				{
