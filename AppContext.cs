@@ -107,6 +107,7 @@ namespace Windows_AI_Assistant
 									break;
 								}
 						}
+						return true;
 					}
 				}
 			}
@@ -174,24 +175,7 @@ namespace Windows_AI_Assistant
 									break;
 								}
 						}
-					}
-					else
-					{
-						switch (Globals.settings.textToSpeech)
-						{
-							case Data.Settings.TextToSpeech.Elevenlabs:
-								{
-									if (Globals.settings.elevenlabs.APIKey != "" && Globals.settings.elevenlabs.Voice != "")
-										new Classes.TextToSpeech().speakElevenlabs("OK", Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
-									break;
-								}
-							case Data.Settings.TextToSpeech.Windows:
-								{
-									new Classes.TextToSpeech().speakWindows("OK");
-									break;
-								}
-						}
-					}
+					}					
 				}
 			}
 		}

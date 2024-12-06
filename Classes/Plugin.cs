@@ -17,7 +17,7 @@ namespace Windows_AI_Assistant.Classes
 			foreach (Type type in DLL.GetExportedTypes())
 			{
 				var c = Activator.CreateInstance(type);
-				if(type.IsSubclassOf(typeof(IWAIAPlugin)))
+				if(type.GetInterfaces().Contains(typeof(IWAIAPlugin)))
 					return (String)type.InvokeMember("RunPlugin", BindingFlags.InvokeMethod, null, c, new object[] { text });				
 			}
 			return "";
