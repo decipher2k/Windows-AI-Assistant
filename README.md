@@ -12,7 +12,7 @@
 <br><br>
 
 <h2>Download:</h2><br>
-https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.4.1/Windows.AI.Assistant.zip<br><br>
+https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.5/Windows.AI.Assistant.zip<br><br>
 <h2>Usage:</h2><br>
 <br>
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
@@ -37,7 +37,11 @@ Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) with at least 8G
 Some models (3B etc.) will work with less VRAM at the cost of quality.<br>
 Good models (70B) will require 24GB VRAM and more.<br>
 Set the model name and a system prompt in the settings window.<br>
-You can find models at https://ollama.com/search <br>
+You can find models at https://ollama.com/search <br><br>
+<h3>Awan:</h3><br>
+(https://www.awanllm.com)<br>
+Awan is a free API for LLAMA models.
+<br>
 <br>
 <h3>Elevenlabs:</h3><br>
 Log in to your ElevenLabs account.<br>
@@ -55,7 +59,8 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 -Microsoft Azure (5h/month are free)<br>
 <br>
 <h3>AI Chat - one of the following:</h3><br>
--Ollama (free, requires good hardware)<br>
+-Ollama (free, requires good hardware, slow)<br>
+-Awan (free, slow)<br>
 -ChatGPT API (about 10$/month)<br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
