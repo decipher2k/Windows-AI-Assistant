@@ -35,7 +35,7 @@ Thankfully copied from https://github.com/dessant/buster/wiki/Configuring-Micros
 <h1>AI Chat</h1>
 <h3>ChatGPT:</h3><br>
 https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b35aa00 <br>
-!You will need ChatGPT API credits, not ChatGPT Plus!<br>
+<b>You will need ChatGPT API credits, not ChatGPT Plus!</b><br>
 <br>
 <h3>Ollama:</h3><br>
 (https://ollama.com/)<br>
