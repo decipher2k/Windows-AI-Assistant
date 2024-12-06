@@ -21,6 +21,7 @@ namespace Windows_AI_Assistant.Data
 		public Command command { get; set; } = Command.Program;
 		public String keyword { get; set; } = "Computer";
 		public Awan awan { get; set; } = new Awan();
+		public WindowsSpeech windowsSpeech { get; set; }=new WindowsSpeech();
 
 		public enum SpeechToText
 		{

@@ -52,7 +52,7 @@ namespace Windows_AI_Assistant.Classes
 			return ret;
 		}
 
-		public String sendToAWAN(String text, String apiKey= "c88afa90-e2e6-470d-a070-150289b4e966")
+		public String sendToAWAN(String text, String apiKey)
 		{
 			try
 			{

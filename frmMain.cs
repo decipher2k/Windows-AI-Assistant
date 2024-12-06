@@ -109,6 +109,11 @@ namespace Windows_AI_Assistant
 				Settings.ElevenlabsSettings elevenlabsSettings = new Settings.ElevenlabsSettings();
 				elevenlabsSettings.ShowDialog();
 			}
+			else if(cbSpeechSynthesis.SelectedItem.ToString() == "Microsoft Windows Speech")
+			{
+				Settings.WindowsSpeechSettings windowsSpeechSettings = new Settings.WindowsSpeechSettings();
+				windowsSpeechSettings.ShowDialog();
+			}
 			Globals.Save();
 		}
 

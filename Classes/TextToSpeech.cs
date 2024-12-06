@@ -37,6 +37,9 @@ namespace Windows_AI_Assistant.Classes
 			{
 				var synthesizer = new System.Speech.Synthesis.SpeechSynthesizer();
 				synthesizer.SetOutputToDefaultAudioDevice();
+				if(Globals.settings.windowsSpeech.Voice!="")
+					synthesizer.SelectVoice(Globals.settings.windowsSpeech.Voice);
+
 				synthesizer.Speak(text);
 			}catch(Exception ex)
 			{
