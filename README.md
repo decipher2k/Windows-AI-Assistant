@@ -23,7 +23,7 @@ You can set a custom keyword for starting speech recognition. Default is "Comput
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
 <h2>Program Starter</h2>
-Plugins can be configured using the "Commands" button.<br>
+The program starter can be configured using the "Commands" button.<br>
 This is an example for starting Windows explorer:<br><br>
 
 <img src="https://github.com/user-attachments/assets/5fa40e98-4d8e-4d8c-8895-702e6cc632db" width="600">
@@ -36,7 +36,8 @@ The third column is the program file that should be started.<br>
 The fourth column allows you to set command parameters.<br><br>
 
 <h2>Webhooks</h2>
-Webhooks can be used to raise events in webapplications, for example IFTTT. IFTTT can be used to control home automation systems etc.<br>
+Webhooks program starter can be configured using the "Commands" button.<br>
+They can be used to raise events in webapplications, for example IFTTT. IFTTT can be used to control home automation systems etc.<br>
 This is an example for a webhook that turns on the light:<br><br>
 <img src="https://github.com/user-attachments/assets/28477f74-f1b1-41c2-8cb7-8b27ba639c13" width="600"></img>
 <br><br>
