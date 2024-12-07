@@ -8,6 +8,7 @@
 -Advanced voice recognition powered by Azure speech services<br>
 -Plugin System<br>
 -Hands-free interaction with Windows:<br>
+--Plugin system<br>
 --Program starter using key sentences<br>
 --Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
   (untested)
@@ -22,6 +23,11 @@ Setup the API keys and other information using the "Settings" buttons.<br>
 <h3>Keyword:</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
+<br>
+<h3>Keyword Detection:</h3><br>
+There is now a keyword detection using Pocketsphinx.<br>
+It is adivsed to used it in a noisy environment, like when watching TV or listening to music.<br>
+Keyword detection sets the keyword to "Windows", which can't be changed.<br>
 <br>
 <h2>Program Starter</h2>
 The program starter can be configured using the "Commands" button.<br>
