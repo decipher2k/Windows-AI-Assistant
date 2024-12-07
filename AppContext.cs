@@ -16,6 +16,7 @@ namespace Windows_AI_Assistant
 		private NotifyIcon trayIcon=new NotifyIcon();
 		frmMain mainForm = new frmMain();
 		bool running = true;
+		Pocketsphinx pocketsphinx = new Pocketsphinx();
 		public AppContext()
 		{			
 			var icon = new System.Drawing.Icon("robot.ico"); // Load an icon for the tray
@@ -126,7 +127,7 @@ namespace Windows_AI_Assistant
 			{
 				String text = "";
 				String result = "";
-		
+				
 				switch (Globals.settings.speechToText)
 				{
 					case Data.Settings.SpeechToText.Azure:
@@ -184,6 +185,7 @@ namespace Windows_AI_Assistant
 						}
 					}					
 				}
+				Pocketsphinx.keywordDetected = false;
 			}
 		}
 	}

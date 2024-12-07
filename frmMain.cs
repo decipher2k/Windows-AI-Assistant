@@ -139,6 +139,16 @@ namespace Windows_AI_Assistant
 		private void cbKeywordDetection_CheckedChanged(object sender, EventArgs e)
 		{
 			Globals.settings.useWindowsSpeech = cbKeywordDetection.Checked;
+			if(cbKeywordDetection.Checked)
+			{
+				tbKeyword.Text = "Windows";
+				Globals.settings.keyword = "Windows";
+				tbKeyword.Enabled = false;
+			}
+			else
+			{
+				tbKeyword.Enabled = true;
+			}
 			Globals.Save();
 		}
 

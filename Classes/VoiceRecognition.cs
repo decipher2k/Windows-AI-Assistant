@@ -18,34 +18,9 @@ namespace Windows_AI_Assistant.Classes
 			{
 				if(Globals.settings.useWindowsSpeech)
 				{
-					try
-					{
-						SpeechRecognitionEngine recognizer =
-							new SpeechRecognitionEngine(new System.Globalization.CultureInfo(Globals.settings.azure.Language));
-
-						recognizer.LoadGrammar(new DictationGrammar());
-						recognizer.SetInputToDefaultAudioDevice();
-
-						var recognized = recognizer.Recognize();
-						if (recognized != null)
-						{
-							recognitionResult = recognized.Text;
-							if (recognitionResult != Globals.settings.keyword)
-							{
-								String ret = recognize(subscriptionKey, region, language);
-							}
-							else
-							{
-								return "";
-							}
-						}
-						else
-						{
-							return "";
-						}
-						
-					}
-					catch (Exception ex) { }
+					while (!Pocketsphinx.keywordDetected)
+						System.Threading.Thread.Sleep(100);
+					String ret = recognize(subscriptionKey, region, language);
 				}
 				else
 				{
@@ -65,13 +40,14 @@ namespace Windows_AI_Assistant.Classes
 		{
 			try
 			{
-				SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);
+				SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);				
 				SpeechRecognitionResult result;
 				using (Microsoft.CognitiveServices.Speech.SpeechRecognizer recognizer = new(speechConfig, AutoDetectSourceLanguageConfig.FromLanguages(new String[] { language })))
 				{
+					recognizer.Canceled += Recognizer_Canceled;
 					result = recognizer.RecognizeOnceAsync().Result;
-					if (result.Reason == ResultReason.RecognizedSpeech)
-						return result.Text;
+					if (result.Reason == ResultReason.RecognizedSpeech)					
+						return result.Text;								
 				}
 			}
 			catch (Exception ex)
@@ -79,6 +55,19 @@ namespace Windows_AI_Assistant.Classes
 				new TextToSpeech().speakWindows("Microsoft Azure error.");
 			}
 			return "";
+		}
+
+		private void Recognizer_Canceled(object? sender, SpeechRecognitionCanceledEventArgs e)
+		{
+			if(e.ErrorDetails.Contains("Quota"))
+			{
+				new TextToSpeech().speakWindows("Microsoft Azure quota exceeded.");
+			}
+		}
+
+		private bool detectKeyword()
+		{
+			return false;
 		}
 	}
 }

@@ -179,9 +179,9 @@
 			cbKeywordDetection.AutoSize = true;
 			cbKeywordDetection.Location = new Point(27, 391);
 			cbKeywordDetection.Name = "cbKeywordDetection";
-			cbKeywordDetection.Size = new Size(487, 29);
+			cbKeywordDetection.Size = new Size(399, 29);
 			cbKeywordDetection.TabIndex = 14;
-			cbKeywordDetection.Text = "Use Windows Speech Recognition for keyword detection";
+			cbKeywordDetection.Text = "Use keyword detection for keyword detection";
 			cbKeywordDetection.UseVisualStyleBackColor = true;
 			cbKeywordDetection.CheckedChanged += cbKeywordDetection_CheckedChanged;
 			// 
@@ -190,9 +190,9 @@
 			label5.AutoSize = true;
 			label5.Location = new Point(49, 415);
 			label5.Name = "label5";
-			label5.Size = new Size(348, 25);
+			label5.Size = new Size(455, 25);
 			label5.TabIndex = 15;
-			label5.Text = "(Experimental - this will reduce data usage)";
+			label5.Text = "(The keyword to start recognition is allways \"Windows\").";
 			// 
 			// frmMain
 			// 

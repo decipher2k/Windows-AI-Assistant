@@ -22,11 +22,6 @@ Setup the API keys and other information using the "Settings" buttons.<br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
-<h3>Keyword Detection:</h3>
-WAIA now allows you to use Windows Speech Detection for detecting keywords.<br>
-This is not as reliable as Azure Cognitive Services, but it will keep your Azure contingent from draining when WAIA is used in a noisy environment.<br>
-For now, the Language that has been set in the Microsoft Azure settings will be used.<br>
-<br>                                                                                                   
 <h2>Program Starter</h2>
 The program starter can be configured using the "Commands" button.<br>
 This is an example for starting Windows explorer:<br><br>
