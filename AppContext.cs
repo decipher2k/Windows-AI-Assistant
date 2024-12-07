@@ -136,6 +136,12 @@ namespace Windows_AI_Assistant
 								text = new Classes.VoiceRecognition().recognizeAzure(Globals.settings.azure.APIKey, Globals.settings.azure.Region, Globals.settings.azure.Language);
 							break;
 						}
+					case Data.Settings.SpeechToText.Groq:
+						{
+							if (Globals.settings.groq.APIKey != "" && Globals.settings.groq.Language != "")
+								text = new Classes.VoiceRecognition().recognizeGroq(Globals.settings.groq.APIKey, Globals.settings.groq.Language);
+							break;
+						}
 				}
 
 				text = text.Replace(".", "");
