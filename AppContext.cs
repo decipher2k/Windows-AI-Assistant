@@ -144,7 +144,8 @@ namespace Windows_AI_Assistant
 
 				if (text.StartsWith(Globals.settings.keyword) || (Globals.settings.useWindowsSpeech && text!=""))
 				{
-					text = text.Substring(Globals.settings.keyword.Length);
+					if(!Globals.settings.useWindowsSpeech)
+						text = text.Substring(Globals.settings.keyword.Length);
 
 					if (!EvaluateCommand(text))
 					{
