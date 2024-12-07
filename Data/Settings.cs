@@ -22,6 +22,7 @@ namespace Windows_AI_Assistant.Data
 		public AIChat aiChat { get; set; } = AIChat.Ollama;
 		public Command command { get; set; } = Command.Program;
 		public String keyword { get; set; } = "Computer";
+		public bool useWindowsSpeech { get; set; } = false;
 
 
 		public enum SpeechToText

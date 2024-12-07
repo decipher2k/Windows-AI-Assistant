@@ -13,6 +13,7 @@ using System.Diagnostics;
 using Windows_AI_Assistant.Classes;
 using NAudio.Utils;
 using Windows_AI_Assistant.Data;
+using Microsoft.Win32;
 
 
 namespace Windows_AI_Assistant
@@ -21,6 +22,7 @@ namespace Windows_AI_Assistant
 
 	public partial class frmMain : Form
 	{
+		RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
 		public frmMain()
 		{
@@ -29,13 +31,24 @@ namespace Windows_AI_Assistant
 		}
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			cbVoiceRecognition.SelectedItem = Globals.settings.speechToText==Data.Settings.SpeechToText.Azure?"Microsoft Azure" : "";
+			cbVoiceRecognition.SelectedItem = Globals.settings.speechToText == Data.Settings.SpeechToText.Azure ? "Microsoft Azure" : "";
 
 			cbSpeechSynthesis.SelectedItem = Globals.settings.textToSpeech == Data.Settings.TextToSpeech.Elevenlabs ? "Elevenlabs" :
 				(Globals.settings.textToSpeech == Data.Settings.TextToSpeech.Windows ? "Microsoft Windows Speech" : "");
 
 			cbChatAI.SelectedItem = Globals.settings.aiChat == Data.Settings.AIChat.ChatGPT ? "ChatGPT" :
-				 Globals.settings.aiChat == Data.Settings.AIChat.Ollama ? "Ollama":Globals.settings.aiChat==Data.Settings.AIChat.Awan?"Awan":"";
+				 Globals.settings.aiChat == Data.Settings.AIChat.Ollama ? "Ollama" : Globals.settings.aiChat == Data.Settings.AIChat.Awan ? "Awan" : "";
+
+			cbKeywordDetection.Checked = Globals.settings.useWindowsSpeech;
+
+			if (rkApp.GetValue("WAIA") == null)
+			{
+				cbAutostart.Checked = false;
+			}
+			else
+			{
+				cbAutostart.Checked = true;
+			}
 		}
 
 		public void cbVoiceRecognition_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,10 +80,10 @@ namespace Windows_AI_Assistant
 
 		public void bnSettingsVoiceRecognition_Click(object sender, EventArgs e)
 		{
-			if(cbVoiceRecognition.SelectedItem.ToString() == "Microsoft Azure")
+			if (cbVoiceRecognition.SelectedItem.ToString() == "Microsoft Azure")
 			{
 				Settings.AzureSettings azureSettings = new Settings.AzureSettings();
-				azureSettings.ShowDialog();				
+				azureSettings.ShowDialog();
 			}
 			Globals.Save();
 		}
@@ -85,18 +98,18 @@ namespace Windows_AI_Assistant
 		public void bnSettingsChatAI_Click(object sender, EventArgs e)
 		{
 			if (cbChatAI.SelectedItem.ToString() == "ChatGPT")
-			{				
+			{
 				Settings.ChatGPTSettings chatGPTSettings = new Settings.ChatGPTSettings();
 				chatGPTSettings.ShowDialog();
 			}
-			else if(cbChatAI.SelectedItem.ToString() == "Ollama")
+			else if (cbChatAI.SelectedItem.ToString() == "Ollama")
 			{
 				Settings.OllamaSettings ollamaSettings = new Settings.OllamaSettings();
 				ollamaSettings.ShowDialog();
 			}
-			else if(cbChatAI.SelectedItem.ToString()=="Awan")
+			else if (cbChatAI.SelectedItem.ToString() == "Awan")
 			{
-				Settings.AwanSettings awanSettings=new Settings.AwanSettings();
+				Settings.AwanSettings awanSettings = new Settings.AwanSettings();
 				awanSettings.ShowDialog();
 			}
 			Globals.Save();
@@ -104,12 +117,12 @@ namespace Windows_AI_Assistant
 
 		public void bnSettingsSpeechSynthesis_Click(object sender, EventArgs e)
 		{
-			if(cbSpeechSynthesis.SelectedItem.ToString() == "Elevenlabs")
+			if (cbSpeechSynthesis.SelectedItem.ToString() == "Elevenlabs")
 			{
 				Settings.ElevenlabsSettings elevenlabsSettings = new Settings.ElevenlabsSettings();
 				elevenlabsSettings.ShowDialog();
 			}
-			else if(cbSpeechSynthesis.SelectedItem.ToString() == "Microsoft Windows Speech")
+			else if (cbSpeechSynthesis.SelectedItem.ToString() == "Microsoft Windows Speech")
 			{
 				Settings.WindowsSpeechSettings windowsSpeechSettings = new Settings.WindowsSpeechSettings();
 				windowsSpeechSettings.ShowDialog();
@@ -123,7 +136,21 @@ namespace Windows_AI_Assistant
 			Globals.Save();
 		}
 
+		private void cbKeywordDetection_CheckedChanged(object sender, EventArgs e)
+		{
+			Globals.settings.useWindowsSpeech = cbKeywordDetection.Checked;
+		}
 
-
+		private void cbAutostart_CheckedChanged(object sender, EventArgs e)
+		{
+			if(cbAutostart.Checked)
+			{
+				rkApp.SetValue("WAIA", System.Windows.Forms.Application.ExecutablePath);
+			}
+			else
+			{
+				rkApp.DeleteValue("WAIA", false);
+			}
+		}
 	}
 }

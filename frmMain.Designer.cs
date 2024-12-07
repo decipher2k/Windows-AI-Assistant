@@ -41,6 +41,9 @@
 			label4 = new Label();
 			tbKeyword = new TextBox();
 			button1 = new Button();
+			cbAutostart = new CheckBox();
+			cbKeywordDetection = new CheckBox();
+			label5 = new Label();
 			SuspendLayout();
 			// 
 			// label1
@@ -152,7 +155,7 @@
 			// 
 			// button1
 			// 
-			button1.Location = new Point(27, 352);
+			button1.Location = new Point(27, 470);
 			button1.Name = "button1";
 			button1.Size = new Size(473, 34);
 			button1.TabIndex = 12;
@@ -160,11 +163,45 @@
 			button1.UseVisualStyleBackColor = true;
 			button1.Click += bnSettingsCommands_Click;
 			// 
+			// cbAutostart
+			// 
+			cbAutostart.AutoSize = true;
+			cbAutostart.Location = new Point(27, 356);
+			cbAutostart.Name = "cbAutostart";
+			cbAutostart.Size = new Size(191, 29);
+			cbAutostart.TabIndex = 13;
+			cbAutostart.Text = "Start with Windows";
+			cbAutostart.UseVisualStyleBackColor = true;
+			cbAutostart.CheckedChanged += cbAutostart_CheckedChanged;
+			// 
+			// cbKeywordDetection
+			// 
+			cbKeywordDetection.AutoSize = true;
+			cbKeywordDetection.Location = new Point(27, 391);
+			cbKeywordDetection.Name = "cbKeywordDetection";
+			cbKeywordDetection.Size = new Size(487, 29);
+			cbKeywordDetection.TabIndex = 14;
+			cbKeywordDetection.Text = "Use Windows Speech Recognition for keyword detection";
+			cbKeywordDetection.UseVisualStyleBackColor = true;
+			cbKeywordDetection.CheckedChanged += cbKeywordDetection_CheckedChanged;
+			// 
+			// label5
+			// 
+			label5.AutoSize = true;
+			label5.Location = new Point(49, 415);
+			label5.Name = "label5";
+			label5.Size = new Size(348, 25);
+			label5.TabIndex = 15;
+			label5.Text = "(Experimental - this will reduce data usage)";
+			// 
 			// frmMain
 			// 
 			AutoScaleDimensions = new SizeF(10F, 25F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(520, 420);
+			ClientSize = new Size(520, 516);
+			Controls.Add(label5);
+			Controls.Add(cbKeywordDetection);
+			Controls.Add(cbAutostart);
 			Controls.Add(button1);
 			Controls.Add(tbKeyword);
 			Controls.Add(label4);
@@ -203,5 +240,8 @@
 		private Label label4;
 		private TextBox tbKeyword;
 		private Button button1;
+		private CheckBox cbAutostart;
+		private CheckBox cbKeywordDetection;
+		private Label label5;
 	}
 }
