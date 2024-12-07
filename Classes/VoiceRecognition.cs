@@ -10,7 +10,7 @@ namespace Windows_AI_Assistant.Classes
 {
 	public class VoiceRecognition
 	{
-		public String recognizeAzure(String subscriptionKey, String region, String lang="en-US")
+		public String recognizeAzure(String subscriptionKey, String region, String language="en-US")
 		{
 			String recognitionResult = "";
 
@@ -20,38 +20,57 @@ namespace Windows_AI_Assistant.Classes
 				{
 					try
 					{
-						System.Speech.Recognition.Choices choices = new System.Speech.Recognition.Choices();
-						choices.Add(Globals.settings.keyword);
-						GrammarBuilder gb = new GrammarBuilder();
-						gb.Append(choices);
-
 						SpeechRecognitionEngine recognizer =
-							new SpeechRecognitionEngine(new System.Globalization.CultureInfo(System.Threading.Thread.CurrentThread.CurrentCulture.Name));
+							new SpeechRecognitionEngine(new System.Globalization.CultureInfo(Globals.settings.azure.Language));
 
-						recognizer.LoadGrammar(new System.Speech.Recognition.Grammar(gb));
+						recognizer.LoadGrammar(new DictationGrammar());
 						recognizer.SetInputToDefaultAudioDevice();
 
-						recognitionResult = recognizer.Recognize().Text;
-						if (recognitionResult != Globals.settings.keyword)
+						var recognized = recognizer.Recognize();
+						if (recognized != null)
+						{
+							recognitionResult = recognized.Text;
+							if (recognitionResult != Globals.settings.keyword)
+							{
+								String ret = recognize(subscriptionKey, region, language);
+							}
+							else
+							{
+								return "";
+							}
+						}
+						else
+						{
 							return "";
+						}
+						
 					}
 					catch (Exception ex) { }
 				}
-
-				SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);				
-				SpeechRecognitionResult result;
-				using (Microsoft.CognitiveServices.Speech.SpeechRecognizer recognizer = new(speechConfig, AutoDetectSourceLanguageConfig.FromLanguages(new String[] { lang })))
+				else
 				{
-					result = recognizer.RecognizeOnceAsync().Result;
-					if (result.Reason == ResultReason.RecognizedSpeech)
-						return result.Text;					
+					return recognize(subscriptionKey, region,language);
 				}
+				
 			}
 			catch (Exception ex) 
 			{ 
 				new Classes.TextToSpeech().speakWindows("Error recognizing speech."); 
 			}
 
+			return "";
+		}
+
+		private String recognize(String subscriptionKey, String region, String language)
+		{
+			SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);
+			SpeechRecognitionResult result;
+			using (Microsoft.CognitiveServices.Speech.SpeechRecognizer recognizer = new(speechConfig, AutoDetectSourceLanguageConfig.FromLanguages(new String[] { language })))
+			{
+				result = recognizer.RecognizeOnceAsync().Result;
+				if (result.Reason == ResultReason.RecognizedSpeech)
+					return result.Text;
+			}
 			return "";
 		}
 	}

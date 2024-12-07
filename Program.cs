@@ -12,11 +12,16 @@ namespace Windows_AI_Assistant
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            if (Process.GetProcessesByName("Windows AI Assistant").Count()>1)
+            if (Process.GetProcessesByName("Windows AI Assistant").Count() > 1)
+            {
                 MessageBox.Show("Windows AI Assistant is allready running.");
-            ApplicationConfiguration.Initialize();
-			Globals.Load();
-			Application.Run(new AppContext());
+            }
+            else
+            {
+                ApplicationConfiguration.Initialize();
+                Globals.Load();
+                Application.Run(new AppContext());
+            }
 		}
     }
 }

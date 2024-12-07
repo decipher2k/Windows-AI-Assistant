@@ -141,7 +141,7 @@ namespace Windows_AI_Assistant
 				text = text.Replace(",", "");
 				text = text.Trim();
 
-				if (text.StartsWith(Globals.settings.keyword))
+				if (text.StartsWith(Globals.settings.keyword) || (Globals.settings.useWindowsSpeech && text!=""))
 				{
 					text = text.Substring(Globals.settings.keyword.Length);
 
