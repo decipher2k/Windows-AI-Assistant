@@ -13,6 +13,7 @@ namespace Windows_AI_Assistant.Data
 		public WindowsSpeech windowsSpeech { get; set; } = new WindowsSpeech();
 		public Elevenlabs elevenlabs { get; set; } = new Elevenlabs();
 		public Azure azure {  get; set; } = new Azure();
+		public Groq groq { get; set; } = new Groq();
 		public ChatGPT chatGPT { get; set; } = new ChatGPT();
 		public Ollama ollama { get; set; } = new Ollama();
 		public Awan awan { get; set; } = new Awan();
@@ -27,7 +28,8 @@ namespace Windows_AI_Assistant.Data
 
 		public enum SpeechToText
 		{
-			Azure
+			Azure,
+			Groq
 		}
 
 		public enum TextToSpeech

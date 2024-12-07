@@ -59,7 +59,7 @@
 			// 
 			cbVoiceRecognition.DropDownStyle = ComboBoxStyle.DropDownList;
 			cbVoiceRecognition.FormattingEnabled = true;
-			cbVoiceRecognition.Items.AddRange(new object[] { "Microsoft Azure" });
+			cbVoiceRecognition.Items.AddRange(new object[] { "Microsoft Azure", "Groq" });
 			cbVoiceRecognition.Location = new Point(27, 123);
 			cbVoiceRecognition.Name = "cbVoiceRecognition";
 			cbVoiceRecognition.Size = new Size(355, 33);

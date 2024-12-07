@@ -31,7 +31,8 @@ namespace Windows_AI_Assistant
 		}
 		private void frmMain_Load(object sender, EventArgs e)
 		{
-			cbVoiceRecognition.SelectedItem = Globals.settings.speechToText == Data.Settings.SpeechToText.Azure ? "Microsoft Azure" : "";
+			cbVoiceRecognition.SelectedItem = Globals.settings.speechToText == Data.Settings.SpeechToText.Azure ? "Microsoft Azure" :
+				 Globals.settings.speechToText == Data.Settings.SpeechToText.Groq ? "Groq" : "";
 
 			cbSpeechSynthesis.SelectedItem = Globals.settings.textToSpeech == Data.Settings.TextToSpeech.Elevenlabs ? "Elevenlabs" :
 				(Globals.settings.textToSpeech == Data.Settings.TextToSpeech.Windows ? "Microsoft Windows Speech" : "");
@@ -55,6 +56,8 @@ namespace Windows_AI_Assistant
 		{
 			if (cbVoiceRecognition.SelectedItem.ToString() == "Microsoft Azure")
 				Globals.settings.speechToText = Data.Settings.SpeechToText.Azure;
+			else if(cbVoiceRecognition.SelectedItem.ToString() == "Groq")
+				Globals.settings.speechToText = Data.Settings.SpeechToText.Groq;
 			Globals.Save();
 		}
 
@@ -83,6 +86,11 @@ namespace Windows_AI_Assistant
 			if (cbVoiceRecognition.SelectedItem.ToString() == "Microsoft Azure")
 			{
 				Settings.AzureSettings azureSettings = new Settings.AzureSettings();
+				azureSettings.ShowDialog();
+			}
+			else if(cbVoiceRecognition.SelectedItem.ToString() == "Groq")
+			{
+				Settings.GroqSettings azureSettings = new Settings.GroqSettings();
 				azureSettings.ShowDialog();
 			}
 			Globals.Save();
