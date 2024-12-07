@@ -14,6 +14,7 @@ namespace Windows_AI_Assistant
 	public class AppContext : ApplicationContext
 	{
 		private NotifyIcon trayIcon=new NotifyIcon();
+		frmMain mainForm = new frmMain();
 		bool running = true;
 		public AppContext()
 		{			
@@ -36,8 +37,8 @@ namespace Windows_AI_Assistant
 		{
 			if(e.ClickedItem.Text=="Open")
 			{
-				frmMain mainForm = new frmMain();
-				mainForm.ShowDialog();
+				if(!mainForm.Visible) 
+					mainForm.ShowDialog();
 			}
 			if(e.ClickedItem.Text=="Exit")
 			{
@@ -48,8 +49,8 @@ namespace Windows_AI_Assistant
 
 		private void TrayIcon_DoubleClick(object? sender, EventArgs e)
 		{
-			frmMain mainForm = new frmMain();
-			mainForm.ShowDialog();
+			if (!mainForm.Visible)
+				mainForm.ShowDialog();
 		}
 
 		void Exit(object sender, EventArgs e)

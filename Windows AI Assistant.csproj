@@ -42,7 +42,7 @@
 
   <ItemGroup>
     <Reference Include="WAIA Plugin">
-      <HintPath>..\WAIA Sample Plugin\WAIA Plugin.dll</HintPath>
+      <HintPath>WAIA Plugin.dll</HintPath>
     </Reference>
   </ItemGroup>
 
