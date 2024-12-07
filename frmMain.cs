@@ -139,11 +139,12 @@ namespace Windows_AI_Assistant
 		private void cbKeywordDetection_CheckedChanged(object sender, EventArgs e)
 		{
 			Globals.settings.useWindowsSpeech = cbKeywordDetection.Checked;
+			Globals.Save();
 		}
 
 		private void cbAutostart_CheckedChanged(object sender, EventArgs e)
 		{
-			if(cbAutostart.Checked)
+			if (cbAutostart.Checked)
 			{
 				rkApp.SetValue("WAIA", System.Windows.Forms.Application.ExecutablePath);
 			}
