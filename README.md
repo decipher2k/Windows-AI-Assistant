@@ -11,6 +11,8 @@
 --Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
   (untested)
 <br><br>
+<b>If you listen to music or watch TV while Windows AI Assistant is running, the speech recognition contingent will be draining fast. Make sure you are in a silent environment when using it.</b>
+<br><br>
 <h2>Download:</h2><br>
 https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.5/Windows.AI.Assistant.zip<br><br>
 <h2>Usage:</h2><br>
