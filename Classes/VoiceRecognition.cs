@@ -63,13 +63,20 @@ namespace Windows_AI_Assistant.Classes
 
 		private String recognize(String subscriptionKey, String region, String language)
 		{
-			SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);
-			SpeechRecognitionResult result;
-			using (Microsoft.CognitiveServices.Speech.SpeechRecognizer recognizer = new(speechConfig, AutoDetectSourceLanguageConfig.FromLanguages(new String[] { language })))
+			try
 			{
-				result = recognizer.RecognizeOnceAsync().Result;
-				if (result.Reason == ResultReason.RecognizedSpeech)
-					return result.Text;
+				SpeechConfig speechConfig = SpeechConfig.FromSubscription(subscriptionKey, region);
+				SpeechRecognitionResult result;
+				using (Microsoft.CognitiveServices.Speech.SpeechRecognizer recognizer = new(speechConfig, AutoDetectSourceLanguageConfig.FromLanguages(new String[] { language })))
+				{
+					result = recognizer.RecognizeOnceAsync().Result;
+					if (result.Reason == ResultReason.RecognizedSpeech)
+						return result.Text;
+				}
+			}
+			catch (Exception ex)
+			{
+				new TextToSpeech().speakWindows("Microsoft Azure error.");
 			}
 			return "";
 		}
