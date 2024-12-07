@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Windows_AI_Assistant.Classes
 {
@@ -21,118 +22,102 @@ namespace Windows_AI_Assistant.Classes
 		bool recording = false;
 		float impedance_at_recording = 0;
 		bool just_started = false;
+		bool louder = false;
+		bool done = false;
 		private void calculateImpedance()
 		{
-			while (true)
-			{
-				//initialize
-				if (!listening_started) 
-				{
-					WaveInEvent waveSourceImpedance = new WaveInEvent();
+			
+			
 					waveSourceImpedance.WaveFormat = new WaveFormat(16000, 1);
 
 					waveSourceImpedance.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailableImpedance);
 					listening_started = true;
 					waveSourceImpedance.StartRecording();
-				}
-				else
-				{
-					//if recording has not started and is above threshhold
-					//(check for start of recording
-					if (impedance > impedance_prev * 1.3f && !recording_started)
-					{
-						//set impedance at recording start to current impedance and start recording
-						impedance_at_recording = impedance;
-						recording_started = true;
-						recording = true;
-					}
-					//if previous impedance was more silent then at start and if is recording
-					//(check for end of recording)
-					else if (impedance_prev <= impedance_at_recording * 0.2f && recording_started)
-					{
-						recording = false;
-						finished = true;
-					}
-					//currently recording
-					if(listening_started) 
-					{
-						impedance_prev = impedance;
-						lastUpdate = DateTime.Now;
-					}
-				}
-				System.Threading.Thread.Sleep(1000);
-			}
+			
+			
 		}
-
+		int step = 0;
 		private void waveSource_DataAvailableImpedance(object? sender, WaveInEventArgs e)
 		{
 			int silenceCount = 0;
 			for (int i = 0; i < e.Buffer.Length; i++)
 			{
-				if (e.Buffer[i] < 25 || e.Buffer[i] > 200)
+				if (e.Buffer[i] < 50)
 				{
 					silenceCount++;
 				}
 			}
-			impedance_prev=impedance;
-			impedance = silenceCount;
 
+			
 		}
 
 		public void startRecording()
 		{			
-			waveSource.WaveFormat = new WaveFormat(16000, 1);
-
+			waveSource.WaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(16000, 1);
+			
 			waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
 			new System.Threading.Thread(updateThread).Start();
 			waveSource.StartRecording();
-			new System.Threading.Thread(calculateImpedance).Start();
 		}
 
-		public IEnumerable<byte> buffer=new List<byte>();
+		public List<byte> buffer = new List<byte>();
 		DateTime lastUpdate = DateTime.Now;
 		bool started = false;
 		private void waveSource_DataAvailable(object? sender, WaveInEventArgs e)
 		{
-			if (recording)
+			
 			{
 				long silenceCount = 0;
 				bool silence = false;
 
 				for (int i = 0; i < e.Buffer.Length; i++)
 				{
-					if (e.Buffer[i] < 25 || e.Buffer[i] > 200)
+					if (e.Buffer[i] < 50)
 					{
 						silenceCount++;
 					}
 				}
+				if (impedance_at_recording == 0)
+					impedance_at_recording = e.Buffer.Length - silenceCount;
 
-				buffer = buffer.Concat(e.Buffer);
+				impedance = e.Buffer.Length - silenceCount;
+
+				if (impedance > impedance_at_recording * 1.01)
+				{
+					louder = true;
+					started = true;
+					lastUpdate = DateTime.Now;
+				}
+
+				if ((DateTime.Now - lastUpdate).TotalSeconds > 2 && louder)
+				{
+					done = true;
+				}
+				byte[] ebuffer = new byte[e.BytesRecorded];
+				for (int n = 0; n < ebuffer.Length; n++)
+				{
+					ebuffer[n] = e.Buffer[n];
+				}
+				buffer.AddRange(ebuffer);
 			}
 		}
 
 		private void updateThread()
 		{
-			while (!finished)
+			while (!done)
 			{
-				if ((DateTime.Now - lastUpdate).TotalSeconds >1 && started)
-				{
-					if (buffer.Count() > 30000)
-					{
-						waveSource.StopRecording();
-						WaveFileWriter waveFile = new WaveFileWriter(@"output.wav", waveSource.WaveFormat);
-						waveFile.Write(buffer.ToArray(), 0, buffer.Count());
-						waveFile.Flush();
-						waveFile.Close();
-						finished = true;
-					}
-					else
-					{
-						//buffer = new List<byte>();
-						lastUpdate = DateTime.Now;
-					}
-				}
 				System.Threading.Thread.Sleep(100);
+			}
+			//	if (buffer.Count() > 30000)
+			{
+				waveSource.StopRecording();
+				if (File.Exists("output.wav"))
+					File.Delete("output.wav");
+				WaveFileWriter waveFile = new WaveFileWriter(@"output.wav", waveSource.WaveFormat);
+				waveFile.Write(buffer.ToArray(), 0, buffer.Count());
+
+				waveFile.Close();
+				finished = true;
 			}
 		}
 	}

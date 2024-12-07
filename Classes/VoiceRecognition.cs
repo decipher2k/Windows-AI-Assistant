@@ -71,7 +71,7 @@ namespace Windows_AI_Assistant.Classes
 				System.Threading.Thread.Sleep(100);
 			}
 
-			MemoryStream memoryStream = new MemoryStream(File.ReadAllBytes("output.wav"));
+			MemoryStream memoryStream =  new MemoryStream(File.ReadAllBytes("output.wav"));
 
 			using MultipartFormDataContent content = new MultipartFormDataContent();
 			content.Add(new StreamContent(memoryStream), "file","output.wav");
