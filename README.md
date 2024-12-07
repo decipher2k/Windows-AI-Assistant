@@ -2,6 +2,7 @@
 <h1>Windows AI Assistant</h1><br>
 <br>
 <b>A voice-controlled AI Assistant for Microsoft Windows</b><br><br>
+<a href="https://www.kickstarter.com/projects/r0ulaboard/windows-ai-assistant">Support WAIA on Kickstarter</a>
 <h2>Features:</h2><br>
 -Seamlessly integrates with Ollama, ChatGPT and Awan.<br>
 -Advanced voice recognition powered by Azure speech services<br>
