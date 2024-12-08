@@ -22,7 +22,7 @@ Setup the API keys and other information using the "Settings" buttons.<br>
 <br>
 A green point on the tray icon means that speech is being recorded.<br>
 A blue point means that the recorded text has been sent to the Chat AI.<br>
-<b>Keyword detection usind pocketsphinx is not reliable</b><br><br>
+<br>
                                                                  
 How to allways show a tray icon:<br>
 https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
