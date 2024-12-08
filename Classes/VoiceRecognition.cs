@@ -17,6 +17,7 @@ namespace Windows_AI_Assistant.Classes
 {
 	public class VoiceRecognition
 	{
+		bool recognized = false;
 		public String recognizeAzure(String subscriptionKey, String region, String language="en-US")
 		{
 			String recognitionResult = "";
@@ -27,9 +28,6 @@ namespace Windows_AI_Assistant.Classes
 				{
                     Recording recording=new Recording();
 					recording.Show();
-                    while (!Pocketsphinx.keywordDetected)
-						System.Threading.Thread.Sleep(100);
-                    
 
                     String ret = recognize(subscriptionKey, region, language);
 					recording.Close();
@@ -54,10 +52,7 @@ namespace Windows_AI_Assistant.Classes
 			if (Globals.settings.useWindowsSpeech)
 			{
 				
-				while (!Pocketsphinx.keywordDetected && AppContext.running)
-					System.Threading.Thread.Sleep(100);
-   
-
+			
                 if (AppContext.running)
 				{
 					AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_active.ico");
@@ -73,23 +68,52 @@ namespace Windows_AI_Assistant.Classes
 
 		}
 
-		private string doRecognizeGroq(String subscriptionKey, String language)
+		public String recognizeWindows()
+		{
+            SpeechRecognitionEngine recognizer = new SpeechRecognitionEngine();
+            recognizer.SetInputToDefaultAudioDevice();
+            Choices choices = new Choices(Globals.settings.keyword);
+           // System.Speech.Recognition.Grammar grammar = new System.Speech.Recognition.Grammar(new GrammarBuilder(choices));
+            recognizer.LoadGrammar(new DictationGrammar());
+            recognizer.SpeechRecognized += new EventHandler<SpeechRecognizedEventArgs>(SpeechRecognized);
+			recognizer.RecognizeAsync();
+
+			while(!recognized && AppContext.running)
+			{
+				System.Threading.Thread.Sleep(100);
+			}
+			return Globals.settings.keyword;
+		}
+
+        private void SpeechRecognized(object? sender, SpeechRecognizedEventArgs e)
+        {
+			if ((e.Result.Confidence > 0.5f && e.Result.Text == Globals.settings.keyword) || e.Result.Alternates.Where(a=>a.Text==Globals.settings.keyword).Any())
+				recognized = true;
+        }
+
+        private string doRecognizeGroq(String subscriptionKey, String language)
 		{
 			var groqApi = new GroqApiClient(subscriptionKey);
 			try
 			{
-				RecordAudio recordAudio = new RecordAudio();
+                
+                RecordAudio recordAudio = new RecordAudio();
 				recordAudio.startRecording();
-				while (recordAudio.finished == false && !recordAudio.failed)
+
+             
+
+
+
+                while (recordAudio.finished == false && !recordAudio.failed)
 				{
-					System.Threading.Thread.Sleep(100);
+                    System.Threading.Thread.Sleep(100);
 				}
                 
-                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
-				if (!recordAudio.failed)
-				{
 
-					MemoryStream memoryStream = new MemoryStream(File.ReadAllBytes("output.wav"));
+                if (!recordAudio.failed)
+				{
+                    AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+                    MemoryStream memoryStream = new MemoryStream(File.ReadAllBytes("output.wav"));
 
 					using MultipartFormDataContent content = new MultipartFormDataContent();
 					content.Add(new StreamContent(memoryStream), "file", "output.wav");
