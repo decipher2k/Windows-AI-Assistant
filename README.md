@@ -25,6 +25,8 @@ A blue point means that the recorded text has been sent to the Chat AI.<br><br>
 How to allways show a tray icon:<br>
 https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
 <br>
+How to remove the microphone tray icon:<br>
+https://github.com/valinet/ExplorerPatcher<br>
 <h3>Keyword:</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
