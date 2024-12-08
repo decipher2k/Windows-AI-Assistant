@@ -204,9 +204,9 @@
             cbKeywordDetection.Location = new Point(32, 469);
             cbKeywordDetection.Margin = new Padding(4);
             cbKeywordDetection.Name = "cbKeywordDetection";
-            cbKeywordDetection.Size = new Size(501, 34);
+            cbKeywordDetection.Size = new Size(561, 34);
             cbKeywordDetection.TabIndex = 14;
-            cbKeywordDetection.Text = "Use Pocketsphinx detection for keyword detection";
+            cbKeywordDetection.Text = "Use Windows Speech Recognition for keyword detection";
             cbKeywordDetection.UseVisualStyleBackColor = true;
             cbKeywordDetection.CheckedChanged += cbKeywordDetection_CheckedChanged;
             // 
