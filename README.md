@@ -22,7 +22,7 @@ Setup the API keys and other information using the "Settings" buttons.<br>
 <br>
 A green point on the tray icon means that speech is being recorded.<br>
 A blue point means that the recorded text has been sent to the Chat AI.<br>
-<b>Keyword detection usind pocketsphinx is not reliable</b><br><br>
+<br>
                                                                  
 How to allways show a tray icon:<br>
 https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
@@ -34,10 +34,10 @@ You can set a custom keyword for starting speech recognition. Default is "Comput
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
 <h3>Keyword Detection:</h3><br>
-There is now a keyword detection using Pocketsphinx.<br>
-It can be good to used it in a noisy environment, like when watching TV or listening to music to prevent Azure quota draining.<br>
-Keyword detection sets the keyword to "Windows", which can't be changed.<br>
-<b>Pocketsphinx keybord detection is not reliable</b><br>
+There is now a keyword detection using Windows Speech Recognition.<br>
+It can be good to use it in a noisy environment, like when watching TV or listening to music to prevent speech recognition quota draining.<br>
+Keyword detection sets the keyword to "Windows", which can't be changed. Reliability differes between systems.<br>
+<br>
 <br>
 <h2>Program Starter</h2>
 The program starter can be configured using the "Commands" button.<br>
