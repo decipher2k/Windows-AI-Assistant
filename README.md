@@ -21,7 +21,9 @@ After starting the application, a tray icon is being added. Doubleclick on it to
 Setup the API keys and other information using the "Settings" buttons.<br>
 <br>
 A green point on the tray icon means that speech is being recorded.<br>
-A blue point means that the recorded text has been sent to the Chat AI.<br>
+A blue point means that the recorded text has been sent to the Chat AI.<br><br>
+How to allways show a tray icon:<br>
+https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
 <br>
 <h3>Keyword:</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
