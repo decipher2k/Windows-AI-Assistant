@@ -15,7 +15,7 @@
 <br><br>
 <h2>Download:</h2><br>
 https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.8/Windows.AI.Assistant.zip<br><br>
-<h2>Usage:</h2><br>
+<h1>Usage:</h1><br>
 <br>
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
 Setup the API keys and other information using the "Settings" buttons.<br>
