@@ -27,7 +27,7 @@ namespace Windows_AI_Assistant.Classes
 				_waveOut.Play();
 				while (_waveOut.PlaybackState != PlaybackState.Stopped)
 					System.Threading.Thread.Sleep(500);
-			}
+            }
 			catch (Exception ex) 
 			{
 				speakWindows(text);
@@ -44,12 +44,18 @@ namespace Windows_AI_Assistant.Classes
 					synthesizer.SelectVoice(Globals.settings.windowsSpeech.Voice);
 
 				synthesizer.Speak(text);
-			}catch(Exception ex)
+				System.Threading.Thread.Sleep(1000);
+				
+
+
+            }
+            catch(Exception ex)
 			{
 				var synthesizer = new System.Speech.Synthesis.SpeechSynthesizer();
-				synthesizer.SetOutputToDefaultAudioDevice();				
-				synthesizer.Speak(text);
-			}
+				synthesizer.SetOutputToDefaultAudioDevice();
+
+                if (synthesizer.SpeakAsync(text).IsCompleted) ;
+            }
 		}		
 	}
 }

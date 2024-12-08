@@ -44,6 +44,7 @@ namespace Windows_AI_Assistant
 			if(e.ClickedItem.Text=="Exit")
 			{
 				Pocketsphinx.process.Kill();
+                Pocketsphinx.iconProcess.Kill();
                 running = false;
 				Application.Exit();
 			}
@@ -191,13 +192,10 @@ namespace Windows_AI_Assistant
 									break;
 								}
 						}
-					}					
-				}
-				Pocketsphinx.keywordDetected = false;
-               
-
+					}         
+                }
+                pocketsphinx.restart();
             }
-
         }
 	}
 }

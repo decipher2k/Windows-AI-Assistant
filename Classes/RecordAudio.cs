@@ -85,6 +85,7 @@ namespace Windows_AI_Assistant.Classes
 			if (silenceCount > 35)
 			{
 				waveSource.StopRecording();
+				waveSource.Dispose();
 				if (File.Exists("output.wav"))
 					File.Delete("output.wav");
 				WaveFileWriter waveFile = new WaveFileWriter(@"output.wav", waveSource.WaveFormat);

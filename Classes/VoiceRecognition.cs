@@ -29,7 +29,9 @@ namespace Windows_AI_Assistant.Classes
 					recording.Show();
                     while (!Pocketsphinx.keywordDetected)
 						System.Threading.Thread.Sleep(100);
-					String ret = recognize(subscriptionKey, region, language);
+                    
+
+                    String ret = recognize(subscriptionKey, region, language);
 					recording.Close();
 				}
 				else
@@ -54,8 +56,9 @@ namespace Windows_AI_Assistant.Classes
 				
 				while (!Pocketsphinx.keywordDetected && AppContext.running)
 					System.Threading.Thread.Sleep(100);
+   
 
-				if (AppContext.running)
+                if (AppContext.running)
 				{
 					AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_active.ico");
 					ret = doRecognizeGroq(subscriptionKey, language);
@@ -81,7 +84,8 @@ namespace Windows_AI_Assistant.Classes
 				{
 					System.Threading.Thread.Sleep(100);
 				}
-				AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+                
+                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
 				if (!recordAudio.failed)
 				{
 
