@@ -20,6 +20,9 @@ https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.8/Window
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
 Setup the API keys and other information using the "Settings" buttons.<br>
 <br>
+A green point on the tray icon means that speech is being recorded.<br>
+A blue point means that the recorded text has been sent to the Chat AI.<br>
+<br>
 <h3>Keyword:</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
