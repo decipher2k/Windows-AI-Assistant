@@ -58,55 +58,62 @@ namespace Windows_AI_Assistant.Classes
 				if (AppContext.running)
 				{
 					AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_active.ico");
-					ret = doRecognizeGro(subscriptionKey, language);
+					ret = doRecognizeGroq(subscriptionKey, language);
 					AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
 				}
             }
 			else
 			{
-				ret= doRecognizeGro(subscriptionKey,language);
+				ret= doRecognizeGroq(subscriptionKey,language);
 			}
 			return ret;
 
 		}
 
-		private string doRecognizeGro(String subscriptionKey, String language)
+		private string doRecognizeGroq(String subscriptionKey, String language)
 		{
 			var groqApi = new GroqApiClient(subscriptionKey);
-
-			RecordAudio recordAudio = new RecordAudio();
-			recordAudio.startRecording();
-			while (recordAudio.finished == false && !recordAudio.failed)
+			try
 			{
-				System.Threading.Thread.Sleep(100);
-			}
-            AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
-            if (!recordAudio.failed)
-			{
-				
-				MemoryStream memoryStream = new MemoryStream(File.ReadAllBytes("output.wav"));
+				RecordAudio recordAudio = new RecordAudio();
+				recordAudio.startRecording();
+				while (recordAudio.finished == false && !recordAudio.failed)
+				{
+					System.Threading.Thread.Sleep(100);
+				}
+				AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+				if (!recordAudio.failed)
+				{
 
-				using MultipartFormDataContent content = new MultipartFormDataContent();
-				content.Add(new StreamContent(memoryStream), "file", "output.wav");
-				content.Add(new StringContent("whisper-large-v3-turbo"), "model");
-				content.Add(new StringContent(Globals.settings.groq.Language.Substring(0, 2)), "language");
-				content.Add(new StringContent("json"), "response_format");
+					MemoryStream memoryStream = new MemoryStream(File.ReadAllBytes("output.wav"));
 
-				HttpClient httpClient = new HttpClient();
-				httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", subscriptionKey);
-				HttpResponseMessage obj = httpClient.PostAsync("https://api.groq.com/openai/v1/audio/transcriptions", content).Result;
-				obj.EnsureSuccessStatusCode();
-				JsonObject result = obj.Content.ReadFromJsonAsync<JsonObject>().Result;
-                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
-                if (result != null)
-					return result?["text"]?.ToString();
+					using MultipartFormDataContent content = new MultipartFormDataContent();
+					content.Add(new StreamContent(memoryStream), "file", "output.wav");
+					content.Add(new StringContent("whisper-large-v3-turbo"), "model");
+					content.Add(new StringContent(Globals.settings.groq.Language.Substring(0, 2)), "language");
+					content.Add(new StringContent("json"), "response_format");
+
+					HttpClient httpClient = new HttpClient();
+					httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", subscriptionKey);
+					HttpResponseMessage obj = httpClient.PostAsync("https://api.groq.com/openai/v1/audio/transcriptions", content).Result;
+					obj.EnsureSuccessStatusCode();
+					JsonObject result = obj.Content.ReadFromJsonAsync<JsonObject>().Result;
+					AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+					if (result != null)
+						return result?["text"]?.ToString();
+					else
+						return "";
+				}
 				else
+				{
 					return "";
+				}
 			}
-			else
+			catch (Exception ex)
 			{
-				return "";
+				new TextToSpeech().speakWindows("Error recognizing query.");
 			}
+			return "";
 		}
 
 		private String recognize(String subscriptionKey, String region, String language)
