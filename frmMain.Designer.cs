@@ -82,7 +82,7 @@
             // 
             cbChatAI.DropDownStyle = ComboBoxStyle.DropDownList;
             cbChatAI.FormattingEnabled = true;
-            cbChatAI.Items.AddRange(new object[] { "ChatGPT", "Groq", "Ollama", "Awan" });
+            cbChatAI.Items.AddRange(new object[] { "ChatGPT", "Ollama", "Awan" });
             cbChatAI.Location = new Point(32, 248);
             cbChatAI.Margin = new Padding(4);
             cbChatAI.Name = "cbChatAI";

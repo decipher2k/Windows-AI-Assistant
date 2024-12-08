@@ -39,7 +39,7 @@ namespace Windows_AI_Assistant
 
 			cbChatAI.SelectedItem = Globals.settings.aiChat == Data.Settings.AIChat.ChatGPT ? "ChatGPT" :
 				 Globals.settings.aiChat == Data.Settings.AIChat.Ollama ? "Ollama" : Globals.settings.aiChat == Data.Settings.AIChat.Awan ? "Awan" : 
-				 Globals.settings.aiChat==Data.Settings.AIChat.Groq ? "Groq"  : "";
+				  "";
 
 			cbKeywordDetection.Checked = Globals.settings.useWindowsSpeech;
 
@@ -70,8 +70,7 @@ namespace Windows_AI_Assistant
 				Globals.settings.aiChat = Data.Settings.AIChat.Ollama;
 			else if (cbChatAI.SelectedItem.ToString() == "Awan")
 				Globals.settings.aiChat = Data.Settings.AIChat.Awan;
-            else if (cbChatAI.SelectedItem.ToString() == "Groq")
-                Globals.settings.aiChat = Data.Settings.AIChat.Groq;
+      
             Globals.Save();
 		}
 
