@@ -15,10 +15,15 @@
 <br><br>
 <h2>Download:</h2><br>
 https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.8/Windows.AI.Assistant.zip<br><br>
-<h2>Usage:</h2><br>
+<h1>Usage:</h1><br>
 <br>
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
 Setup the API keys and other information using the "Settings" buttons.<br>
+<br>
+A green point on the tray icon means that speech is being recorded.<br>
+A blue point means that the recorded text has been sent to the Chat AI.<br><br>
+How to allways show a tray icon:<br>
+https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
 <br>
 <h3>Keyword:</h3><br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
@@ -87,6 +92,10 @@ Go to Resource Management > Keys and Endpoint and click on Show Keys<br>
 Copy the first displayed API key<br>
 <br>
 Thankfully copied from https://github.com/dessant/buster/wiki/Configuring-Microsoft-Azure-Speech-to-Text <br>
+<br>
+<h3>Groq Speech Recognition:</h3>
+Groq can be found at https://groq.com<br>
+The API keys can be created at https://console.groq.com/keys <br>
 <br>
 <h1>AI Chat</h1>
 <h3>ChatGPT:</h3><br>
