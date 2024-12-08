@@ -37,6 +37,7 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 There is now a keyword detection using Pocketsphinx.<br>
 It is adivsed to used it in a noisy environment, like when watching TV or listening to music to prevent Azure quota draining.<br>
 Keyword detection sets the keyword to "Windows", which can't be changed.<br>
+<b>Pocketsphinx keybord detection is not reliable</b><br>
 <br>
 <h2>Program Starter</h2>
 The program starter can be configured using the "Commands" button.<br>
