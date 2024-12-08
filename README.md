@@ -37,7 +37,7 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 There is now a keyword detection using Windows Speech Recognition.<br>
 It can be good to use it in a noisy environment, like when watching TV or listening to music to prevent speech recognition quota draining.<br>
 Keyword detection sets the keyword to "Windows", which can't be changed. Reliability differes between systems.<br>
-<b>Pocketsphinx keybord detection is not reliable</b><br>
+<br>
 <br>
 <h2>Program Starter</h2>
 The program starter can be configured using the "Commands" button.<br>
