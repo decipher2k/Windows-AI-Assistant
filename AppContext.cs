@@ -13,9 +13,9 @@ namespace Windows_AI_Assistant
 {
 	public class AppContext : ApplicationContext
 	{
-		private NotifyIcon trayIcon=new NotifyIcon();
+		public static NotifyIcon trayIcon=new NotifyIcon();
 		frmMain mainForm = new frmMain();
-		bool running = true;
+		public static bool running = true;
 		Pocketsphinx pocketsphinx = new Pocketsphinx();
 		public AppContext()
 		{			
@@ -43,7 +43,8 @@ namespace Windows_AI_Assistant
 			}
 			if(e.ClickedItem.Text=="Exit")
 			{
-				running = false;
+				Pocketsphinx.process.Kill();
+                running = false;
 				Application.Exit();
 			}
 		}
@@ -193,7 +194,10 @@ namespace Windows_AI_Assistant
 					}					
 				}
 				Pocketsphinx.keywordDetected = false;
-			}
-		}
+               
+
+            }
+
+        }
 	}
 }
