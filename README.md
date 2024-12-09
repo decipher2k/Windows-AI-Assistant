@@ -6,7 +6,6 @@
 <h2>Features:</h2><br>
 -Seamlessly integrates with Ollama, ChatGPT and Awan.<br>
 -Advanced voice recognition powered by Azure speech services<br>
--Plugin System<br>
 -Voice controlled interaction with Windows:<br>
 --Plugin system<br>
 --Program starter using key sentences<br>
