@@ -5,7 +5,7 @@
 <a href="https://www.kickstarter.com/projects/r0ulaboard/windows-ai-assistant">Support WAIA on Kickstarter</a>
 <h2>Features:</h2><br>
 <ul>
-<li>Seamlessly integrates with ChatGPT, Groq, Ollama and Awan.</li>
+<li>Seamlessly integrates with ChatGPT, Groq, Ollama and Awan</li>
 <li>Advanced voice recognition powered by Azure speech services</li>
 <li>Voice controlled interaction with Windows</li>
 <ul><li>Plugin system</li>
