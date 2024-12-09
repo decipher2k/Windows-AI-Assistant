@@ -144,7 +144,7 @@ You can find models at https://ollama.com/search <br><br>
 Awan is a free API for LLAMA models.
 <br>
 <br>
-<h1>Speech Synthesis:</h1>
+<h1>Speech Synthesis</h1>
 <h3>Elevenlabs:</h3>
 Log in to your ElevenLabs account.<br>
 In the top-right corner, click on your profile icon > Profile.<br>
