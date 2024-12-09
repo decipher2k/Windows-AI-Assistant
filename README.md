@@ -130,7 +130,7 @@ Please note: The "voice" field referes to the name of the voice, not to its ID.<
 <br>
 <h1>Costs</h1><br>
 <br>
-<h3>Speech Recognition:</h3><br>
+<h3>Speech Recognition - one of the following:</h3><br>
 -Microsoft Azure (5h/month are free)<br>
 -Groq (free, usage limits)
 <br>
