@@ -150,7 +150,7 @@ Log in to your ElevenLabs account.<br>
 In the top-right corner, click on your profile icon > Profile.<br>
 Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
 Please note: The "voice" field referes to the name of the voice, not to its ID.<br>
-<h3>Windows Speech Synthesis</h3>
+<h3>Windows Speech Synthesis:</h3>
 Average Quality.<br>
 You may need to set a voice according to your language in the settings.
 <br>
