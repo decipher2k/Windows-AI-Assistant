@@ -20,11 +20,11 @@ namespace Windows_AI_Assistant
 {
 
 
-	public partial class frmMain : Form
+	public partial class MainForm : Form
 	{
 		RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
-		public frmMain()
+		public MainForm()
 		{
 			InitializeComponent();
 			tbKeyword.Text = Globals.settings.keyword;

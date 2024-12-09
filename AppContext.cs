@@ -13,7 +13,7 @@ namespace Windows_AI_Assistant
 {
 	public class AppContext : ApplicationContext
 	{
-        frmMain mainForm = new frmMain();
+        MainForm mainForm = new MainForm();
         public static NotifyIcon trayIcon=new NotifyIcon();		
 		public static bool running = true;
 	
