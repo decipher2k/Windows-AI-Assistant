@@ -146,7 +146,7 @@ Awan is a free API for LLAMA models.
 <br>
 <h1>Speech Synthesis</h1>
 <h3>Elevenlabs:</h3>
-Log in to your ElevenLabs account.<br>
+Log in to your Elevenlabs account.<br>
 In the top-right corner, click on your profile icon > Profile.<br>
 Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
 Please note: The "voice" field referes to the name of the voice, not to its ID.<br>
