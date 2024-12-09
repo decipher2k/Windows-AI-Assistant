@@ -62,7 +62,7 @@ This is an example for starting Windows explorer:<br><br>
 
 <img src="https://github.com/user-attachments/assets/5fa40e98-4d8e-4d8c-8895-702e6cc632db" width="600">
 <br><br>
-The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
+The first column defines whether to use speech recognition or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "starting windows explorer" will allow you to say either "start windows explorer", or "run windows explorer" etc.<br>
 <b>Chat AI commands are not implemented yet.</b><br>
@@ -75,7 +75,7 @@ They can be used to raise events in webapplications, for example IFTTT. IFTTT ca
 This is an example for a webhook that turns on the light:<br><br>
 <img src="https://github.com/user-attachments/assets/28477f74-f1b1-41c2-8cb7-8b27ba639c13" width="600"></img>
 <br><br>
-The first column defines whether to use speech recognition and keywords or the chat AI to execute the webhook.<br>
+The first column defines whether to use speech recognition or the chat AI to execute the webhook.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "turning on the light" will allow you to say either "turn on the light", or "switch on the light" etc.<br>
 <b>Chat AI commands are not implemented yet.</b><br>
@@ -93,7 +93,7 @@ This is an example for the media player plugin:<br>
 <img src="https://github.com/user-attachments/assets/ad6ddca7-6669-4751-a30c-5d5bf54b233e" width="600"></img>
 <br><br>
 The media player plugin is included in the release of the program.<br><br>
-The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
+The first column defines whether to use speech recognition or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "playing media" will allow you to say either "play media", or "play the song" etc.<br>
 <b>Chat AI commands are not implemented yet.</b><br>
