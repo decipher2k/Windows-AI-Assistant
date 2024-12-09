@@ -65,7 +65,7 @@ This is an example for starting Windows explorer:<br><br>
 The first column defines whether to use speech recognition or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "starting windows explorer" will allow you to say either "start windows explorer", or "run windows explorer" etc.<br>
-<b>Chat AI commands are not implemented yet.</b><br>
+<b>Chat AI commands have not been implemented yet.</b><br>
 The third column is the program file that should be started.<br>
 The fourth column allows you to set command parameters.<br><br>
 
@@ -78,7 +78,7 @@ This is an example for a webhook that turns on the light:<br><br>
 The first column defines whether to use speech recognition or the chat AI to execute the webhook.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "turning on the light" will allow you to say either "turn on the light", or "switch on the light" etc.<br>
-<b>Chat AI commands are not implemented yet.</b><br>
+<b>Chat AI commands have not been implemented yet.</b><br>
 The second column defines the sentence that the program uses to recognize the command.<br>
 The third column is the URL of the webhook.<br>
 The fourth column defines whether to use HTTP POST or HTTP GET. For most webhooks, this will be HTTP GET.<br>
@@ -96,7 +96,7 @@ The media player plugin is included in the release of the program.<br><br>
 The first column defines whether to use speech recognition or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "playing media" will allow you to say either "play media", or "play the song" etc.<br>
-<b>Chat AI commands are not implemented yet.</b><br>
+<b>Chat AI commands have not been implemented yet.</b><br>
 The second column defines the sentence that the program uses to recognize the command.<br>
 The third column defines the name of the plugin DLL.<br>
 The following columns are there to parametrize the plugin. They do differ from plugin to plugin. Please read the plugin's manual for more information.<br>
