@@ -13,8 +13,8 @@ namespace Windows_AI_Assistant
 {
 	public class AppContext : ApplicationContext
 	{
-		public static NotifyIcon trayIcon=new NotifyIcon();
-		frmMain mainForm = new frmMain();
+        frmMain mainForm = new frmMain();
+        public static NotifyIcon trayIcon=new NotifyIcon();		
 		public static bool running = true;
 	
 		public AppContext()
@@ -68,9 +68,12 @@ namespace Windows_AI_Assistant
 				{
 					try
 					{
-						new Command().runProgram(program.Command, program.Parameter,text.Replace(program.Token,""));
+						Command.runProgram(program.Command, program.Parameter,text.Replace(program.Token,""));
 					}
-					catch (Exception ex) { new TextToSpeech().speakWindows("Error starting program."); }
+					catch (Exception ex) 
+					{ 
+						TextToSpeech.speakWindows("Error starting program."); 
+					}
 					return true;
 				}
 			}
@@ -81,9 +84,12 @@ namespace Windows_AI_Assistant
 				{
 					try
 					{
-						new Command().openURL(webhook.URl, webhook.Getpost.ToString(), webhook.Parameter, text.Replace(webhook.Token,""));
+						Command.openURL(webhook.URl, webhook.Getpost.ToString(), webhook.Parameter, text.Replace(webhook.Token,""));
 					}
-					catch (Exception ex) { new TextToSpeech().speakWindows("Error calling webhook."); }
+					catch (Exception ex) 
+					{ 
+						TextToSpeech.speakWindows("Error calling webhook."); 
+					}
 					return true;
 				}
 			}
@@ -92,7 +98,7 @@ namespace Windows_AI_Assistant
 			{
 				if(text.ToLower().Contains(plugin.Token.ToLower()) &&  plugin.Token!="")
 				{
-					String ret=new Classes.Plugin().RunPlugin(text,plugin.DLL,plugin.Parameter);
+					String ret=Classes.Plugin.RunPlugin(text,plugin.DLL,plugin.Parameter);
 					if (ret != null && ret != "")
 					{
 						switch (Globals.settings.textToSpeech)
@@ -100,12 +106,12 @@ namespace Windows_AI_Assistant
 							case Data.Settings.TextToSpeech.Elevenlabs:
 								{
 									if (Globals.settings.elevenlabs.APIKey != "" && Globals.settings.elevenlabs.Voice != "")
-										new Classes.TextToSpeech().speakElevenlabs(ret, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
+										Classes.TextToSpeech.speakElevenlabs(ret, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
 									break;
 								}
 							case Data.Settings.TextToSpeech.Windows:
 								{
-									new Classes.TextToSpeech().speakWindows(ret);
+									Classes.TextToSpeech.speakWindows(ret);
 									break;
 								}
 						}
@@ -173,22 +179,22 @@ namespace Windows_AI_Assistant
 								case Data.Settings.AIChat.Ollama:
 									{
 										if (Globals.settings.ollama.SystemPrompt != "" && Globals.settings.ollama.Model != "")
-											result = new Classes.AIChat().sendToOllama(text, Globals.settings.ollama.SystemPrompt, Globals.settings.ollama.Model);
+											result = Classes.AIChat.sendToOllama(text, Globals.settings.ollama.SystemPrompt, Globals.settings.ollama.Model);
 										break;
 									}
 								case Data.Settings.AIChat.ChatGPT:
 									{
 										if (Globals.settings.chatGPT.APIKey != "")
-											result = new Classes.AIChat().sendToChatGPT(text, Globals.settings.chatGPT.APIKey);
+											result = Classes.AIChat.sendToChatGPT(text, Globals.settings.chatGPT.APIKey);
 										break;
 									}
 								case Data.Settings.AIChat.Awan:
 									if (Globals.settings.awan.APIKey != "")
-										result = new Classes.AIChat().sendToAWAN(text, Globals.settings.awan.APIKey);
+										result = Classes.AIChat.sendToAWAN(text, Globals.settings.awan.APIKey);
 									break;
 								case Data.Settings.AIChat.Groq:
                                     if (Globals.settings.groq.APIKey != "")
-                                        result = new Classes.AIChat().sendToGroq(text, Globals.settings.groq.APIKey, Globals.settings.groq.LLMModel);
+                                        result = Classes.AIChat.sendToGroq(text, Globals.settings.groq.APIKey, Globals.settings.groq.LLMModel);
                                     break;
                             }
 
@@ -197,19 +203,18 @@ namespace Windows_AI_Assistant
 								case Data.Settings.TextToSpeech.Elevenlabs:
 									{
 										if (Globals.settings.elevenlabs.APIKey != "" && Globals.settings.elevenlabs.Voice != "")
-											new Classes.TextToSpeech().speakElevenlabs(result, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
+											Classes.TextToSpeech.speakElevenlabs(result, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
 										break;
 									}
 								case Data.Settings.TextToSpeech.Windows:
 									{
-										new Classes.TextToSpeech().speakWindows(result);
+										Classes.TextToSpeech.speakWindows(result);
 										break;
 									}
 							}
 						}
 					}
-				}
-                
+				}                
             }
         }
 	}

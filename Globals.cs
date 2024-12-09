@@ -23,7 +23,7 @@ namespace Windows_AI_Assistant
 				System.IO.File.WriteAllText(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\AIAssistant\\settings.json", jsonString);
 			}catch(Exception)
 			{
-				new TextToSpeech().speakWindows("Error saving configuration.");
+				TextToSpeech.speakWindows("Error saving configuration.");
 			}
 		}
 
@@ -38,7 +38,7 @@ namespace Windows_AI_Assistant
 				}
 				catch (Exception)
 				{
-					new TextToSpeech().speakWindows("Error loading configuration.");
+					TextToSpeech.speakWindows("Error loading configuration.");
 				}
 			}
 		}

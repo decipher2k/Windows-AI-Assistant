@@ -9,9 +9,9 @@ using Windows_AI_Assistant.Data;
 
 namespace Windows_AI_Assistant.Classes
 {
-	public class Command
+	public static class Command
 	{
-		public void runProgram(String file, String parameter = "", String text = "")
+		public static void runProgram(String file, String parameter = "", String text = "")
 		{
 			try
 			{
@@ -24,10 +24,12 @@ namespace Windows_AI_Assistant.Classes
 				};
 				Process.Start(psi);
 			}
-			catch (Exception ex) { new Classes.TextToSpeech().speakWindows("Error while starting the program."); }
+			catch (Exception ex) 
+			{ 
+				Classes.TextToSpeech.speakWindows("Error while starting the program."); }
 		}
 
-		public void openURL(String url, String GetPost, String parameter, String text)
+		public static void openURL(String url, String GetPost, String parameter, String text)
 		{
 			if(GetPost=="GET")
 			{
@@ -49,13 +51,10 @@ namespace Windows_AI_Assistant.Classes
 				}
 
 				var content = new FormUrlEncodedContent(values);
-
 				var response = client.PostAsync(url, content).Result;
-
 				var responseString = response.Content.ReadAsStringAsync().Result;
 			}
 			
 		}
-
 	}
 }

@@ -19,9 +19,7 @@ namespace Windows_AI_Assistant.Classes
 	{
 		bool recognized = false;
 		public String recognizeAzure(String subscriptionKey, String region, String language="en-US")
-		{
-			String recognitionResult = "";
-
+		{			
 			try
 			{
 				String keywordRecognized = "";
@@ -38,14 +36,11 @@ namespace Windows_AI_Assistant.Classes
 				else
 				{
                     return doRecognizeAzure(subscriptionKey, region, language);
-                }
-				
-				
-				
+                }												
 			}
 			catch (Exception ex) 
 			{ 
-				new Classes.TextToSpeech().speakWindows("Error recognizing speech."); 
+				Classes.TextToSpeech.speakWindows("Error recognizing speech."); 
 			}
 
 			return "";
@@ -57,7 +52,6 @@ namespace Windows_AI_Assistant.Classes
 			if (Globals.settings.useWindowsSpeech)
 			{
                 String keywordRecognized = "";
-
 			
 				keywordRecognized = recognizeWindows();
                 AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_active.ico");
@@ -69,8 +63,7 @@ namespace Windows_AI_Assistant.Classes
 				else
 				{
 					return "";
-				}
-                
+				}                
             }
 			else
 			{                
@@ -110,11 +103,7 @@ namespace Windows_AI_Assistant.Classes
                 
                 RecordAudio recordAudio = new RecordAudio();
 				recordAudio.startRecording();
-
-             
-
-
-
+            
                 while (recordAudio.finished == false && !recordAudio.failed)
 				{
 					if(recordAudio.running)
@@ -122,7 +111,6 @@ namespace Windows_AI_Assistant.Classes
                     System.Threading.Thread.Sleep(100);
 				}
           
-
                 if (!recordAudio.failed)
 				{
                     
@@ -153,7 +141,7 @@ namespace Windows_AI_Assistant.Classes
 			}
 			catch (Exception ex)
 			{
-				new TextToSpeech().speakWindows("Error recognizing query.");
+				TextToSpeech.speakWindows("Error recognizing query.");
 			}
             AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
             return "";
@@ -175,7 +163,7 @@ namespace Windows_AI_Assistant.Classes
 			}
 			catch (Exception ex)
 			{
-				new TextToSpeech().speakWindows("Microsoft Azure error.");
+				TextToSpeech.speakWindows("Microsoft Azure error.");
 			}
 			return "";
 		}
@@ -184,11 +172,11 @@ namespace Windows_AI_Assistant.Classes
 		{
 			if(e.ErrorDetails.Contains("Quota"))
 			{
-				new TextToSpeech().speakWindows("Microsoft Azure quota exceeded.");
+				TextToSpeech.speakWindows("Microsoft Azure quota exceeded.");
 			}
 			else
 			{
-                new TextToSpeech().speakWindows("Microsoft Azure error.");
+                TextToSpeech.speakWindows("Microsoft Azure error.");
             }
 		}
 	}

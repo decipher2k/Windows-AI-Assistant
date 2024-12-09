@@ -9,27 +9,25 @@ using System.Threading.Tasks;
 
 namespace Windows_AI_Assistant.Classes
 {
-	public class AIChat
+	public static class AIChat
 	{
-		public String sendToOllama(string text, String systemPrompt = "you are a helpful assistant.", String model = "llama3")
+		public static String sendToOllama(string text, String systemPrompt = "you are a helpful assistant.", String model = "llama3")
 		{
 			String ret = "";
 			try
 			{
                 AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
                 return Task.Run(async Task<String> () => {
-
 					var uri = new Uri("http://localhost:11434");
 					var ollama = new OllamaApiClient(uri);
-
 
 					var mdl = ollama.ListLocalModelsAsync().Result;
 					if (ollama.ListLocalModelsAsync().Result.Where(a => a.Name.Contains(model)).Count() == 0)
 					{
-						new TextToSpeech().speakWindows("Pulling AI model. This may take a while.");
+						TextToSpeech.speakWindows("Pulling AI model. This may take a while.");
 
 						await foreach (var status in ollama.PullModelAsync(model)) ;
-						new TextToSpeech().speakWindows("Finished pulling AI model.");
+						TextToSpeech.speakWindows("Finished pulling AI model.");
 						return "";
 					}
                     AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
@@ -40,12 +38,16 @@ namespace Windows_AI_Assistant.Classes
                     return ret.Replace("*","");
 				}).Result;
 			}
-			catch (Exception) { new Classes.TextToSpeech().speakWindows("Error querying Ollama."); }
+			catch (Exception) 
+			{ 
+				Classes.TextToSpeech.speakWindows("Error querying Ollama."); 
+			}
+
             AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
             return ret.Replace("*","");
 		}
 
-		public String sendToChatGPT(string text, String apiKey)
+		public static String sendToChatGPT(string text, String apiKey)
 		{
 			String ret = "";
 			try
@@ -58,12 +60,15 @@ namespace Windows_AI_Assistant.Classes
 				foreach (ChatMessageContentPart contentPart in completion.Content)
 					ret = ret + contentPart.Text + " ";
 			}
-			catch (Exception) { new Classes.TextToSpeech().speakWindows("Error querying ChatGPT."); }
+			catch (Exception) 
+			{ 
+				Classes.TextToSpeech.speakWindows("Error querying ChatGPT."); 
+			}
             AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
             return ret.Replace("*","");
 		}
 
-        public String sendToGroq(string text, String apiKey, String model)
+        public static String sendToGroq(string text, String apiKey, String model)
         {
             String ret = "";
             try
@@ -76,12 +81,15 @@ namespace Windows_AI_Assistant.Classes
                 foreach (ChatMessageContentPart contentPart in completion.Content)
                     ret = ret + contentPart.Text + " ";
             }
-            catch (Exception) { new Classes.TextToSpeech().speakWindows("Error querying Groq."); }
+            catch (Exception) 
+			{ 
+				Classes.TextToSpeech.speakWindows("Error querying Groq."); 
+			}
             AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
             return ret.Replace("*", "");
         }
 
-        public String sendToAWAN(String text, String apiKey)
+        public static String sendToAWAN(String text, String apiKey)
 		{
 			try
 			{
@@ -110,7 +118,8 @@ namespace Windows_AI_Assistant.Classes
 				answer = answer.Substring(0, answer.IndexOf("\""));
                 AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
                 return answer.Replace("\\n", "").Replace("*", "");
-			}catch(Exception)
+			}
+			catch(Exception)
 			{
 				try
 				{
@@ -141,7 +150,7 @@ namespace Windows_AI_Assistant.Classes
 				}
 				catch (Exception)
 				{
-					new TextToSpeech().speakWindows("Error querying Awan.");
+					TextToSpeech.speakWindows("Error querying Awan.");
 					return "";
 				}
 			}

@@ -8,9 +8,9 @@ using WAIA_Plugin;
 
 namespace Windows_AI_Assistant.Classes
 {
-	public class Plugin
+	public static class Plugin
 	{
-		public String RunPlugin(String text, String dll, String[] parameter)
+		public static String RunPlugin(String text, String dll, String[] parameter)
 		{
 			var DLL = Assembly.LoadFile(Path.GetDirectoryName( Assembly.GetExecutingAssembly().Location)+"\\"+dll);
 

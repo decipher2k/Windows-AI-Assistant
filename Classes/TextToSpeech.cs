@@ -10,9 +10,9 @@ using OpenAI;
 
 namespace Windows_AI_Assistant.Classes
 {
-	public class TextToSpeech
+	public static class TextToSpeech
 	{
-		public void speakElevenlabs(String text, String key, String sVoice)
+		public static void speakElevenlabs(String text, String key, String sVoice)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace Windows_AI_Assistant.Classes
 			}
 		}
 
-		public void speakWindows(String text)
+		public static void speakWindows(String text)
 		{		
 			try
 			{
@@ -44,10 +44,7 @@ namespace Windows_AI_Assistant.Classes
 					synthesizer.SelectVoice(Globals.settings.windowsSpeech.Voice);
 
 				synthesizer.Speak(text);
-				System.Threading.Thread.Sleep(1000);
-				
-
-
+				System.Threading.Thread.Sleep(1000);			
             }
             catch(Exception ex)
 			{

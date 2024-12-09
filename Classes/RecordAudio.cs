@@ -15,7 +15,17 @@ namespace Windows_AI_Assistant.Classes
 	
 		public bool finished=false;
 		public bool running = false;
-		private void waveSource_DataAvailableImpedance(object? sender, WaveInEventArgs e)
+
+        public List<byte> buffer = new List<byte>();
+        DateTime lastUpdate = DateTime.Now;
+        bool started = false;
+        public bool failed = false;
+        bool silence = true;
+        long silenceCount = 0;
+        DateTime lastUpdateTime = DateTime.Now;
+        DateTime recordingStarted = DateTime.Now;
+
+        private void waveSource_DataAvailableImpedance(object? sender, WaveInEventArgs e)
 		{
 			int silenceCount = 0;
 			for (int i = 0; i < e.Buffer.Length; i++)
@@ -35,14 +45,6 @@ namespace Windows_AI_Assistant.Classes
 			waveSource.StartRecording();
 		}
 
-		public List<byte> buffer = new List<byte>();
-		DateTime lastUpdate = DateTime.Now;
-		bool started = false;
-		public bool failed = false;
-        bool silence = true;
-        long silenceCount = 0;
-		DateTime lastUpdateTime = DateTime.Now;
-		DateTime recordingStarted = DateTime.Now;
 		private void waveSource_DataAvailable(object? sender, WaveInEventArgs e)
 		{
 			if ((DateTime.Now - lastUpdateTime).TotalSeconds > 3 && !started)
