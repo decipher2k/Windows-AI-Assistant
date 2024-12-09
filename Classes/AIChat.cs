@@ -51,7 +51,7 @@ namespace Windows_AI_Assistant.Classes
 			try
 			{
                 AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
-                ChatClient client = new ChatClient("gpt-4o", apiKey);
+                ChatClient client = new ChatClient("gpt-4o", new System.ClientModel.ApiKeyCredential(apiKey));
 
 				ChatCompletion completion = client.CompleteChat(text);
 				
@@ -63,7 +63,25 @@ namespace Windows_AI_Assistant.Classes
             return ret.Replace("*","");
 		}
 
-		public String sendToAWAN(String text, String apiKey)
+        public String sendToGroq(string text, String apiKey, String model)
+        {
+            String ret = "";
+            try
+            {
+                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+                ChatClient client = new ChatClient(model, new System.ClientModel.ApiKeyCredential(apiKey), new OpenAI.OpenAIClientOptions() { Endpoint = new Uri("https://api.groq.com/openai/v1") });
+
+                ChatCompletion completion = client.CompleteChat(text);
+
+                foreach (ChatMessageContentPart contentPart in completion.Content)
+                    ret = ret + contentPart.Text + " ";
+            }
+            catch (Exception) { new Classes.TextToSpeech().speakWindows("Error querying Groq."); }
+            AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+            return ret.Replace("*", "");
+        }
+
+        public String sendToAWAN(String text, String apiKey)
 		{
 			try
 			{

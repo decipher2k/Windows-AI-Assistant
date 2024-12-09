@@ -41,6 +41,7 @@ namespace Windows_AI_Assistant.Data
 		public enum AIChat
 		{
 			ChatGPT,
+			Groq,
 			Ollama,
 			Awan
 		}

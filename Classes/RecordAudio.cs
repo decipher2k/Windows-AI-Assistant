@@ -86,7 +86,7 @@ namespace Windows_AI_Assistant.Classes
 
 			if (silenceCount > 35)
 			{
-				if ((DateTime.Now - recordingStarted).TotalSeconds < 2)
+				if ((DateTime.Now - recordingStarted).TotalSeconds < 1)
 				{
 					failed = true;
 				}

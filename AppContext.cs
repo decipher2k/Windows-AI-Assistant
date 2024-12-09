@@ -186,7 +186,11 @@ namespace Windows_AI_Assistant
 									if (Globals.settings.awan.APIKey != "")
 										result = new Classes.AIChat().sendToAWAN(text, Globals.settings.awan.APIKey);
 									break;
-							}
+								case Data.Settings.AIChat.Groq:
+                                    if (Globals.settings.groq.APIKey != "")
+                                        result = new Classes.AIChat().sendToGroq(text, Globals.settings.groq.APIKey, Globals.settings.groq.LLMModel);
+                                    break;
+                            }
 
 							switch (Globals.settings.textToSpeech)
 							{
