@@ -16,9 +16,9 @@
   </li>
   </ul>
 <br><br>
-<h2>Download:</h2><br>
+<h2>Download:</h2>
 https://github.com/decipher2k/Windows-AI-Assistant/releases<br><br>
-<h1>Usage:</h1><br>
+<h1>Usage:</h1>
 <br>
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
 Setup the API keys and other information using the "Settings" buttons.<br>
@@ -32,11 +32,11 @@ https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219
 <br>
 How to remove the microphone tray icon:<br>
 https://github.com/valinet/ExplorerPatcher<br>
-<h3>Keyword:</h3><br>
+<h3>Keyword:</h3>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
-<h3>Keyword Detection:</h3><br>
+<h3>Keyword Detection:</h3>
 There is now a keyword detection using Windows Speech Recognition.<br>
 It can be good to use it in a noisy environment, like when watching TV or listening to music to prevent speech recognition quota draining.<br>
 Keyword detection sets the keyword to "Computer", which can't be changed. Reliability differes between systems.<br><br>
