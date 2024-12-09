@@ -65,7 +65,7 @@ namespace Windows_AI_Assistant.Functions
 					count++;
 				}
 			}
-			if ((dbA / count) > 3980)
+			if ((dbA / count) > 3985)
 				silence = false;
 			else
 				silence = true;
@@ -88,7 +88,7 @@ namespace Windows_AI_Assistant.Functions
 
 			if (silenceCount > 35)
 			{
-				if ((DateTime.Now - recordingStarted).TotalSeconds < 1)
+				if ((DateTime.Now - recordingStarted).TotalSeconds < 1.3)
 				{
 					failed = true;
 				}
