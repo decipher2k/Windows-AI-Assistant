@@ -164,7 +164,7 @@ You may need to set a voice according to your language in the settings.
 -ChatGPT (about 10$/month)<br>
 -Groq LLM API (free, usage limits, fast) <br>
 -Ollama (free, requires good hardware, slow)<br>
--Awan(free, usage limits, slow)<br>
+-Awan (free, usage limits, slow)<br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
 -Microsoft Windows Speech (free, average quality)<br>
