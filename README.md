@@ -103,7 +103,7 @@ The following columns are there to parametrize the plugin. They do differ from p
 <b>Only use Plugins from trusted sources</b>
 <br><br>
 <h2>The [TEXT] variable</h2>
-Whenever you enter the token [TEXT] in a parameter of the commands section, the token will be replace with the text that has been said after the command.<br>
+Whenever you enter the token [TEXT] in a parameter of the commands section, the token will be replaced with the text that has been said after the command.<br>
 For example "Create a note: Shopping" using the key sentence "Create a note: [TEXT]" will pass the word "Shopping" instead of the [TEXT] token to a plugin, a webhook, or a program.<br>
 This will only work with Speech Recognition commands, not with Chat AI ones.<br>
 
