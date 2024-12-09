@@ -38,7 +38,7 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 <br>
 <h3>Keyword Detection:</h3>
 There is now a keyword detection using Windows Speech Recognition.<br>
-It can be good to use it in a noisy environment, like when watching TV or listening to music to prevent speech recognition quota draining.<br>
+It can be good to use it in a noisy environment, like when watching TV or listening to music, to prevent speech recognition quota draining.<br>
 Keyword detection sets the keyword to "Computer", which can't be changed. Reliability differes between systems.<br><br>
 Recognition quality can be enhaced by training:<br>
 https://www.tenforums.com/tutorials/120674-add-delete-change-speech-recognition-profiles-windows-10-a.html<br>
