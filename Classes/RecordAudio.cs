@@ -42,6 +42,7 @@ namespace Windows_AI_Assistant.Classes
         bool silence = true;
         long silenceCount = 0;
 		DateTime lastUpdateTime = DateTime.Now;
+		DateTime recordingStarted = DateTime.Now;
 		private void waveSource_DataAvailable(object? sender, WaveInEventArgs e)
 		{
 			if ((DateTime.Now - lastUpdateTime).TotalSeconds > 3 && !started)
@@ -71,6 +72,7 @@ namespace Windows_AI_Assistant.Classes
 			{
 				started = true;
 				running = true;
+				recordingStarted = DateTime.Now;
 			}
 			else
 			{
@@ -84,16 +86,23 @@ namespace Windows_AI_Assistant.Classes
 
 			if (silenceCount > 35)
 			{
-				running = false;
-				waveSource.StopRecording();
-				waveSource.Dispose();
-				if (File.Exists("output.wav"))
-					File.Delete("output.wav");
-				WaveFileWriter waveFile = new WaveFileWriter(@"output.wav", waveSource.WaveFormat);
-				waveFile.Write(buffer.ToArray(), 0, buffer.Count());
+				if ((DateTime.Now - recordingStarted).TotalSeconds < 2)
+				{
+					failed = true;
+				}
+				else
+				{
+					running = false;
+					waveSource.StopRecording();
+					waveSource.Dispose();
+					if (File.Exists("output.wav"))
+						File.Delete("output.wav");
+					WaveFileWriter waveFile = new WaveFileWriter(@"output.wav", waveSource.WaveFormat);
+					waveFile.Write(buffer.ToArray(), 0, buffer.Count());
 
-				waveFile.Close();
-				finished = true;
+					waveFile.Close();
+					finished = true;
+				}
 			}
 		}
 	}
