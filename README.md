@@ -132,6 +132,7 @@ Please note: The "voice" field referes to the name of the voice, not to its ID.<
 <br>
 <h3>Speech Recognition:</h3><br>
 -Microsoft Azure (5h/month are free)<br>
+-Groq (free, usage limits)
 <br>
 <h3>AI Chat - one of the following:</h3><br>
 -Ollama (free, requires good hardware, slow)<br>
