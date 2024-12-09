@@ -40,11 +40,11 @@ Recognition quality can be enhaced by training:<br>
 https://www.tenforums.com/tutorials/120674-add-delete-change-speech-recognition-profiles-windows-10-a.html<br>
 To access the control panel in Windows 11, hit the "Windows" key and enter "control panel".<br>
 <br>
-<h3>Windows Sound Recording Level</h3>
+<h3>Windows Sound Recording Level:</h3>
 If the voice recognition is active too often without you saying anything, you can try to adjust the microphone recording level in the Windows settings, or use the keyword detection to prevent draining of the cloud voice recognition quota.
 <br>
 <br>
-<h3>Suggested Services</h3>
+<h3>Suggested Services:</h3>
 I had good experiences with the following setup:<br><br>
 Voice recognition: Windows Azure. Make sure to adjust the microphone recording level to prevent quota draining.<br>
 Chat AI: Groq ist the fastest one.<br>
