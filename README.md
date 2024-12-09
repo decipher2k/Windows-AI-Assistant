@@ -18,7 +18,7 @@
 <br><br>
 <h2>Download:</h2>
 https://github.com/decipher2k/Windows-AI-Assistant/releases<br><br>
-<h1>Usage:</h1>
+<h1>Usage</h1>
 <br>
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
 Setup the API keys and other information using the "Settings" buttons.<br>
