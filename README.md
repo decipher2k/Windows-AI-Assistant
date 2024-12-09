@@ -122,7 +122,7 @@ Groq can be found at https://groq.com<br>
 The API keys can be created at https://console.groq.com/keys <br>
 <br>
 <h1>AI Chat</h1>
-<h3>ChatGPT:</h3><br>
+<h3>ChatGPT:</h3>
 https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b35aa00 <br>
 <b>You will need ChatGPT API credits, not ChatGPT Plus!</b><br>
 <br>
@@ -130,7 +130,7 @@ https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b3
 Groq can be found at https://groq.com <br>
 The API keys can be created at https://console.groq.com/keys <br>
 <br><br>
-<h3>Ollama:</h3><br>
+<h3>Ollama:</h3>
 (https://ollama.com/)<br>
 Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) is required.<br>
 Low quality models (3B etc.) will require 4GB VRAM.<br>
@@ -139,13 +139,13 @@ Good models (70B) will require 24GB VRAM and more.<br><br>
 Set the model name and a system prompt in the settings window.<br>
 The model will be automatically downloaded if it does not exist yet.<br>
 You can find models at https://ollama.com/search <br><br>
-<h3>Awan:</h3><br>
+<h3>Awan:</h3>
 (https://www.awanllm.com)<br>
 Awan is a free API for LLAMA models.
 <br>
 <br>
 <h1>Speech synthesis</h1>
-<h3>Elevenlabs:</h3><br>
+<h3>Elevenlabs:</h3>
 Log in to your ElevenLabs account.<br>
 In the top-right corner, click on your profile icon > Profile.<br>
 Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
