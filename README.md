@@ -4,17 +4,21 @@
 <b>A voice-controlled AI Assistant for Microsoft Windows</b><br><br>
 <a href="https://www.kickstarter.com/projects/r0ulaboard/windows-ai-assistant">Support WAIA on Kickstarter</a>
 <h2>Features:</h2><br>
--Seamlessly integrates with ChatGPT, Groq, Ollama and Awan.<br>
--Advanced voice recognition powered by Azure speech services<br>
--Voice controlled interaction with Windows:<br>
---Plugin system<br>
---Program starter using key sentences<br>
---Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
-  (untested)
+<ul>
+<li>Seamlessly integrates with ChatGPT, Groq, Ollama and Awan</li>
+<li>Advanced voice recognition powered by Azure speech services</li>
+<li>Voice controlled interaction with Windows</li>
+<ul><li>Plugin system</li>
+<li>Program starter using key sentences</li>
+<li>Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
+  (untested)</li>
+</ul>
+  </li>
+  </ul>
 <br><br>
-<h2>Download:</h2><br>
+<h2>Download:</h2>
 https://github.com/decipher2k/Windows-AI-Assistant/releases<br><br>
-<h1>Usage:</h1><br>
+<h1>Usage</h1>
 <br>
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
 Setup the API keys and other information using the "Settings" buttons.<br>
@@ -28,15 +32,29 @@ https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219
 <br>
 How to remove the microphone tray icon:<br>
 https://github.com/valinet/ExplorerPatcher<br>
-<h3>Keyword:</h3><br>
+<h3>Keyword:</h3>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
-<h3>Keyword Detection:</h3><br>
+<h3>Keyword Detection:</h3>
 There is now a keyword detection using Windows Speech Recognition.<br>
 It can be good to use it in a noisy environment, like when watching TV or listening to music to prevent speech recognition quota draining.<br>
-Keyword detection sets the keyword to "Windows", which can't be changed. Reliability differes between systems.<br>
+Keyword detection sets the keyword to "Computer", which can't be changed. Reliability differes between systems.<br><br>
+Recognition quality can be enhaced by training:<br>
+https://www.tenforums.com/tutorials/120674-add-delete-change-speech-recognition-profiles-windows-10-a.html<br>
+To access the control panel in Windows 11, hit the "Windows" key and enter "control panel".<br>
 <br>
+<h3>Windows Sound Recording Level:</h3>
+If the voice recognition is active too often without you saying anything, you can try to adjust the microphone recording level in the Windows settings, or use the keyword detection to prevent draining of the cloud voice recognition quota.
+<br>
+<br>
+<h3>Suggested Services:</h3>
+I had good experiences with the following setup.<br>
+All suggested services are available for free.<br>
+<br>
+Voice recognition: Groq. Make sure to adjust the microphone recording level to prevent quota draining.<br>
+Chat AI: Groq ist the fastest one.<br>
+Voice Output: Windows Speech until Google Cloud AI has been implemented.<br>
 <br>
 <h2>Program Starter</h2>
 The program starter can be configured using the "Commands" button.<br>
@@ -104,7 +122,7 @@ Groq can be found at https://groq.com<br>
 The API keys can be created at https://console.groq.com/keys <br>
 <br>
 <h1>AI Chat</h1>
-<h3>ChatGPT:</h3><br>
+<h3>ChatGPT:</h3>
 https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b35aa00 <br>
 <b>You will need ChatGPT API credits, not ChatGPT Plus!</b><br>
 <br>
@@ -112,7 +130,7 @@ https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b3
 Groq can be found at https://groq.com <br>
 The API keys can be created at https://console.groq.com/keys <br>
 <br><br>
-<h3>Ollama:</h3><br>
+<h3>Ollama:</h3>
 (https://ollama.com/)<br>
 Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) is required.<br>
 Low quality models (3B etc.) will require 4GB VRAM.<br>
@@ -121,18 +139,18 @@ Good models (70B) will require 24GB VRAM and more.<br><br>
 Set the model name and a system prompt in the settings window.<br>
 The model will be automatically downloaded if it does not exist yet.<br>
 You can find models at https://ollama.com/search <br><br>
-<h3>Awan:</h3><br>
+<h3>Awan:</h3>
 (https://www.awanllm.com)<br>
 Awan is a free API for LLAMA models.
 <br>
 <br>
-<h1>Speech synthesis</h1>
-<h3>Elevenlabs:</h3><br>
-Log in to your ElevenLabs account.<br>
+<h1>Speech Synthesis</h1>
+<h3>Elevenlabs:</h3>
+Log in to your Elevenlabs account.<br>
 In the top-right corner, click on your profile icon > Profile.<br>
 Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
 Please note: The "voice" field referes to the name of the voice, not to its ID.<br>
-<h3>Windows Speech Synthesis</h3>
+<h3>Windows Speech Synthesis:</h3>
 Average Quality.<br>
 You may need to set a voice according to your language in the settings.
 <br>
@@ -140,7 +158,7 @@ You may need to set a voice according to your language in the settings.
 <br>
 <h3>Speech Recognition - one of the following:</h3><br>
 -Microsoft Azure (5h/month are free)<br>
--Groq (free, usage limits, fast)
+-Groq (free, usage limits, fast)<br>
 <br>
 <h3>AI Chat - one of the following:</h3><br>
 -ChatGPT (about 10$/month)<br>
