@@ -16,7 +16,8 @@ namespace Windows_AI_Assistant.Classes
 			String ret = "";
 			try
 			{
-				return Task.Run(async Task<String> () => {
+                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+                return Task.Run(async Task<String> () => {
 
 					var uri = new Uri("http://localhost:11434");
 					var ollama = new OllamaApiClient(uri);
@@ -25,22 +26,23 @@ namespace Windows_AI_Assistant.Classes
 					var mdl = ollama.ListLocalModelsAsync().Result;
 					if (ollama.ListLocalModelsAsync().Result.Where(a => a.Name.Contains(model)).Count() == 0)
 					{
-						new TextToSpeech().speakWindows("Pulling AI model.");
+						new TextToSpeech().speakWindows("Pulling AI model. This may take a while.");
 
 						await foreach (var status in ollama.PullModelAsync(model)) ;
 						new TextToSpeech().speakWindows("Finished pulling AI model.");
 						return "";
 					}
-
-					var chat = new Chat(ollama, systemPrompt);
+                    AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+                    var chat = new Chat(ollama, systemPrompt);
 					ollama.SelectedModel = model;
-
-					ret = chat.SendAsync(text).StreamToEndAsync().Result;
-					return ret;
+                    ret = chat.SendAsync(text).StreamToEndAsync().Result;
+                    AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+                    return ret.Replace("*","");
 				}).Result;
 			}
 			catch (Exception) { new Classes.TextToSpeech().speakWindows("Error querying Ollama."); }
-			return ret.Replace("*","");
+            AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+            return ret.Replace("*","");
 		}
 
 		public String sendToChatGPT(string text, String apiKey)
@@ -48,7 +50,8 @@ namespace Windows_AI_Assistant.Classes
 			String ret = "";
 			try
 			{
-				ChatClient client = new ChatClient("gpt-4o", apiKey);
+                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+                ChatClient client = new ChatClient("gpt-4o", apiKey);
 
 				ChatCompletion completion = client.CompleteChat(text);
 				
@@ -56,7 +59,8 @@ namespace Windows_AI_Assistant.Classes
 					ret = ret + contentPart.Text + " ";
 			}
 			catch (Exception) { new Classes.TextToSpeech().speakWindows("Error querying ChatGPT."); }
-			return ret.Replace("*","");
+            AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+            return ret.Replace("*","");
 		}
 
 		public String sendToAWAN(String text, String apiKey)
@@ -68,8 +72,8 @@ namespace Windows_AI_Assistant.Classes
 				template = template.Replace("MODEL", Globals.settings.awan.Model);
 				HttpClient client = new HttpClient();
 				var content = new StringContent(template);//FormUrlEncodedContent(values);
-
-				using var request = new HttpRequestMessage(HttpMethod.Post, "https://api.awanllm.com/v1/chat/completions");
+                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+                using var request = new HttpRequestMessage(HttpMethod.Post, "https://api.awanllm.com/v1/chat/completions");
 				request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 				client.DefaultRequestHeaders
 				  .Accept
@@ -86,7 +90,8 @@ namespace Windows_AI_Assistant.Classes
 				String answer = responseString.Substring(responseString.IndexOf("\"content\":\"") + "\"content\":\"".Length);
 				answer = answer.Replace("\\\"", "");
 				answer = answer.Substring(0, answer.IndexOf("\""));
-				return answer.Replace("\\n", "").Replace("*", "");
+                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+                return answer.Replace("\\n", "").Replace("*", "");
 			}catch(Exception)
 			{
 				try

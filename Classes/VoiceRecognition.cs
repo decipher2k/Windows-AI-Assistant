@@ -24,18 +24,23 @@ namespace Windows_AI_Assistant.Classes
 
 			try
 			{
-				if(Globals.settings.useWindowsSpeech)
-				{
-                    Recording recording=new Recording();
-					recording.Show();
+				String keywordRecognized = "";
 
-                    String ret = recognize(subscriptionKey, region, language);
-					recording.Close();
-				}
+                if (Globals.settings.useWindowsSpeech)
+				{                  
+					keywordRecognized=recognizeWindows();
+
+                    if (keywordRecognized == Globals.settings.keyword)
+                        return recognize(subscriptionKey, region, language);
+                    else
+                        return "";
+                }
 				else
 				{
-					return recognize(subscriptionKey, region,language);
-				}
+                    return recognize(subscriptionKey, region, language);
+                }
+				
+				
 				
 			}
 			catch (Exception ex) 
@@ -51,21 +56,27 @@ namespace Windows_AI_Assistant.Classes
 			string ret = "";
 			if (Globals.settings.useWindowsSpeech)
 			{
-				
+                String keywordRecognized = "";
+
 			
-                if (AppContext.running)
-				{
-					AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_active.ico");
-					ret = doRecognizeGroq(subscriptionKey, language);
-					AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+				keywordRecognized = recognizeWindows();
+                AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_active.ico");
+				if (keywordRecognized == Globals.settings.keyword)
+				{                    
+					ret= doRecognizeGroq(subscriptionKey, language);                    
+                    return ret;
 				}
+				else
+				{
+					return "";
+				}
+                
             }
 			else
-			{
-				ret= doRecognizeGroq(subscriptionKey,language);
+			{                
+                ret = doRecognizeGroq(subscriptionKey,language);             
+                return ret;
 			}
-			return ret;
-
 		}
 
 		public String recognizeWindows()
@@ -106,13 +117,15 @@ namespace Windows_AI_Assistant.Classes
 
                 while (recordAudio.finished == false && !recordAudio.failed)
 				{
+					if(recordAudio.running)
+                        AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_active.ico");
                     System.Threading.Thread.Sleep(100);
 				}
-                
+          
 
                 if (!recordAudio.failed)
 				{
-                    AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
+                    
                     MemoryStream memoryStream = new MemoryStream(File.ReadAllBytes("output.wav"));
 
 					using MultipartFormDataContent content = new MultipartFormDataContent();
@@ -134,14 +147,16 @@ namespace Windows_AI_Assistant.Classes
 				}
 				else
 				{
-					return "";
+                    AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+                    return "";
 				}
 			}
 			catch (Exception ex)
 			{
 				new TextToSpeech().speakWindows("Error recognizing query.");
 			}
-			return "";
+            AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
+            return "";
 		}
 
 		private String recognize(String subscriptionKey, String region, String language)

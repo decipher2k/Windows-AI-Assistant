@@ -14,7 +14,7 @@ namespace Windows_AI_Assistant.Classes
 		WaveInEvent waveSource = new WaveInEvent();
 	
 		public bool finished=false;
-
+		public bool running = false;
 		private void waveSource_DataAvailableImpedance(object? sender, WaveInEventArgs e)
 		{
 			int silenceCount = 0;
@@ -70,7 +70,7 @@ namespace Windows_AI_Assistant.Classes
 			if (!silence)
 			{
 				started = true;
-
+				running = true;
 			}
 			else
 			{
@@ -84,6 +84,7 @@ namespace Windows_AI_Assistant.Classes
 
 			if (silenceCount > 35)
 			{
+				running = false;
 				waveSource.StopRecording();
 				waveSource.Dispose();
 				if (File.Exists("output.wav"))
