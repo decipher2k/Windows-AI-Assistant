@@ -31,13 +31,13 @@ namespace Windows_AI_Assistant.Classes
 					keywordRecognized=recognizeWindows();
 
                     if (keywordRecognized == Globals.settings.keyword)
-                        return recognize(subscriptionKey, region, language);
+                        return doRecognizeAzure(subscriptionKey, region, language);
                     else
                         return "";
                 }
 				else
 				{
-                    return recognize(subscriptionKey, region, language);
+                    return doRecognizeAzure(subscriptionKey, region, language);
                 }
 				
 				
@@ -159,7 +159,7 @@ namespace Windows_AI_Assistant.Classes
             return "";
 		}
 
-		private String recognize(String subscriptionKey, String region, String language)
+		private String doRecognizeAzure(String subscriptionKey, String region, String language)
 		{
 			try
 			{
@@ -186,6 +186,10 @@ namespace Windows_AI_Assistant.Classes
 			{
 				new TextToSpeech().speakWindows("Microsoft Azure quota exceeded.");
 			}
+			else
+			{
+                new TextToSpeech().speakWindows("Microsoft Azure error.");
+            }
 		}
 	}
 }
