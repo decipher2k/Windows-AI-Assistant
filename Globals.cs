@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Windows_AI_Assistant.Classes;
+using Windows_AI_Assistant.Functions;
 using Windows_AI_Assistant.Data;
 
 namespace Windows_AI_Assistant

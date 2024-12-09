@@ -10,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 using ElevenLabs;
 using ElevenLabs.TextToSpeech;
 using System.Diagnostics;
-using Windows_AI_Assistant.Classes;
+using Windows_AI_Assistant.Functions;
 using NAudio.Utils;
 using Windows_AI_Assistant.Data;
 using Microsoft.Win32;

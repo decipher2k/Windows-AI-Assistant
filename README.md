@@ -155,7 +155,7 @@ Please note that prices are dependent on real usage and may vary.<br><br>
 To write a plugin, add "WAIA Plugin.dll" to a new Visual Studio 2022 DotNet 8.0 class library project, implement the interface IWAIAPlugin and the following method:<br><br>      
 public String RunPlugin(String text);<br><br>
 The parameter "text" is the spoken input.<br><br>
-The return value of the function will be sent to the speech synthesis engine.
+The return value of the Functions will be sent to the speech synthesis engine.
 
 
 

@@ -6,7 +6,7 @@ using System.Net;
 using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
-using Windows_AI_Assistant.Classes;
+using Windows_AI_Assistant.Functions;
 using Windows_AI_Assistant.Data;
 
 namespace Windows_AI_Assistant
@@ -98,7 +98,7 @@ namespace Windows_AI_Assistant
 			{
 				if(text.ToLower().Contains(plugin.Token.ToLower()) &&  plugin.Token!="")
 				{
-					String ret=Classes.Plugin.RunPlugin(text,plugin.DLL,plugin.Parameter);
+					String ret=Functions.Plugin.RunPlugin(text,plugin.DLL,plugin.Parameter);
 					if (ret != null && ret != "")
 					{
 						switch (Globals.settings.textToSpeech)
@@ -106,12 +106,12 @@ namespace Windows_AI_Assistant
 							case Data.Settings.TextToSpeech.Elevenlabs:
 								{
 									if (Globals.settings.elevenlabs.APIKey != "" && Globals.settings.elevenlabs.Voice != "")
-										Classes.TextToSpeech.speakElevenlabs(ret, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
+										Functions.TextToSpeech.speakElevenlabs(ret, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
 									break;
 								}
 							case Data.Settings.TextToSpeech.Windows:
 								{
-									Classes.TextToSpeech.speakWindows(ret);
+									Functions.TextToSpeech.speakWindows(ret);
 									break;
 								}
 						}
@@ -149,13 +149,13 @@ namespace Windows_AI_Assistant
 						case Data.Settings.SpeechToText.Azure:
 							{
 								if (Globals.settings.azure.APIKey != "" && Globals.settings.azure.Region != "" && Globals.settings.azure.Language != "")
-									text = new Classes.VoiceRecognition().recognizeAzure(Globals.settings.azure.APIKey, Globals.settings.azure.Region, Globals.settings.azure.Language);
+									text = new Functions.VoiceRecognition().recognizeAzure(Globals.settings.azure.APIKey, Globals.settings.azure.Region, Globals.settings.azure.Language);
 								break;
 							}
 						case Data.Settings.SpeechToText.Groq:
 							{
 								if (Globals.settings.groq.APIKey != "" && Globals.settings.groq.Language != "")
-									text = new Classes.VoiceRecognition().recognizeGroq(Globals.settings.groq.APIKey, Globals.settings.groq.Language);
+									text = new Functions.VoiceRecognition().recognizeGroq(Globals.settings.groq.APIKey, Globals.settings.groq.Language);
 								break;
 							}
 					}
@@ -179,22 +179,22 @@ namespace Windows_AI_Assistant
 								case Data.Settings.AIChat.Ollama:
 									{
 										if (Globals.settings.ollama.SystemPrompt != "" && Globals.settings.ollama.Model != "")
-											result = Classes.AIChat.sendToOllama(text, Globals.settings.ollama.SystemPrompt, Globals.settings.ollama.Model);
+											result = Functions.AIChat.sendToOllama(text, Globals.settings.ollama.SystemPrompt, Globals.settings.ollama.Model);
 										break;
 									}
 								case Data.Settings.AIChat.ChatGPT:
 									{
 										if (Globals.settings.chatGPT.APIKey != "")
-											result = Classes.AIChat.sendToChatGPT(text, Globals.settings.chatGPT.APIKey);
+											result = Functions.AIChat.sendToChatGPT(text, Globals.settings.chatGPT.APIKey);
 										break;
 									}
 								case Data.Settings.AIChat.Awan:
 									if (Globals.settings.awan.APIKey != "")
-										result = Classes.AIChat.sendToAWAN(text, Globals.settings.awan.APIKey);
+										result = Functions.AIChat.sendToAWAN(text, Globals.settings.awan.APIKey);
 									break;
 								case Data.Settings.AIChat.Groq:
                                     if (Globals.settings.groq.APIKey != "")
-                                        result = Classes.AIChat.sendToGroq(text, Globals.settings.groq.APIKey, Globals.settings.groq.LLMModel);
+                                        result = Functions.AIChat.sendToGroq(text, Globals.settings.groq.APIKey, Globals.settings.groq.LLMModel);
                                     break;
                             }
 
@@ -203,12 +203,12 @@ namespace Windows_AI_Assistant
 								case Data.Settings.TextToSpeech.Elevenlabs:
 									{
 										if (Globals.settings.elevenlabs.APIKey != "" && Globals.settings.elevenlabs.Voice != "")
-											Classes.TextToSpeech.speakElevenlabs(result, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
+											Functions.TextToSpeech.speakElevenlabs(result, Globals.settings.elevenlabs.APIKey, Globals.settings.elevenlabs.Voice);
 										break;
 									}
 								case Data.Settings.TextToSpeech.Windows:
 									{
-										Classes.TextToSpeech.speakWindows(result);
+										Functions.TextToSpeech.speakWindows(result);
 										break;
 									}
 							}

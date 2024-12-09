@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WAIA_Plugin;
 
-namespace Windows_AI_Assistant.Classes
+namespace Windows_AI_Assistant.Functions
 {
 	public static class Plugin
 	{

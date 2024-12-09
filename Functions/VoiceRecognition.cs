@@ -13,7 +13,7 @@ using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Net.Http.Headers;
 
-namespace Windows_AI_Assistant.Classes
+namespace Windows_AI_Assistant.Functions
 {
 	public class VoiceRecognition
 	{
@@ -40,7 +40,7 @@ namespace Windows_AI_Assistant.Classes
 			}
 			catch (Exception ex) 
 			{ 
-				Classes.TextToSpeech.speakWindows("Error recognizing speech."); 
+				Functions.TextToSpeech.speakWindows("Error recognizing speech."); 
 			}
 
 			return "";

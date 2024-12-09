@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-namespace Windows_AI_Assistant.Classes
+namespace Windows_AI_Assistant.Functions
 {
 	public class RecordAudio
 	{

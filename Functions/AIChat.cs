@@ -7,7 +7,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Windows_AI_Assistant.Classes
+namespace Windows_AI_Assistant.Functions
 {
 	public static class AIChat
 	{
@@ -40,7 +40,7 @@ namespace Windows_AI_Assistant.Classes
 			}
 			catch (Exception) 
 			{ 
-				Classes.TextToSpeech.speakWindows("Error querying Ollama."); 
+				Functions.TextToSpeech.speakWindows("Error querying Ollama."); 
 			}
 
             AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
@@ -62,7 +62,7 @@ namespace Windows_AI_Assistant.Classes
 			}
 			catch (Exception) 
 			{ 
-				Classes.TextToSpeech.speakWindows("Error querying ChatGPT."); 
+				Functions.TextToSpeech.speakWindows("Error querying ChatGPT."); 
 			}
             AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
             return ret.Replace("*","");
@@ -83,7 +83,7 @@ namespace Windows_AI_Assistant.Classes
             }
             catch (Exception) 
 			{ 
-				Classes.TextToSpeech.speakWindows("Error querying Groq."); 
+				Functions.TextToSpeech.speakWindows("Error querying Groq."); 
 			}
             AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
             return ret.Replace("*", "");

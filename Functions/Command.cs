@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows_AI_Assistant.Data;
 
-namespace Windows_AI_Assistant.Classes
+namespace Windows_AI_Assistant.Functions
 {
 	public static class Command
 	{
@@ -26,7 +26,7 @@ namespace Windows_AI_Assistant.Classes
 			}
 			catch (Exception ex) 
 			{ 
-				Classes.TextToSpeech.speakWindows("Error while starting the program."); }
+				Functions.TextToSpeech.speakWindows("Error while starting the program."); }
 		}
 
 		public static void openURL(String url, String GetPost, String parameter, String text)
