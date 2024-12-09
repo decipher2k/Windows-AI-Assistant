@@ -44,6 +44,12 @@ To access the control panel in Windows 11, hit the "Windows" key and enter "cont
 If the voice recognition is active too often without you saying anything, you can try to adjust the microphone recording level in the Windows settings, or use the keyword detection to prevent draining of the cloud voice recognition quota.
 <br>
 <br>
+<h3>Suggested Services</h3>
+I had good experiences with the following setup:<br>
+Voice recognition: Windows Azure. Make sure to adjust the microphone recording level to prevent quota draining.<br>
+Chat AI: Groq ist the fastest one.<br>
+Voice Output: Windows Speech until Google Cloud AI has been implemented<br>
+<br>
 <h2>Program Starter</h2>
 The program starter can be configured using the "Commands" button.<br>
 This is an example for starting Windows explorer:<br><br>
