@@ -48,7 +48,7 @@ If the voice recognition is active too often without you saying anything, you ca
 I had good experiences with the following setup:<br><br>
 Voice recognition: Windows Azure. Make sure to adjust the microphone recording level to prevent quota draining.<br>
 Chat AI: Groq ist the fastest one.<br>
-Voice Output: Windows Speech until Google Cloud AI has been implemented<br>
+Voice Output: Windows Speech until Google Cloud AI has been implemented.<br>
 <br>
 <h2>Program Starter</h2>
 The program starter can be configured using the "Commands" button.<br>
