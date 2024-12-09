@@ -141,7 +141,7 @@ Please note: The "voice" field referes to the name of the voice, not to its ID.<
 <br>
 <h3>Speech output - one of the following:</h3><br>
 -Microsoft Windows Speech (free, average quality)<br>
--Elevenlabs (about 10$/month, good quality)<br>
+-Elevenlabs (about 10$-20$/month, good quality)<br>
 <br>
 Please note that prices are dependent on real usage and may vary.<br><br>
 <h2>Writing a plugin</h2><br>
