@@ -38,7 +38,10 @@ It can be good to use it in a noisy environment, like when watching TV or listen
 Keyword detection sets the keyword to "Computer", which can't be changed. Reliability differes between systems.<br><br>
 Recognition quality can be enhaced by training:<br>
 https://www.tenforums.com/tutorials/120674-add-delete-change-speech-recognition-profiles-windows-10-a.html<br>
-To access the control panel in Windows 11, hit the "Windows" key and enter "control panel".
+To access the control panel in Windows 11, hit the "Windows" key and enter "control panel".<br>
+<br>
+<h3>Windows Sound Recording Level</h3>
+If the voice recognition is active too often without you saying anything, you can try to adjust the microphone recording level in the Windows settings, or use the keyword detection to prevent draining of the cloud voice recognition quota.
 <br>
 <br>
 <h2>Program Starter</h2>
