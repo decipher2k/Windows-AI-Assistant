@@ -158,8 +158,8 @@ namespace Windows_AI_Assistant
 			Globals.settings.useWindowsSpeech = cbKeywordDetection.Checked;
 			if(cbKeywordDetection.Checked)
 			{
-				tbKeyword.Text = "Windows";
-				Globals.settings.keyword = "Windows";
+				tbKeyword.Text = "Computer";
+				Globals.settings.keyword = "Computer";
 				tbKeyword.Enabled = false;
 			}
 			else
