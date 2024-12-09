@@ -6,7 +6,6 @@
 <h2>Features:</h2><br>
 -Seamlessly integrates with Ollama, ChatGPT and Awan.<br>
 -Advanced voice recognition powered by Azure speech services<br>
--Plugin System<br>
 -Voice controlled interaction with Windows:<br>
 --Plugin system<br>
 --Program starter using key sentences<br>
@@ -14,7 +13,7 @@
   (untested)
 <br><br>
 <h2>Download:</h2><br>
-https://github.com/decipher2k/Windows-AI-Assistant/releases/download/v0.8/Windows.AI.Assistant.zip<br><br>
+https://github.com/decipher2k/Windows-AI-Assistant/releases<br><br>
 <h1>Usage:</h1><br>
 <br>
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
@@ -130,7 +129,7 @@ Please note: The "voice" field referes to the name of the voice, not to its ID.<
 <br>
 <h1>Costs</h1><br>
 <br>
-<h3>Speech Recognition:</h3><br>
+<h3>Speech Recognition - one of the following:</h3><br>
 -Microsoft Azure (5h/month are free)<br>
 -Groq (free, usage limits)
 <br>
