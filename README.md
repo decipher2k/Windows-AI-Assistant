@@ -143,8 +143,7 @@ You may need to set a voice according to your language in the settings.
 <br>
 <h3>Speech Recognition - one of the following:</h3><br>
 -Microsoft Azure (5h/month are free)<br>
--Groq (free, usage limits, fast)
--Windows Speech Recognition (free, low detection rate, fast)<br>
+-Groq (free, usage limits, fast)<br>
 <br>
 <h3>AI Chat - one of the following:</h3><br>
 -ChatGPT (about 10$/month)<br>
