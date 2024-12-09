@@ -49,7 +49,9 @@ If the voice recognition is active too often without you saying anything, you ca
 <br>
 <br>
 <h3>Suggested Services:</h3>
-I had good experiences with the following setup:<br><br>
+I had good experiences with the following setup.<br>
+All suggested services are available for free.<br>
+<br>
 Voice recognition: Groq. Make sure to adjust the microphone recording level to prevent quota draining.<br>
 Chat AI: Groq ist the fastest one.<br>
 Voice Output: Windows Speech until Google Cloud AI has been implemented.<br>
