@@ -4,13 +4,17 @@
 <b>A voice-controlled AI Assistant for Microsoft Windows</b><br><br>
 <a href="https://www.kickstarter.com/projects/r0ulaboard/windows-ai-assistant">Support WAIA on Kickstarter</a>
 <h2>Features:</h2><br>
--Seamlessly integrates with ChatGPT, Groq, Ollama and Awan.<br>
--Advanced voice recognition powered by Azure speech services<br>
--Voice controlled interaction with Windows:<br>
---Plugin system<br>
---Program starter using key sentences<br>
---Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
-  (untested)
+<ul>
+<li>Seamlessly integrates with ChatGPT, Groq, Ollama and Awan.</li>
+<li>Advanced voice recognition powered by Azure speech services</li>
+<li>Voice controlled interaction with Windows</li>
+<ul><li>Plugin system</li>
+<li>Program starter using key sentences</li>
+<li>Webhooks using key sentences for integration with IFTTT (home automation etc.) - https://ifttt.com/ <br>
+  (untested)</li>
+</ul>
+  </li>
+  </ul>
 <br><br>
 <h2>Download:</h2><br>
 https://github.com/decipher2k/Windows-AI-Assistant/releases<br><br>
