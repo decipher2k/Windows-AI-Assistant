@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows_AI_Assistant.Functions;
 using Windows_AI_Assistant.Data;
+using NAudio.Wave;
 
 namespace Windows_AI_Assistant
 {
@@ -31,6 +32,7 @@ namespace Windows_AI_Assistant
 				Visible = true
 			};
 			trayIcon.DoubleClick += TrayIcon_DoubleClick;
+			new System.Threading.Thread(microphoneThread).Start();
 			new System.Threading.Thread(mainThread).Start();
 		}
 
@@ -126,6 +128,12 @@ namespace Windows_AI_Assistant
 
 			return false;
 		}
+
+		void microphoneThread()
+		{
+            WaveInEvent waveSource = new WaveInEvent();
+            waveSource.StartRecording();
+        }
 
 		void mainThread()
 		{

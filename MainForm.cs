@@ -181,13 +181,15 @@ namespace Windows_AI_Assistant
 			{
 				rkApp.DeleteValue("WAIA", false);
 			}
-		}
+            Globals.Save();
+        }
 
-		private void tbLanguage_TextChanged(object sender, EventArgs e)
+        private void tbLanguage_TextChanged(object sender, EventArgs e)
 		{
 			if(tbLanguage.Text!="")
 			{
 				Globals.settings.language = tbLanguage.Text;
+				Globals.Save();
 			}
 		}
 

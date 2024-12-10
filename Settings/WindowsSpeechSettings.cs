@@ -25,6 +25,7 @@ namespace Windows_AI_Assistant.Settings
 			{
 				cbVoice.Items.Add(voice.VoiceInfo.Name);
 			}
+			cbVoice.SelectedText = Globals.settings.windowsSpeech.Voice;
 		}
 
 		private void button1_Click(object sender, EventArgs e)

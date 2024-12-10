@@ -51,7 +51,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(27, 95);
+            label1.Location = new Point(27, 105);
             label1.Name = "label1";
             label1.Size = new Size(157, 25);
             label1.TabIndex = 1;
@@ -62,7 +62,7 @@
             cbVoiceRecognition.DropDownStyle = ComboBoxStyle.DropDownList;
             cbVoiceRecognition.FormattingEnabled = true;
             cbVoiceRecognition.Items.AddRange(new object[] { "Microsoft Azure", "Groq", "Windows Speech Recognition" });
-            cbVoiceRecognition.Location = new Point(27, 123);
+            cbVoiceRecognition.Location = new Point(27, 133);
             cbVoiceRecognition.Name = "cbVoiceRecognition";
             cbVoiceRecognition.Size = new Size(355, 33);
             cbVoiceRecognition.TabIndex = 2;
@@ -71,7 +71,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(27, 179);
+            label2.Location = new Point(27, 189);
             label2.Name = "label2";
             label2.Size = new Size(74, 25);
             label2.TabIndex = 3;
@@ -82,7 +82,7 @@
             cbChatAI.DropDownStyle = ComboBoxStyle.DropDownList;
             cbChatAI.FormattingEnabled = true;
             cbChatAI.Items.AddRange(new object[] { "ChatGPT", "Groq", "Ollama", "Awan" });
-            cbChatAI.Location = new Point(27, 207);
+            cbChatAI.Location = new Point(27, 217);
             cbChatAI.Name = "cbChatAI";
             cbChatAI.Size = new Size(355, 33);
             cbChatAI.TabIndex = 4;
@@ -91,7 +91,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(27, 272);
+            label3.Location = new Point(27, 282);
             label3.Name = "label3";
             label3.Size = new Size(151, 25);
             label3.TabIndex = 5;
@@ -102,7 +102,7 @@
             cbSpeechSynthesis.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSpeechSynthesis.FormattingEnabled = true;
             cbSpeechSynthesis.Items.AddRange(new object[] { "Elevenlabs", "Microsoft Windows Speech" });
-            cbSpeechSynthesis.Location = new Point(27, 300);
+            cbSpeechSynthesis.Location = new Point(27, 310);
             cbSpeechSynthesis.Name = "cbSpeechSynthesis";
             cbSpeechSynthesis.Size = new Size(355, 33);
             cbSpeechSynthesis.TabIndex = 6;
@@ -110,7 +110,7 @@
             // 
             // bnSettingsVoiceRecognition
             // 
-            bnSettingsVoiceRecognition.Location = new Point(388, 123);
+            bnSettingsVoiceRecognition.Location = new Point(388, 133);
             bnSettingsVoiceRecognition.Name = "bnSettingsVoiceRecognition";
             bnSettingsVoiceRecognition.Size = new Size(112, 34);
             bnSettingsVoiceRecognition.TabIndex = 7;
@@ -120,7 +120,7 @@
             // 
             // bnSettingsChatAI
             // 
-            bnSettingsChatAI.Location = new Point(388, 207);
+            bnSettingsChatAI.Location = new Point(388, 217);
             bnSettingsChatAI.Name = "bnSettingsChatAI";
             bnSettingsChatAI.Size = new Size(112, 34);
             bnSettingsChatAI.TabIndex = 8;
@@ -130,7 +130,7 @@
             // 
             // bnSettingsSpeechSynthesis
             // 
-            bnSettingsSpeechSynthesis.Location = new Point(388, 300);
+            bnSettingsSpeechSynthesis.Location = new Point(388, 310);
             bnSettingsSpeechSynthesis.Name = "bnSettingsSpeechSynthesis";
             bnSettingsSpeechSynthesis.Size = new Size(112, 34);
             bnSettingsSpeechSynthesis.TabIndex = 9;
@@ -157,7 +157,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(27, 565);
+            button1.Location = new Point(27, 575);
             button1.Name = "button1";
             button1.Size = new Size(473, 34);
             button1.TabIndex = 12;
@@ -168,7 +168,7 @@
             // cbAutostart
             // 
             cbAutostart.AutoSize = true;
-            cbAutostart.Location = new Point(27, 451);
+            cbAutostart.Location = new Point(27, 461);
             cbAutostart.Name = "cbAutostart";
             cbAutostart.Size = new Size(191, 29);
             cbAutostart.TabIndex = 13;
@@ -180,7 +180,7 @@
             // 
             label5.AutoSize = true;
             label5.Enabled = false;
-            label5.Location = new Point(49, 510);
+            label5.Location = new Point(49, 520);
             label5.Name = "label5";
             label5.Size = new Size(461, 25);
             label5.TabIndex = 15;
@@ -189,7 +189,7 @@
             // cbKeywordDetection
             // 
             cbKeywordDetection.AutoSize = true;
-            cbKeywordDetection.Location = new Point(27, 486);
+            cbKeywordDetection.Location = new Point(27, 496);
             cbKeywordDetection.Name = "cbKeywordDetection";
             cbKeywordDetection.Size = new Size(487, 29);
             cbKeywordDetection.TabIndex = 14;
@@ -200,7 +200,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(27, 366);
+            label6.Location = new Point(27, 376);
             label6.Name = "label6";
             label6.Size = new Size(179, 25);
             label6.TabIndex = 16;
@@ -208,7 +208,7 @@
             // 
             // tbLanguage
             // 
-            tbLanguage.Location = new Point(28, 396);
+            tbLanguage.Location = new Point(28, 406);
             tbLanguage.Name = "tbLanguage";
             tbLanguage.Size = new Size(472, 31);
             tbLanguage.TabIndex = 17;
@@ -218,7 +218,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(520, 623);
+            ClientSize = new Size(520, 631);
             Controls.Add(tbLanguage);
             Controls.Add(label6);
             Controls.Add(label5);
