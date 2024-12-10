@@ -17,7 +17,8 @@ namespace Windows_AI_Assistant
         MainForm mainForm = new MainForm();
         public static NotifyIcon trayIcon=new NotifyIcon();		
 		public static bool running = true;
-	
+		List<Tuple<String, String>> chatHistory = new List<Tuple<String, String>>();
+
 		public AppContext()
 		{			
 			var icon = new System.Drawing.Icon("robot.ico"); // Load an icon for the tray
@@ -187,22 +188,75 @@ namespace Windows_AI_Assistant
 								case Data.Settings.AIChat.Ollama:
 									{
 										if (Globals.settings.ollama.SystemPrompt != "" && Globals.settings.ollama.Model != "")
-											result = Functions.AIChat.sendToOllama(text, Globals.settings.ollama.SystemPrompt, Globals.settings.ollama.Model);
+										{
+											result = Functions.AIChat.sendToOllama(text, Globals.settings.ollama.SystemPrompt, Globals.settings.ollama.Model, chatHistory);
+											if(result!="")
+											{
+                                                if (chatHistory.Count > 3)
+                                                {
+                                                    chatHistory.RemoveAt(0);
+                                                }
+												chatHistory.Add(Tuple.Create(text, result));
+                                            }
+										}
 										break;
 									}
 								case Data.Settings.AIChat.ChatGPT:
 									{
 										if (Globals.settings.chatGPT.APIKey != "")
-											result = Functions.AIChat.sendToChatGPT(text, Globals.settings.chatGPT.APIKey);
+										{                                         
+                                            result = Functions.AIChat.sendToChatGPT(text, Globals.settings.chatGPT.APIKey, chatHistory);
+                                            if (result != "")
+                                            {
+                                                if (chatHistory.Count > 3)
+                                                {
+                                                    chatHistory.RemoveAt(0);
+                                                }
+                                                chatHistory.Add(Tuple.Create(text, result));
+                                            }
+                                        }
 										break;
 									}
 								case Data.Settings.AIChat.Awan:
 									if (Globals.settings.awan.APIKey != "")
-										result = Functions.AIChat.sendToAWAN(text, Globals.settings.awan.APIKey);
+									{
+
+                                        String chatHistoryText = "";
+                                        if (chatHistory.Count > 0)
+                                        {
+                                            chatHistoryText = "Please answer according to the previous conversation. You are the computer, and I am the user. The previous conversation was:";
+                                            foreach (Tuple<String, String> historyItem in chatHistory)
+                                            {
+                                                chatHistoryText += "User: " + historyItem.Item1 + ", computer: " + historyItem.Item2 + ",";
+                                            }
+                                            chatHistoryText = chatHistoryText.Substring(chatHistoryText.Length - 1);
+                                            chatHistoryText = chatHistoryText + ".";
+                                        }
+
+                                        result = Functions.AIChat.sendToAWAN(text, Globals.settings.awan.APIKey, chatHistoryText);
+                                        if (result != "")
+                                        {
+                                            if (chatHistory.Count > 3)
+                                            {
+                                                chatHistory.RemoveAt(0);
+                                            }
+                                            chatHistory.Add(Tuple.Create(text, result));
+                                        }
+                                    }
 									break;
 								case Data.Settings.AIChat.Groq:
-                                    if (Globals.settings.groq.APIKey != "")
-                                        result = Functions.AIChat.sendToGroq(text, Globals.settings.groq.APIKey, Globals.settings.groq.LLMModel);
+									if (Globals.settings.groq.APIKey != "")
+									{
+                                        result = Functions.AIChat.sendToGroq(text, Globals.settings.groq.APIKey, Globals.settings.groq.LLMModel, chatHistory);
+                                        if (result != "")
+                                        {
+                                            if (chatHistory.Count > 3)
+                                            {
+                                                chatHistory.RemoveAt(0);
+                                            }
+                                            chatHistory.Add(Tuple.Create(text, result));
+                                        }
+                                    }
                                     break;
                             }
 

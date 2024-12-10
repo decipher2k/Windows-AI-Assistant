@@ -1,4 +1,5 @@
 ﻿using OllamaSharp;
+using OllamaSharp.Models.Chat;
 using OpenAI.Chat;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Windows_AI_Assistant.Functions
 {
 	public static class AIChat
 	{
-		public static String sendToOllama(string text, String systemPrompt = "you are a helpful assistant.", String model = "llama3")
+		public static String sendToOllama(string text, String systemPrompt, String model, List<Tuple<String, String>> chatHistory)
 		{
 			String ret = "";
 			try
@@ -32,6 +33,23 @@ namespace Windows_AI_Assistant.Functions
 					}
                     AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
                     var chat = new Chat(ollama, systemPrompt);
+
+                    List<OllamaSharp.Models.Chat.Message> messageHistory = new List<OllamaSharp.Models.Chat.Message>();
+                    foreach (Tuple<String, String> chatHistoryItem in chatHistory)
+					{
+						OllamaSharp.Models.Chat.Message messageUser = new OllamaSharp.Models.Chat.Message();
+						messageUser.Role = ChatRole.User;
+						messageUser.Content = chatHistoryItem.Item1;
+						messageHistory.Add(messageUser);
+
+                        OllamaSharp.Models.Chat.Message messageAssistant = new OllamaSharp.Models.Chat.Message();
+                        messageAssistant.Role = ChatRole.Assistant;
+                        messageAssistant.Content = chatHistoryItem.Item2;
+                        messageHistory.Add(messageAssistant);
+                    }
+
+					chat.Messages = messageHistory;
+
 					ollama.SelectedModel = model;
                     ret = chat.SendAsync(text).StreamToEndAsync().Result;
                     AppContext.trayIcon.Icon = new System.Drawing.Icon("robot.ico");
@@ -47,17 +65,25 @@ namespace Windows_AI_Assistant.Functions
             return ret.Replace("*","");
 		}
 
-		public static String sendToChatGPT(string text, String apiKey)
+		public static String sendToChatGPT(string text, String apiKey, List<Tuple<String, String>> chatHistory)
 		{
 			String ret = "";
 			try
 			{
                 AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
                 ChatClient client = new ChatClient("gpt-4o", new System.ClientModel.ApiKeyCredential(apiKey));
+                List<ChatMessage> chatMessages = new List<ChatMessage>();
+                foreach (Tuple<String, String> chatHistoryMessage in chatHistory)
+                {
+                    chatMessages.Add(ChatMessage.CreateUserMessage(chatHistoryMessage.Item1));
+                    chatMessages.Add(ChatMessage.CreateAssistantMessage(chatHistoryMessage.Item2));
+                }
 
-				ChatCompletion completion = client.CompleteChat(text);
-				
-				foreach (ChatMessageContentPart contentPart in completion.Content)
+                ChatMessage userMessageObj = ChatMessage.CreateUserMessage(text);
+                chatMessages.Add(userMessageObj);
+                ChatCompletion completion = client.CompleteChat(chatMessages);
+
+                foreach (ChatMessageContentPart contentPart in completion.Content)
 					ret = ret + contentPart.Text + " ";
 			}
 			catch (Exception) 
@@ -68,15 +94,23 @@ namespace Windows_AI_Assistant.Functions
             return ret.Replace("*","");
 		}
 
-        public static String sendToGroq(string text, String apiKey, String model)
+        public static String sendToGroq(string text, String apiKey, String model, List<Tuple<String, String>> chatHistory)
         {
             String ret = "";
             try
             {
                 AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_thinking.ico");
                 ChatClient client = new ChatClient(model, new System.ClientModel.ApiKeyCredential(apiKey), new OpenAI.OpenAIClientOptions() { Endpoint = new Uri("https://api.groq.com/openai/v1") });
+				List<ChatMessage> chatMessages = new List<ChatMessage>();
+				foreach (Tuple<String, String> chatHistoryMessage in chatHistory)
+				{
+					chatMessages.Add(ChatMessage.CreateUserMessage(chatHistoryMessage.Item1));
+                    chatMessages.Add(ChatMessage.CreateAssistantMessage(chatHistoryMessage.Item2));
+                }
 
-                ChatCompletion completion = client.CompleteChat(text);
+				ChatMessage userMessageObj=ChatMessage.CreateUserMessage(text);
+                chatMessages.Add(userMessageObj);
+                ChatCompletion completion = client.CompleteChat(chatMessages);
 
                 foreach (ChatMessageContentPart contentPart in completion.Content)
                     ret = ret + contentPart.Text + " ";
@@ -89,12 +123,12 @@ namespace Windows_AI_Assistant.Functions
             return ret.Replace("*", "");
         }
 
-        public static String sendToAWAN(String text, String apiKey)
+        public static String sendToAWAN(String text, String apiKey, String chatHistory)
 		{
 			try
 			{
 				String template = File.ReadAllText(".\\awan.txt");
-				template = template.Replace("TOKEN", text);
+				template = template.Replace("TOKEN", chatHistory + " " + text);
 				template = template.Replace("MODEL", Globals.settings.awan.Model);
 				HttpClient client = new HttpClient();
 				var content = new StringContent(template);//FormUrlEncodedContent(values);
