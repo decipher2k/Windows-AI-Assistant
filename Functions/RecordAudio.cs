@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Speech.Recognition;
 
 namespace Windows_AI_Assistant.Functions
 {
@@ -22,8 +23,10 @@ namespace Windows_AI_Assistant.Functions
         public bool failed = false;
         bool silence = true;
         long silenceCount = 0;
+		public bool speechRecognized = false;
         DateTime lastUpdateTime = DateTime.Now;
         DateTime recordingStarted = DateTime.Now;
+
 
         private void waveSource_DataAvailableImpedance(object? sender, WaveInEventArgs e)
 		{
@@ -41,11 +44,21 @@ namespace Windows_AI_Assistant.Functions
 		{			
 			waveSource.WaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(16000, 1);
 			waveSource.DataAvailable += new EventHandler<WaveInEventArgs>(waveSource_DataAvailable);
-
+			SpeechRecognitionEngine speechRecognitionEngine = new SpeechRecognitionEngine();
+			speechRecognitionEngine.LoadGrammar(new DictationGrammar());
+			speechRecognitionEngine.SetInputToDefaultAudioDevice();
+            speechRecognitionEngine.RecognizeAsync();            
+            speechRecognitionEngine.SpeechRecognized += SpeechRecognitionEngine_SpeechRecognized;
 			waveSource.StartRecording();
 		}
 
-		private void waveSource_DataAvailable(object? sender, WaveInEventArgs e)
+        private void SpeechRecognitionEngine_SpeechRecognized(object? sender, SpeechRecognizedEventArgs e)
+        {
+			speechRecognized = true;
+            recordingStarted = DateTime.Now;
+        }
+
+        private void waveSource_DataAvailable(object? sender, WaveInEventArgs e)
 		{
 			if ((DateTime.Now - lastUpdateTime).TotalSeconds > 3 && !started)
 			{
@@ -65,7 +78,7 @@ namespace Windows_AI_Assistant.Functions
 					count++;
 				}
 			}
-			if ((dbA / count) > 3983.5)
+			if ((dbA / count) > 3983)
 				silence = false;
 			else
 				silence = true;
@@ -74,7 +87,7 @@ namespace Windows_AI_Assistant.Functions
 			{
 				started = true;
 				running = true;
-				recordingStarted = DateTime.Now;
+				//recordingStarted = DateTime.Now;
 			}
 			else
 			{
@@ -85,8 +98,9 @@ namespace Windows_AI_Assistant.Functions
 			}
 
 			buffer.AddRange(e.Buffer);
+    
 
-			if (silenceCount > 35)
+            if (silenceCount > 35 && speechRecognized)
 			{
 				if ((DateTime.Now - recordingStarted).TotalSeconds < 1.3)
 				{
@@ -106,6 +120,11 @@ namespace Windows_AI_Assistant.Functions
 					finished = true;
 				}
 			}
+			else if (silenceCount > 35 && !speechRecognized)
+			{
+				failed = true;
+			}
+
 		}
 	}
 }

@@ -106,7 +106,7 @@ namespace Windows_AI_Assistant.Functions
             
                 while (recordAudio.finished == false && !recordAudio.failed)
 				{
-					if(recordAudio.running)
+					if(recordAudio.speechRecognized)
                         AppContext.trayIcon.Icon = new System.Drawing.Icon("robot_active.ico");
                     System.Threading.Thread.Sleep(100);
 				}
