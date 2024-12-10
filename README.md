@@ -21,7 +21,7 @@ https://github.com/decipher2k/Windows-AI-Assistant/releases<br><br>
 <h1>Usage</h1>
 <br>
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.<br>
-Setup the API keys and other information using the "Settings" buttons.<br>
+Setup the API keys and other informations using the "Settings" buttons.<br>
 <br>
 A green point on the tray icon means that speech is being recorded.<br>
 A blue point means that the recorded text has been sent to the Chat AI.<br>
@@ -38,7 +38,7 @@ Thus you can say "Computer, who was John F. Kennedy" to get informations about J
 <br>
 <h3>Keyword Detection:</h3>
 There is now a keyword detection using Windows Speech Recognition.<br>
-It can be good to use it in a noisy environment, like when watching TV or listening to music to prevent speech recognition quota draining.<br>
+It can be good to use it in a noisy environment, like when watching TV or listening to music, to prevent speech recognition quota draining.<br>
 Keyword detection sets the keyword to "Computer", which can't be changed. Reliability differes between systems.<br><br>
 Recognition quality can be enhaced by training:<br>
 https://www.tenforums.com/tutorials/120674-add-delete-change-speech-recognition-profiles-windows-10-a.html<br>
@@ -62,10 +62,10 @@ This is an example for starting Windows explorer:<br><br>
 
 <img src="https://github.com/user-attachments/assets/5fa40e98-4d8e-4d8c-8895-702e6cc632db" width="600">
 <br><br>
-The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
+The first column defines whether to use speech recognition or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "starting windows explorer" will allow you to say either "start windows explorer", or "run windows explorer" etc.<br>
-<b>Chat AI commands are not implemented yet.</b><br>
+<b>Chat AI commands have not been implemented yet.</b><br>
 The third column is the program file that should be started.<br>
 The fourth column allows you to set command parameters.<br><br>
 
@@ -75,10 +75,10 @@ They can be used to raise events in webapplications, for example IFTTT. IFTTT ca
 This is an example for a webhook that turns on the light:<br><br>
 <img src="https://github.com/user-attachments/assets/28477f74-f1b1-41c2-8cb7-8b27ba639c13" width="600"></img>
 <br><br>
-The first column defines whether to use speech recognition and keywords or the chat AI to execute the webhook.<br>
+The first column defines whether to use speech recognition or the chat AI to execute the webhook.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "turning on the light" will allow you to say either "turn on the light", or "switch on the light" etc.<br>
-<b>Chat AI commands are not implemented yet.</b><br>
+<b>Chat AI commands have not been implemented yet.</b><br>
 The second column defines the sentence that the program uses to recognize the command.<br>
 The third column is the URL of the webhook.<br>
 The fourth column defines whether to use HTTP POST or HTTP GET. For most webhooks, this will be HTTP GET.<br>
@@ -93,17 +93,17 @@ This is an example for the media player plugin:<br>
 <img src="https://github.com/user-attachments/assets/ad6ddca7-6669-4751-a30c-5d5bf54b233e" width="600"></img>
 <br><br>
 The media player plugin is included in the release of the program.<br><br>
-The first column defines whether to use speech recognition and keywords or the chat AI to start the plugin.<br>
+The first column defines whether to use speech recognition or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
 Using the Chat AI allows you to vary sentences. The program does automatically precede the sentence with "if the user asks for". Thus, the sentence "playing media" will allow you to say either "play media", or "play the song" etc.<br>
-<b>Chat AI commands are not implemented yet.</b><br>
+<b>Chat AI commands have not been implemented yet.</b><br>
 The second column defines the sentence that the program uses to recognize the command.<br>
 The third column defines the name of the plugin DLL.<br>
 The following columns are there to parametrize the plugin. They do differ from plugin to plugin. Please read the plugin's manual for more information.<br>
 <b>Only use Plugins from trusted sources</b>
 <br><br>
 <h2>The [TEXT] variable</h2>
-Whenever you enter the token [TEXT] in a parameter of the commands section, the token will be replace with the text that has been said after the command.<br>
+Whenever you enter the token [TEXT] in a parameter of the commands section, the token will be replaced with the text that has been said after the command.<br>
 For example "Create a note: Shopping" using the key sentence "Create a note: [TEXT]" will pass the word "Shopping" instead of the [TEXT] token to a plugin, a webhook, or a program.<br>
 This will only work with Speech Recognition commands, not with Chat AI ones.<br>
 
@@ -164,7 +164,7 @@ You may need to set a voice according to your language in the settings.
 -ChatGPT (about 10$/month)<br>
 -Groq LLM API (free, usage limits, fast) <br>
 -Ollama (free, requires good hardware, slow)<br>
--Awan(free, usage limits, slow)<br>
+-Awan (free, usage limits, slow)<br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
 -Microsoft Windows Speech (free, average quality)<br>
@@ -175,7 +175,7 @@ Please note that prices are dependent on real usage and may vary.<br><br>
 To write a plugin, add "WAIA Plugin.dll" to a new Visual Studio 2022 DotNet 8.0 class library project, implement the interface IWAIAPlugin and the following method:<br><br>      
 public String RunPlugin(String text);<br><br>
 The parameter "text" is the spoken input.<br><br>
-The return value of the Functions will be sent to the speech synthesis engine.
+The return value of the function will be sent to the speech synthesis engine.
 
 
 
