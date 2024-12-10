@@ -53,7 +53,7 @@ If the voice recognition is active too often without you saying anything, you ca
 I had good experiences with the following setup.<br>
 All suggested services are available for free.<br>
 <br>
-Voice recognition: Groq. Make sure to adjust the microphone recording level to prevent quota draining.<br>
+Voice recognition: Groq. Azure tends to drain the quota when there is background noise.<br>
 Chat AI: Groq ist the fastest one.<br>
 Voice Output: Windows Speech until Google Cloud AI has been implemented.<br>
 <br>
