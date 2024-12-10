@@ -37,9 +37,5 @@ namespace Windows_AI_Assistant.Settings
             this.Close();
         }
 
-        private void tbModel_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

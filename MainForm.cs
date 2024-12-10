@@ -96,8 +96,8 @@ namespace Windows_AI_Assistant
 			}
 			else if(cbVoiceRecognition.SelectedItem.ToString() == "Groq")
 			{
-				Settings.GroqSettings azureSettings = new Settings.GroqSettings();
-				azureSettings.ShowDialog();
+				Settings.GroqSettings groqSettings = new Settings.GroqSettings();
+				groqSettings.ShowDialog();
 			}
 			Globals.Save();
 		}

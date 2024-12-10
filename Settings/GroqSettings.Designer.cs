@@ -41,46 +41,41 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(36, 37);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(30, 31);
             label1.Name = "label1";
-            label1.Size = new Size(84, 30);
+            label1.Size = new Size(72, 25);
             label1.TabIndex = 0;
             label1.Text = "API Key";
             // 
             // tbAPIKey
             // 
-            tbAPIKey.Location = new Point(36, 71);
-            tbAPIKey.Margin = new Padding(4);
+            tbAPIKey.Location = new Point(30, 59);
             tbAPIKey.Name = "tbAPIKey";
-            tbAPIKey.Size = new Size(528, 35);
+            tbAPIKey.Size = new Size(441, 31);
             tbAPIKey.TabIndex = 1;
             // 
             // tbLanguage
             // 
-            tbLanguage.Location = new Point(36, 176);
-            tbLanguage.Margin = new Padding(4);
+            tbLanguage.Location = new Point(30, 147);
             tbLanguage.Name = "tbLanguage";
-            tbLanguage.Size = new Size(528, 35);
+            tbLanguage.Size = new Size(441, 31);
             tbLanguage.TabIndex = 4;
             tbLanguage.Text = "en-US";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(36, 130);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(30, 108);
             label3.Name = "label3";
-            label3.Size = new Size(104, 30);
+            label3.Size = new Size(89, 25);
             label3.TabIndex = 5;
             label3.Text = "Language";
             // 
             // bnSave
             // 
-            bnSave.Location = new Point(288, 375);
-            bnSave.Margin = new Padding(4);
+            bnSave.Location = new Point(240, 312);
             bnSave.Name = "bnSave";
-            bnSave.Size = new Size(134, 41);
+            bnSave.Size = new Size(112, 34);
             bnSave.TabIndex = 6;
             bnSave.Text = "Save";
             bnSave.UseVisualStyleBackColor = true;
@@ -88,10 +83,9 @@
             // 
             // bnCancel
             // 
-            bnCancel.Location = new Point(430, 375);
-            bnCancel.Margin = new Padding(4);
+            bnCancel.Location = new Point(358, 312);
             bnCancel.Name = "bnCancel";
-            bnCancel.Size = new Size(134, 41);
+            bnCancel.Size = new Size(112, 34);
             bnCancel.TabIndex = 7;
             bnCancel.Text = "Cancel";
             bnCancel.UseVisualStyleBackColor = true;
@@ -100,25 +94,25 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(36, 248);
+            label2.Location = new Point(30, 207);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(72, 30);
+            label2.Size = new Size(63, 25);
             label2.TabIndex = 8;
             label2.Text = "Model";
             // 
             // tbModel
             // 
-            tbModel.Location = new Point(36, 299);
+            tbModel.Location = new Point(30, 235);
             tbModel.Name = "tbModel";
-            tbModel.Size = new Size(528, 35);
+            tbModel.Size = new Size(441, 31);
             tbModel.TabIndex = 9;
-            tbModel.TextChanged += tbModel_TextChanged;
             // 
             // GroqSettings
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(599, 448);
+            ClientSize = new Size(499, 373);
             Controls.Add(tbModel);
             Controls.Add(label2);
             Controls.Add(bnCancel);
@@ -128,7 +122,6 @@
             Controls.Add(tbAPIKey);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Margin = new Padding(4);
             Name = "GroqSettings";
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;

@@ -10,7 +10,7 @@ namespace Windows_AI_Assistant.Data
 	{
 		public String APIKey { get; set; } = "";
 		public String Language { get; set; } = "";
-		public String LLMModel { get; set; } = "llama3-8b-8192";
+		public String LLMModel { get; set; } = "llama-3.1-70b-versatile";
 
     }
 }
