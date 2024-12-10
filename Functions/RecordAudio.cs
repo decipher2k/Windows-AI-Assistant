@@ -65,7 +65,7 @@ namespace Windows_AI_Assistant.Functions
 					count++;
 				}
 			}
-			if ((dbA / count) > 3982)
+			if ((dbA / count) > 3983.5)
 				silence = false;
 			else
 				silence = true;
