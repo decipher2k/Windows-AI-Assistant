@@ -24,7 +24,7 @@ namespace Windows_AI_Assistant.Data
 		public Command command { get; set; } = Command.Program;
 		public String keyword { get; set; } = "Computer";
 		public bool useWindowsSpeech { get; set; } = false;
-
+		public String language { get; set; } = "English";
 
 		public enum SpeechToText
 		{

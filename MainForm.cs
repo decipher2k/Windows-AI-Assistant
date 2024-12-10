@@ -43,6 +43,8 @@ namespace Windows_AI_Assistant
 
 			cbKeywordDetection.Checked = Globals.settings.useWindowsSpeech;
 
+			tbLanguage.Text = Globals.settings.language;
+
 			if (rkApp.GetValue("WAIA") == null)
 			{
 				cbAutostart.Checked = false;
@@ -180,5 +182,14 @@ namespace Windows_AI_Assistant
 				rkApp.DeleteValue("WAIA", false);
 			}
 		}
-	}
+
+		private void tbLanguage_TextChanged(object sender, EventArgs e)
+		{
+			if(tbLanguage.Text!="")
+			{
+				Globals.settings.language = tbLanguage.Text;
+			}
+		}
+
+    }
 }

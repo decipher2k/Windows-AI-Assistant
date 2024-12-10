@@ -44,6 +44,8 @@
             cbAutostart = new CheckBox();
             label5 = new Label();
             cbKeywordDetection = new CheckBox();
+            label6 = new Label();
+            tbLanguage = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -155,7 +157,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(27, 470);
+            button1.Location = new Point(27, 565);
             button1.Name = "button1";
             button1.Size = new Size(473, 34);
             button1.TabIndex = 12;
@@ -166,7 +168,7 @@
             // cbAutostart
             // 
             cbAutostart.AutoSize = true;
-            cbAutostart.Location = new Point(27, 356);
+            cbAutostart.Location = new Point(27, 451);
             cbAutostart.Name = "cbAutostart";
             cbAutostart.Size = new Size(191, 29);
             cbAutostart.TabIndex = 13;
@@ -178,7 +180,7 @@
             // 
             label5.AutoSize = true;
             label5.Enabled = false;
-            label5.Location = new Point(49, 415);
+            label5.Location = new Point(49, 510);
             label5.Name = "label5";
             label5.Size = new Size(461, 25);
             label5.TabIndex = 15;
@@ -187,7 +189,7 @@
             // cbKeywordDetection
             // 
             cbKeywordDetection.AutoSize = true;
-            cbKeywordDetection.Location = new Point(27, 391);
+            cbKeywordDetection.Location = new Point(27, 486);
             cbKeywordDetection.Name = "cbKeywordDetection";
             cbKeywordDetection.Size = new Size(487, 29);
             cbKeywordDetection.TabIndex = 14;
@@ -195,11 +197,30 @@
             cbKeywordDetection.UseVisualStyleBackColor = true;
             cbKeywordDetection.CheckedChanged += cbKeywordDetection_CheckedChanged;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(27, 366);
+            label6.Name = "label6";
+            label6.Size = new Size(179, 25);
+            label6.TabIndex = 16;
+            label6.Text = "Language (in English)";
+            // 
+            // tbLanguage
+            // 
+            tbLanguage.Location = new Point(28, 396);
+            tbLanguage.Name = "tbLanguage";
+            tbLanguage.Size = new Size(472, 31);
+            tbLanguage.TabIndex = 17;
+            tbLanguage.TextChanged += tbLanguage_TextChanged;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(520, 516);
+            ClientSize = new Size(520, 623);
+            Controls.Add(tbLanguage);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(cbKeywordDetection);
             Controls.Add(cbAutostart);
@@ -244,5 +265,7 @@
 		private CheckBox cbAutostart;
         private Label label5;
         private CheckBox cbKeywordDetection;
+        private Label label6;
+        private TextBox tbLanguage;
     }
 }

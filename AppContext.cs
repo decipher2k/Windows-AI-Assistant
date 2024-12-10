@@ -173,7 +173,7 @@ namespace Windows_AI_Assistant
 
 						if (!EvaluateCommand(text))
 						{
-
+							text = "please answer in "+Globals.settings.language+" language: " + text;
 							switch (Globals.settings.aiChat)
 							{
 								case Data.Settings.AIChat.Ollama:
