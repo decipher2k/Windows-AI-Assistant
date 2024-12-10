@@ -29,6 +29,8 @@ A blue point means that the recorded text has been sent to the Chat AI.<br>
                                                                  
 How to allways show a tray icon:<br>
 https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
+<h3>Chat History:</h3>
+The chat history contains the last 3 messages. Thus you can really chat with the AI.<br>
 <h3>Keyword:</h3>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
