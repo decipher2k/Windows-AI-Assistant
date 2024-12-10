@@ -1,5 +1,5 @@
 
-<h1>Windows AI Assistant</h1><br>
+<h1>WAIA</h1><br>
 <br>
 <b>A voice-controlled AI Assistant for Microsoft Windows</b><br><br>
 <a href="https://www.kickstarter.com/projects/r0ulaboard/windows-ai-assistant">Support WAIA on Kickstarter</a>
