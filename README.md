@@ -46,7 +46,7 @@ To access the control panel in Windows 11, hit the "Windows" key and enter "cont
 The speech detection is now independent of background noise.
 <br>
 <h3>Windows Sound Recording Level:</h3>
-If the voice recognition is active too often without you saying anything, you can try to adjust the microphone recording level in the Windows settings, or use the keyword detection to prevent draining of the cloud voice recognition quota.
+If the voice recognition is active too often without you saying anything, or no speech is being detected, you can try to adjust the microphone recording level in the Windows settings.
 <br>
 <br>
 <h3>Suggested Services:</h3>
