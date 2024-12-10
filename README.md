@@ -36,13 +36,14 @@ The Awan implementation does not support a chat history.<br>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
 <br>
-<h3>Keyword Detection:</h3>
+<s><h3>Keyword Detection:</h3>
 There is now a keyword detection using Windows Speech Recognition.<br>
 It can be good to use it in a noisy environment, like when watching TV or listening to music, to prevent speech recognition quota draining.<br>
 Keyword detection sets the keyword to "Computer", which can't be changed. Reliability differes between systems.<br><br>
 Recognition quality can be enhaced by training:<br>
 https://www.tenforums.com/tutorials/120674-add-delete-change-speech-recognition-profiles-windows-10-a.html<br>
-To access the control panel in Windows 11, hit the "Windows" key and enter "control panel".<br>
+To access the control panel in Windows 11, hit the "Windows" key and enter "control panel".<br></s>
+The speech detection is now independent of background noise.
 <br>
 <h3>Windows Sound Recording Level:</h3>
 If the voice recognition is active too often without you saying anything, you can try to adjust the microphone recording level in the Windows settings, or use the keyword detection to prevent draining of the cloud voice recognition quota.
