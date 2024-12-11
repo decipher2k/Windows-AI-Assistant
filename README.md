@@ -11,7 +11,7 @@
 <a href="https://www.kickstarter.com/projects/r0ulaboard/windows-ai-assistant">Support WAIA on Kickstarter</a>
 <h2>Features:</h2><br>
 <ul>
-<li>Seamlessly integrates with ChatGPT, Groq, Ollama and Awan</li>
+<li>Seamlessly integrates with ChatGPT or Groq</li>
 <li>Advanced voice recognition powered by Azure speech services and Groq</li>
 <li>Voice controlled interaction with Windows</li>
 <ul><li>Plugin system</li>
@@ -37,7 +37,6 @@ How to allways show a tray icon:<br>
 https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
 <h3>Chat History:</h3>
 The chat history contains the last 3 messages. Thus you can really chat with the AI.<br>
-The Awan implementation does not support a chat history.<br>
 <h3>Keyword:</h3>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
@@ -129,26 +128,6 @@ https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b3
 Groq can be found at https://groq.com <br>
 The API keys can be created at https://console.groq.com/keys <br>
 <br><br>
-<h3>Ollama:</h3>
-(https://ollama.com/)<br>
-Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) is required.<br>
-Low quality models (3B etc.) will require 4GB VRAM.<br>
-Average models (7B/8B) will require about 12GB VRAM.<br>
-Good models (70B) will require 24GB VRAM and more.<br><br>
-Set the model name and a system prompt in the settings window.<br>
-The model will be automatically downloaded if it does not exist yet.<br>
-You can find models at https://ollama.com/search <br><br>
-<h3>Awan:</h3>
-(https://www.awanllm.com)<br>
-Awan is a free API for LLAMA models.
-<br>
-<br>
-<h1>Speech Synthesis</h1>
-<h3>Elevenlabs:</h3>
-Log in to your Elevenlabs account.<br>
-In the top-right corner, click on your profile icon > Profile.<br>
-Next to the API Key field, click the eye icon to view and copy your API key and store it in a safe place.<br>
-Please note: The "voice" field referes to the name of the voice, not to its ID.<br>
 <h3>Windows Speech Synthesis:</h3>
 Average Quality.<br>
 You may need to set a voice according to your language in the settings.
@@ -162,8 +141,6 @@ You may need to set a voice according to your language in the settings.
 <h3>AI Chat - one of the following:</h3><br>
 -ChatGPT (about 10$/month)<br>
 -Groq LLM API (free, usage limits, fast) <br>
--Ollama (free, requires good hardware, slow)<br>
--Awan (free, usage limits, slow)<br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
 -Microsoft Windows Speech (free, average quality)<br>
