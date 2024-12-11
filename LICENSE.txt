@@ -38,7 +38,7 @@ To the extent there is conflict between the license terms covering the Open-Sour
 
 Third Party Services
 
-Through my application, you may access external resources provided by third parties. You acknowledge and accept that I have no control over these resources and are not responsible for their content or availability.
+Through my application, you may access external resources provided by third parties. You acknowledge and accept that I have no control over these resources and am not responsible for their content or availability.
 
 Conditions for third-party resources, including any rights granted in their content, are governed by those third parties' terms and conditions or by applicable law.
 Acceptable use
