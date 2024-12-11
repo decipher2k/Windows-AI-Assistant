@@ -5,7 +5,9 @@
 <br>
 <b>Update v2.4: Speech recognition does now detect longer sentences. Groq quota draining has been prevented. Chat history addet. It is now possible to do real conversations.</b><br>
 <br>
-<b>The Groq speech detection is now independent of background noise. The Azure speech recognition is still prone to quota draining.</b><br><br>
+<b>The Groq speech detection is now independent of background noise that doesn't sound like speech. The Azure speech recognition is still prone to quota draining.</b><br><br>
+<b>WAIA is just an interface for third party AI providers.</b><br><br>
+<br>
 <a href="https://www.kickstarter.com/projects/r0ulaboard/windows-ai-assistant">Support WAIA on Kickstarter</a>
 <h2>Features:</h2><br>
 <ul>
