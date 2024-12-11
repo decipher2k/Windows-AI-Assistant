@@ -4,12 +4,12 @@ A voice-controlled AI Assistant for Microsoft Windows
 
 Update v2.4: Speech recognition does now detect longer sentences. Groq quota draining has been prevented. Chat history addet. It is now possible to do real conversations.
 
-The Groq speech detection is now independent of Background noise. The Azure speech recognition is still prone to quota draining.
+The Groq speech detection is now independent of Background noise without speech. The Azure speech recognition is still prone to quota draining.
 
 Features:
 
-Seamlessly integrates with ChatGPT, Groq, Ollama and Awan
-Advanced voice recognition powered by Azure speech services and Groq
+Seamlessly integrates with ChatGPT and Groq
+Advanced voice recognition powered by Azure speech services or Groq
 Voice controlled interaction with Windows
 Plugin system
 Program starter using key sentences
