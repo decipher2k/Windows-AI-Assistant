@@ -34,7 +34,7 @@ How to allways show a tray icon:
 https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 
 Chat History:
 The chat history contains the last 3 messages. Thus you can really chat with the AI.
-The Awan implementation does not support a chat history.
+
 Keyword:
 You can set a custom keyword for starting speech recognition. Default is "Computer".
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.
@@ -125,20 +125,6 @@ Groq LLM API:
 Groq can be found at https://groq.com 
 The API keys can be created at https://console.groq.com/keys 
 
-Ollama:
-(https://ollama.com/)
-Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) is required.
-Low quality models (3B etc.) will require 4GB VRAM.
-Average models (7B/8B) will require about 12GB VRAM.
-Good models (70B) will require 24GB VRAM and more.
-Set the model name and a system prompt in the settings window.
-The model will be automatically downloaded if it does not exist yet.
-You can find models at https://ollama.com/search 
-Awan:
-(https://www.awanllm.com)
-Awan is a free API for LLAMA models.
-
-
 Speech Synthesis
 Elevenlabs:
 Log in to your Elevenlabs account.
@@ -158,8 +144,6 @@ Speech Recognition - one of the following:
 AI Chat - one of the following:
 -ChatGPT (about 10$/month)
 -Groq LLM API (free, usage limits, fast) 
--Ollama (free, requires good hardware, slow)
--Awan (free, usage limits, slow)
 
 Speech output - one of the following:
 -Microsoft Windows Speech (free, average quality)
