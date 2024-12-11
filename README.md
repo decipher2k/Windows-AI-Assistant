@@ -21,6 +21,7 @@ Webhooks using key sentences for integration with IFTTT (home automation etc.) -
 
 Download:
 https://github.com/decipher2k/Windows-AI-Assistant/releases
+
 Usage
 
 After starting the application, a tray icon is being added. Doubleclick on it to configure the settings.
