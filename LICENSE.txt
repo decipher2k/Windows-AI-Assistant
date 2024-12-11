@@ -37,6 +37,13 @@ Certain components of the Software may be subject to open-source software licens
 
 To the extent there is conflict between the license terms covering the Open-Source Components and this EULA, the terms of such licenses will apply in lieu of the terms of this EULA. To the extent the terms of the licenses applicable to Open-Source Components prohibit any of the restrictions in this Agreement with respect to such Open-Source Component, such restrictions will not apply to such Open-Source Component. To the extent the terms of the licenses applicable to Open-Source Components require Licensor to make an offer to provide source code in connection with the Product, such offer is hereby made, and you may exercise it by contacting info@dennis-heine.de
 
+Third Party Services
+
+Through my application, you may access external resources provided by third parties. You acknowledge and accept that I have no control over these resources and are not responsible for their content or availability.
+
+Conditions for third-party resources, including any rights granted in their content, are governed by those third parties' terms and conditions or by applicable law.
+Acceptable use
+
 Intellectual Property Notices
 
 The Software and all worldwide copyrights, trade secrets, and other intellectual property rights therein are the exclusive property of Dennis Michael Heine. Dennis Michael Heine reserves all rights in and to the Software not expressly granted to you in this EULA.
