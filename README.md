@@ -139,7 +139,7 @@ You may need to set a voice according to your language in the settings.
 -Groq (free, usage limits, fast)<br>
 <br>
 <h3>AI Chat - one of the following:</h3><br>
--ChatGPT (about 10$/month)<br>
+-ChatGPT LLM API(about 10$/month)<br>
 -Groq LLM API (free, usage limits, fast) <br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
