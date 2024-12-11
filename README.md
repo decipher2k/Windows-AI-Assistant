@@ -120,7 +120,7 @@ Groq can be found at https://groq.com<br>
 The API keys can be created at https://console.groq.com/keys <br>
 <br>
 <h1>AI Chat</h1>
-<h3>ChatGPT:</h3>
+<h3>ChatGPT LLM API:</h3>
 https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b35aa00 <br>
 <b>You will need ChatGPT API credits, not ChatGPT Plus!</b><br>
 <br>
