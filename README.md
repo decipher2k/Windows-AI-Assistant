@@ -31,7 +31,7 @@ Setup the API keys and other informations using the "Settings" buttons.<br>
 <br>
 A green point on the tray icon means that speech has been recorded.<br>
 A blue point means that the recorded text has been sent to the Chat AI.
-<br>
+<br><br>
                                                                  
 How to allways show a tray icon:<br>
 https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
