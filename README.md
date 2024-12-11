@@ -5,12 +5,13 @@
 <br>
 <b>Update v2.4: Speech recognition does now detect longer sentences. Groq quota draining has been prevented. Chat history addet. It is now possible to do real conversations.</b><br>
 <br>
-<b>The Groq speech detection is now independent of background noise. The Azure speech recognition is still prone to quota draining.</b><br><br>
+<b>The Groq speech detection is now independent of background noise without speech. The Azure speech recognition is still prone to quota draining.</b><br><br>
+<b>Please note that WAIA is just a client that unifies different AI services. The program itself does not provide any AI capabilities.</b><br><br>
 <a href="https://www.kickstarter.com/projects/r0ulaboard/windows-ai-assistant">Support WAIA on Kickstarter</a>
 <h2>Features:</h2><br>
 <ul>
-<li>Seamlessly integrates with ChatGPT, Groq, Ollama and Awan</li>
-<li>Advanced voice recognition powered by Azure speech services and Groq</li>
+<li>Seamlessly integrates with ChatGPT and Groq</li>
+<li>Advanced voice recognition powered by Azure speech services or Groq</li>
 <li>Voice controlled interaction with Windows</li>
 <ul><li>Plugin system</li>
 <li>Program starter using key sentences</li>
@@ -35,7 +36,6 @@ How to allways show a tray icon:<br>
 https://www.lifewire.com/show-or-hide-icons-in-system-tray-in-windows-10-5115219 <br>
 <h3>Chat History:</h3>
 The chat history contains the last 3 messages. Thus you can really chat with the AI.<br>
-The Awan implementation does not support a chat history.<br>
 <h3>Keyword:</h3>
 You can set a custom keyword for starting speech recognition. Default is "Computer".<br>
 Thus you can say "Computer, who was John F. Kennedy" to get informations about John F. Kennedy.<br>
@@ -61,10 +61,7 @@ Chat AI: Groq ist the fastest one.<br>
 Voice Output: Windows Speech until Google Cloud AI has been implemented.<br>
 <br>
 <h2>Program Starter</h2>
-The program starter can be configured using the "Commands" button.<br>
-This is an example for starting Windows explorer:<br><br>
-
-<img src="https://github.com/user-attachments/assets/5fa40e98-4d8e-4d8c-8895-702e6cc632db" width="600">
+The program starter can be configured using the "Commands" button.
 <br><br>
 The first column defines whether to use speech recognition or the chat AI to start the plugin.<br>
 Speech recognition will listen for the exact sentence.<br>
@@ -76,8 +73,7 @@ The fourth column allows you to set command parameters.<br><br>
 <h2>Webhooks</h2>
 Webhooks can be configured using the "Commands" button.<br>
 They can be used to raise events in webapplications, for example IFTTT. IFTTT can be used to control home automation systems etc.<br>
-This is an example for a webhook that turns on the light:<br><br>
-<img src="https://github.com/user-attachments/assets/28477f74-f1b1-41c2-8cb7-8b27ba639c13" width="600"></img>
+
 <br><br>
 The first column defines whether to use speech recognition or the chat AI to execute the webhook.<br>
 Speech recognition will listen for the exact sentence.<br>
@@ -91,10 +87,7 @@ In case of GET messages, these parameters will be appended to the URL, for examp
 In case of POST messages, these parameters will define the data that is being sent with the POST request, for example JSON data.<br><br>
 
 <h2>Plugins</h2>
-Plugins can be configured using the "Commands" button.<br>
-This is an example for the media player plugin:<br>
-<br><br>
-<img src="https://github.com/user-attachments/assets/ad6ddca7-6669-4751-a30c-5d5bf54b233e" width="600"></img>
+Plugins can be configured using the "Commands" button.
 <br><br>
 The media player plugin is included in the release of the program.<br><br>
 The first column defines whether to use speech recognition or the chat AI to start the plugin.<br>
@@ -132,20 +125,7 @@ https://medium.com/latinxinai/how-to-get-api-key-for-chat-gpt-3-5-or-4-0-fce40b3
 <br>
 <h3>Groq LLM API:</h3>
 Groq can be found at https://groq.com <br>
-The API keys can be created at https://console.groq.com/keys <br>
-<br><br>
-<h3>Ollama:</h3>
-(https://ollama.com/)<br>
-Ollama is a locally hosted Chat AI. Good hardware (Geforce RTX) is required.<br>
-Low quality models (3B etc.) will require 4GB VRAM.<br>
-Average models (7B/8B) will require about 12GB VRAM.<br>
-Good models (70B) will require 24GB VRAM and more.<br><br>
-Set the model name and a system prompt in the settings window.<br>
-The model will be automatically downloaded if it does not exist yet.<br>
-You can find models at https://ollama.com/search <br><br>
-<h3>Awan:</h3>
-(https://www.awanllm.com)<br>
-Awan is a free API for LLAMA models.
+The API keys can be created at https://console.groq.com/keys
 <br>
 <br>
 <h1>Speech Synthesis</h1>
@@ -167,8 +147,6 @@ You may need to set a voice according to your language in the settings.
 <h3>AI Chat - one of the following:</h3><br>
 -ChatGPT (about 10$/month)<br>
 -Groq LLM API (free, usage limits, fast) <br>
--Ollama (free, requires good hardware, slow)<br>
--Awan (free, usage limits, slow)<br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
 -Microsoft Windows Speech (free, average quality)<br>
