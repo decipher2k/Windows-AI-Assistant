@@ -1,0 +1,16 @@
+E:\WAIA_Closed\WAIATime\bin\Debug\net8.0\WAIATime.deps.json
+E:\WAIA_Closed\WAIATime\bin\Debug\net8.0\WAIATime.dll
+E:\WAIA_Closed\WAIATime\bin\Debug\net8.0\WAIATime.pdb
+E:\WAIA_Closed\WAIATime\bin\Debug\net8.0\WAIA Plugin.dll
+E:\WAIA_Closed\WAIATime\bin\Debug\net8.0\WAIA Plugin.pdb
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.csproj.AssemblyReference.cache
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.GeneratedMSBuildEditorConfig.editorconfig
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.AssemblyInfoInputs.cache
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.AssemblyInfo.cs
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.csproj.CoreCompileInputs.cache
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.sourcelink.json
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.csproj.Up2Date
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.dll
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\refint\WAIATime.dll
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\WAIATime.pdb
+E:\WAIA_Closed\WAIATime\obj\Debug\net8.0\ref\WAIATime.dll

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\WAIA_Closed\\WAIATime\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A555FECD-91DF-43C9-8C21-751B4F325E52}|WAIATime.csproj|e:\\waia_closed\\waiatime\\waiatime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A555FECD-91DF-43C9-8C21-751B4F325E52}|WAIATime.csproj|solutionrelative:waiatime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WAIATime.cs",
+              "DocumentMoniker": "E:\\WAIA_Closed\\WAIATime\\WAIATime.cs",
+              "RelativeDocumentMoniker": "WAIATime.cs",
+              "ToolTip": "E:\\WAIA_Closed\\WAIATime\\WAIATime.cs",
+              "RelativeToolTip": "WAIATime.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T02:38:20.897Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
