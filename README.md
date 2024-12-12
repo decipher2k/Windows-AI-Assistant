@@ -3,7 +3,7 @@
 <br>
 <b>A voice-controlled AI Assistant for Microsoft Windows</b><br>
 <br>
-<b>Update v2.4: Speech recognition does now detect longer sentences. Groq quota draining has been prevented. Chat history addet. It is now possible to do real conversations.</b><br>
+<b>Speech recognition does now detect longer sentences. Groq quota draining has been prevented. Chat history addet. It is now possible to do real conversations.</b><br>
 <br>
 <b>The Groq speech detection is now independent of background noise without speech. The Azure speech recognition is still prone to quota draining.</b><br><br>
 <b>Please note that WAIA is just a client that unifies different AI services. The program itself does not provide any AI capabilities.</b><br>
