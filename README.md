@@ -154,7 +154,5 @@ If the speech doesn't get detected, try the following:<br>
 -Adjust the microphone level of Windows<br>
 -Enable online speech recognition in Windows settings<br>
 -Speak slow and clearly<br>
--Speak faster<br>
--Use shorter sentences
 
 
