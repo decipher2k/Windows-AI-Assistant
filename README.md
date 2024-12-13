@@ -132,17 +132,17 @@ You may need to set a voice according to your language in the settings.
 <h1>Costs</h1><br>
 <br>
 <h3>Speech Recognition - one of the following:</h3><br>
--Groq (free, usage limits, fast)<br>
+-Groq (available for free, usage limits, fast)<br>
 <br>
 <h3>AI Chat - one of the following:</h3><br>
 -ChatGPT (about 10$/month)<br>
--Groq LLM API (free, usage limits, fast) <br>
+-Groq LLM API (available for free, usage limits, fast) <br>
 <br>
 <h3>Speech output - one of the following:</h3><br>
 -Microsoft Windows Speech (free, average quality)<br>
 -Elevenlabs (about 10$-20$/month, good quality)<br>
 <br>
-Please note that prices are dependent on real usage and may vary.<br><br>
+Please note that prices are dependent on actual usage and may vary.<br><br>
 <h2>Writing a plugin</h2><br>
 To write a plugin, add "WAIA Plugin.dll" to a new Visual Studio 2022 DotNet 8.0 class library project, implement the interface IWAIAPlugin and the following method:<br><br>      
 public String RunPlugin(String text);<br><br>
