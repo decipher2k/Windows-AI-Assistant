@@ -149,7 +149,7 @@ public String RunPlugin(String text, String[] parameters);<br><br>
 The parameter "String text" is the spoken input.<br>
 The parameter "String[] parameters" allows you to pass parameters to the plugin.<br><br>
 The return value of the function will be sent to the speech synthesis engine.<br>
-If the third parameter of "String[] parameters" is "AI", the output of the plugin will be sent to the Chat AI.<br>
+If the third parameter of "String[] parameters" is "AI", the return value of the function will be sent to the Chat AI.<br>
 <br>
 <h1>Troubleshooting</h1>
 If the speech doesn't get detected, try the following:<br>
