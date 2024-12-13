@@ -5,7 +5,7 @@
 <br>
 <b>Speech recognition does now detect longer sentences. Groq quota draining has been prevented. Chat history addet. It is now possible to do real conversations.</b><br>
 <br>
-<b>The Groq speech detection is now independent of background noise without speech. The Azure speech recognition is still prone to quota draining.</b><br><br>
+<b>The Groq speech detection is now independent of background noise without speech. The Azure speech recognition has been didsabled.</b><br><br>
 <b>Please note that WAIA is just a client that unifies different AI services. The program itself does not provide any AI capabilities.</b><br>
 <b>Windows control is done using Plugins. So you will need a plugin for each capability.</b><br>
 <br>
@@ -13,7 +13,7 @@
 <h2>Features:</h2><br>
 <ul>
 <li>Seamlessly integrates with ChatGPT and Groq</li>
-<li>Advanced voice recognition powered by Azure speech services or Groq</li>
+<li>Advanced voice recognition powered by Groq</li>
 <li>Voice controlled interaction with Windows</li>
 <ul><li>Plugin system</li>
 <li>Program starter using key sentences</li>
@@ -58,7 +58,7 @@ If the voice recognition is active too often without you saying anything, or no 
 I had good experiences with the following setup.<br>
 All suggested services are available for free.<br>
 <br>
-Voice recognition: Groq. Azure tends to drain the quota when there is background noise.<br>
+Voice recognition: Groq.<br>
 Chat AI: Groq ist the fastest one.<br>
 Voice Output: Windows Speech until Google Cloud AI has been implemented.<br>
 <br>
@@ -107,15 +107,6 @@ For example "Create a note: Shopping" using the key sentence "Create a note: [TE
 This will only work with Speech Recognition commands, not with Chat AI ones.<br>
 
 <h1>Speech recognition</h1>
-<h3>Microsoft Azure speech recognition:</h3><br>
-Go to Microsoft Azure https://azure.microsoft.com/en-us/ and sign up for free with a Microsoft account, you may need to add a credit card to activate the account<br>
-Go to Create Speech Services https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices to create a new speech service, create a new resource group, such as cognitive-services, select a region, give the service a unique name, select the free pricing tier, and click on Review + create to validate the provided details, then click on Create and wait for the service to be created<br>
-Go to Cognitive Services https://portal.azure.com/#view/Microsoft_Azure_ProjectOxford/CognitiveServicesHub/~/SpeechServices and click on the newly created service<br>
-Go to Resource Management > Keys and Endpoint and click on Show Keys<br>
-Copy the first displayed API key<br>
-<br>
-Thankfully copied from https://github.com/dessant/buster/wiki/Configuring-Microsoft-Azure-Speech-to-Text <br>
-<br>
 <h3>Groq Speech Recognition:</h3>
 Groq can be found at https://groq.com<br>
 The API keys can be created at https://console.groq.com/keys <br>
@@ -143,7 +134,6 @@ You may need to set a voice according to your language in the settings.
 <h1>Costs</h1><br>
 <br>
 <h3>Speech Recognition - one of the following:</h3><br>
--Microsoft Azure (5h/month are free)<br>
 -Groq (free, usage limits, fast)<br>
 <br>
 <h3>AI Chat - one of the following:</h3><br>
