@@ -160,6 +160,18 @@ If the third parameter of "String[] parameters" is "AI", the return value of the
 If the speech doesn't get detected, try the following:<br>
 -Adjust the microphone level of Windows<br>
 -Enable online speech recognition in Windows settings<br>
--Speak slow and clearly<br>
-
-
+-Speak slow and clearly<br><br>
+<h1>Planed Features</h1>
+More Plugins for Winodws<br>
+<ul><li>Dictation</li>
+<li>Sound Volume</li>
+<li>Maximizing/Minimizing/Closing windows</li>
+<li>Alt+Tab</li>
+<li>Shutdown/Restart</li>  
+</ul>
+More Services<br>
+<ul><li>Claude</li>
+<li>Microsoft Chat AI</li>
+<li>Microsoft Azure Cortex Speech Recognition</li>
+<li>Google Speech Synthesis</li>
+<li>Google AI</li></ul>
