@@ -8,6 +8,7 @@
 <b>The Groq speech detection is now independent of background noise without speech. The Azure speech recognition has been didsabled.</b><br><br>
 <b>Please note that WAIA is just a client that unifies different AI services. The program itself does not provide any AI capabilities.</b><br>
 <b>Windows control is done using Plugins. So you will need plugins for it.</b><br>
+Only use Plugins from this GitHub repository. Otherwise, they may containt malware.<br><br>
 <h2>Features:</h2><br>
 <ul>
 <li>Seamlessly integrates with ChatGPT and Groq</li>
