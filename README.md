@@ -164,7 +164,7 @@ If the speech doesn't get detected, try the following:<br>
 <h1>Planned Features</h1>
 More Plugins for Windows<br>
 <ul><li>Dictation</li>
-<li>Sound Volume</li>
+<li><s>Sound Volume</s></li>
 <li>Maximizing/Minimizing/Closing windows</li>
 <li>Alt+Tab</li>
 <li>Shutdown/Restart</li>  
