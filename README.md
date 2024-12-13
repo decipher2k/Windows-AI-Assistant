@@ -97,7 +97,7 @@ Using the Chat AI allows you to vary sentences. The program does automatically p
 The second column defines the sentence that the program uses to recognize the command.<br>
 The third column defines the name of the plugin DLL.<br>
 The following columns are there to parametrize the plugin. They do differ from plugin to plugin. Please read the plugin's manual for more information.<br>
-<b>Only use Plugins from trusted sources</b>
+<b>Only use Plugins from this GitHub repository. Otherwise, they may containt malware.</b>
 <br><br>
 <h2>The [TEXT] variable</h2>
 Whenever you enter the token [TEXT] in a parameter of the commands section, the token will be replaced with the text that has been said after the command.<br>
