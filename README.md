@@ -168,6 +168,7 @@ More Plugins for Winodws<br>
 <li>Maximizing/Minimizing/Closing windows</li>
 <li>Alt+Tab</li>
 <li>Shutdown/Restart</li>  
+<li>Macros</li>  
 </ul>
 More Services<br>
 <ul><li>Claude</li>
