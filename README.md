@@ -5,7 +5,7 @@
 <br>
 <b>Speech recognition does now detect longer sentences. Groq quota draining has been prevented. Chat history addet. It is now possible to do real conversations.</b><br>
 <br>
-<b>The Groq speech detection is now independent of background noise without speech. The Azure speech recognition has been disabled.</b><br><br>
+<b>The Groq speech detection is now independent of background noise without speech. The Azure speech recognition has been disabled until quota draining has been repaired.</b><br><br>
 <b>Please note that WAIA is just a client that unifies different AI services. The program itself does not provide any AI capabilities.</b><br>
 <b>Windows control is done using plugins. So you will need plugins for it.</b><br><br>
 <b>Only use Plugins from the WAIA GitHub repository. Otherwise, they may contain malware.</b><br>
