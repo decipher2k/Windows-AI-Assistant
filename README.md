@@ -161,7 +161,7 @@ If the speech doesn't get detected, try the following:<br>
 -Adjust the microphone level of Windows<br>
 -Enable online speech recognition in Windows settings<br>
 -Speak slow and clearly<br><br>
-<h1>Planed Features</h1>
+<h1>Planned Features</h1>
 More Plugins for Windows<br>
 <ul><li>Dictation</li>
 <li>Sound Volume</li>
