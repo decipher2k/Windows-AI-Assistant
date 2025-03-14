@@ -3,7 +3,7 @@
 <br>
 <b>A voice-controlled AI Assistant for Microsoft Windows</b><br>
 <br>
-<b>New: WAIA [Cloudless] which runs 100% on the local machine for increasing privacy.<br><br>
+<b>New: WAIA [Cloudless] which runs 100% on the local machine for increased privacy.<br><br>
 <b>Speech recognition does now detect longer sentences. Groq quota draining has been prevented. Chat history added. It is now possible to do real conversations.</b><br>
 <br>
 <b>The Groq speech detection is now independent of background noise without speech. The Azure speech recognition has been disabled until quota draining has been repaired.</b><br><br>
